@@ -465,6 +465,14 @@ $(document).on('click', '[data-modal]', function(e) {
         
     });
 
+    //
+    //collapse icon + and - toggle
+    //
+    $('.accordion .card-header').on('click', function() {
+        $(this).find(".collapse-icon-plus").collapse('toggle');
+        $(this).find(".collapse-icon-minus").collapse('toggle');
+    });
+
 })(jQuery)
 
 

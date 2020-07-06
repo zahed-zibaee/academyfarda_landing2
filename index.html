@@ -8,6 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, user-scalable=no">
   <meta name="Designer" content="Made with love by dornaweb, UI design by ivahid.com">
   <link rel="stylesheet" href="assets/css/plugins.css">
+  <link rel="stylesheet" href="assets/css/bootstrap-grid.min.css">
   <link rel="stylesheet" href="assets/css/styles.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="assets/js/jquery-2.2.4.min.js"></script>
@@ -515,19 +516,24 @@
     <!--------------------------------------end(branch-address)------------->
     <div class="container">
       <div class="row">
-        <div class="col-lg-3 ">
-          <div class="card card-blendin" id="main-list" style="width: 25rem;">
+        <div class="col-lg-3 hidden-md hidden-sm hidden-xs">
+          <div class="card card-blendin" id="main-list">
             <ul class="list-group list-group-flush">
-              <li class="list-group-item"><a href="#intro"> معرفی متخصصان فردا</a></li>
+              <li class="list-group-item">
+                <a class="d-flex align-content-center justify-content-center" href="tel:+982188937172">
+                  <h3 class="pt-1 pl-2">۰۲۱-۸۸۹۳۷۱۷۲</h3>
+                  <i class="fa fa-phone fa-2x" aria-hidden="true"></i>
+                </a>
+              </li>
+              <li class="list-group-item"><a href="#intro"> متخصصان فردا</a></li>
               <li class="list-group-item"><a href="#courseinfo">معرفی دوره</a></li>
-              <li class="list-group-item"><a href="#activecourses">دوره های در حال ثبت‌نام</a></li>
               <li class="list-group-item"><a href="#topics">سر‌فصل‌ها</a></li>
               <li class="list-group-item"><a href="#course-payment">هزینه دوره</a></li>
               <li class="list-group-item"><a href="#license-course">گواهی نامه</a></li>
-              <li class="list-group-item"><a href="#">محل برگزاری دوره</a></li> 
+              <li class="list-group-item"><a href="#class-location">محل برگزاری دوره</a></li> 
               <li class="list-group-item"><a href="#albums">پشتیبانی پس از دوره</a></li>
-              <li class="list-group-item"><a href="#">سوالات متداول</a></li>
-              <li class="list-group-item"><a href="#">خوابگاه</a></li>
+              <li class="list-group-item"><a href="#CQs">سوالات متداول</a></li>
+              <li class="list-group-item"><a href="#dorms">خوابگاه</a></li>
               <li class="list-group-item">
                 <a href="#register-form" class="btn btn-green text-center py-3 my-2">مشاوره رایگان</a>
                 <a href="" class="btn btn-red text-center py-3 my-2">شرایط ثبت‌نام</a>
@@ -535,7 +541,7 @@
             </ul>
           </div>
         </div>
-        <div class="col-lg-9">
+        <div class="col-lg-9 col-12">
           <section class="main-product " id="intro">
             <div class="left-icons visible-xl visible-xxl visible-lg">
               <svg class="left-iconns" xmlns="http://www.w3.org/2000/svg" width="70.939" height="19.089"
@@ -564,17 +570,19 @@
             </div>
             <!--left-icons-->
       
-            <div class="container" >
+            <div class="" >
               <div class="product-wrap">
                 <h2 class="title-product">
-                  معرفی آموزشگاه متخصصان فردا
+                  آموزشگاه متخصصان فردا
                 </h2>
                 <!--title-product-->
                 <p class="text-justify">
                   آموزشگاه تعمیرات موبایل متخصصان فردا را می توان به جرات یکی از قدیمی ترین آموزشگاه
-                  های سطح تهران دانست .
-                  این آموزشگاه با سابقه ای نزدیک به 20 سال یکی از پرافتخارترین آموزشگاه های سطح ایران
-                  است که توانسته رتبه ی یک آموزش تعمیرات موبایل در سراسر ایران را به خود اختصاص دهد.
+                  های سطح تهران دانست.<br>
+                  آموزشگاه متخصصان فردا مفتخر است که کلاس های تعمیرات موبایل را به صورت هوشمند
+                  ، تخصصی و با استفاده از جدید ترین متد‌ها و مبتنی بر نیاز بازار کار ارائه می‌کند. 
+                  این آموزشگاه با سابقه ای نزدیک به 20 سال یکی از پرافتخارترین آموزشگاه های فوق تخصصی سطح ایران
+                  است که توانسته رتبه ی یک آموزش تعمیرات موبایل در سراسر ایران را به خود اختصاص دهد. <br>
                 </p>
               </div>
               <!--product-wrap-->
@@ -582,28 +590,19 @@
           </section>
           <!---------------------------end(intro)------------------------------------------>
           <section class="main-product " id="courseinfo">
-            <div class="container" >
+            <div class="" >
               <div class="product-wrap">
                 <h2 class="title-product">
                   معرفی دوره
                 </h2>
                 <!--title-product-->
-                <p>
+                <p class="pb-5">
                   دوره تخصصی آموزش تعمیرات موبایل متخصصان فردا شامل 26 جلسه 3 ساعت به صورت فشرده
                   از شنبه تا چهارشنبه برگزار می شود که در مجموع 78 ساعت آموزش کاربردی ویژه بازار کار می
                   باشد.
                   این دوره آموزش صفر تا صد تعمیرات موبایل می باشد که از پایه تا تخصصی آموزش داده می
                   شود، و کارآموزان در انتهای دوره قابلیت ورود به بازار پردرآمد تعمیرات موبایل را خواهند داشت.
                 </p>
-              </div>
-              <!--product-wrap-->
-            </div>
-          </section>
-          <!--main-product-->
-          <!---------------------------end(course-info)------------------------------------------>
-          <section class="main-product " id="activecourses">
-            <div class="container" >
-              <div class="product-wrap">
                 <h2 class="title-product">
                   دوره های در حال ثبت نام
                 </h2>
@@ -630,14 +629,26 @@
             </div>
           </section>
           <!--main-product-->
-          <!---------------------------end(active-courses)------------------------------------------>
-          <section class="why-experts container" id="topics">
+          <!---------------------------end(course-info)------------------------------------------>
+          <section class="why-experts" id="topics">
             <div class="title-experts">
               <h2>
                 سر فصل های دوره
               </h2>
-              <span> دوره تخصصی تعمیرات موبایل شامل آموزش صفر تا صد نرم افزار، سخت افزار، الکترونیک،
-                و آموزش صفر تا صد هاردزدن گوشی با باکس می باشد، که تمام موارد ،IOS ، اندروید
+              <span> دوره تخصصی تعمیرات موبایل شامل آموزش صفر تا صد 
+                <b>نرم افزار</b>
+                ، 
+                <b>سخت افزار</b>
+                ، 
+                <b>الکترونیک</b>
+                ،
+                و آموزش صفر تا صد
+                <b>هارد زدن گوشی با باکس</b>
+                می باشد
+                ، که تمام موارد ،
+                <b>IOS</b>
+                ، 
+                <b>اندروید</b>
                 از پایه آموزش داده می شود. </span>
             </div>
             <!--title-experts-->
@@ -819,7 +830,7 @@
           </section>
           <!--why-experts-->
           <!-------------------------------------end(topics)------------------->
-          <section class="why-experts container" id="course-payment">
+          <section class="why-experts " id="course-payment">
             <div class="title-experts">
               <h2>
                 هزینه دوره
@@ -906,7 +917,7 @@
           </section>
           <!--why-experts-->
           <!-------------------------------------end(course-payment)------------------->
-          <section class="license-course container" id="license-course">
+          <section class="license-course" id="license-course">
             <div class="title-experts">
               <h2>
                 گواهی‌نامه پایان دوره‌ها
@@ -936,9 +947,17 @@
                 <div class="left-license">
                   <p>
                     کار آموزان پس از گذراندن دوره تعمیرات موبایل گواهینامه مهارت از سازمان آموزش فنی و حرفه
-                    ای و وزارت کار دریافت می کنند که این گواهینامه جواز کسب محسوب می شود و با این
-                    گواهینامه می توانند وارد بازار کار شوند، علاوه بر این مدرک قابل ترجمه و استفاده در 168 کشور عضو ULO
-                    سازمان جهانی کار جهت دریافت ویزا کاری می باشد.
+                    ای و وزارت کار دریافت می کنند که این گواهینامه 
+                    <b>جواز کسب</b>
+                    محسوب می شود و با این
+                    گواهینامه می توانند وارد بازار کار شوند، علاوه بر این مدرک 
+                    <b>قابل ترجمه و استفاده در 168 کشور</b>
+                    عضو ULO سازمان جهانی کار جهت دریافت
+                    <b>ویزا کاری</b>
+                    می باشد.
+                    همچنین کارآموزان می‌توانند با استفاده از این مدرک به جهت دریافت 
+                    <b>وام خود اشتغالی</b>
+                    اقدام نمایند.
                   </p>
                 </div>
                 <!--left-license-slide-->
@@ -992,13 +1011,35 @@
           </section>
           <!--license-course-->
           <!--------------------------------------end(license-course)------------------------->
+          <section id="class-location">
+            <div class="title-experts">
+              <h2>
+                محل برگزاری دوره ها
+              </h2>
+              <span>
+                تمامی دوره های آموزشی تعمیرات موبایل در دو آموزشگاه
+                <b>میدان ولیعصر</b> 
+                و 
+                <b>میدان انقلاب</b>
+                برگزارمی شود
+              </span>
+            </div>
+          </section>
+          
+          <!--------------------------------------end(class-location)------------------------->
           <section class="picture-sliders2" id="albums">
             <div class="title-experts">
               <h2>
                 پشتیبانی پس از دوره
               </h2>
-              <span>کارآموزان عزیز می توانند مادام العمر بعد از اتمام دوره جهت دریافت پاسخ سوالات خود به صورت
-                تلفنی و حضوری با آموزشگاه و استاد مربوطه در تماس باشند.</span>
+              <span>کارآموزان عزیز می توانند
+                <b>مادام العمر </b>
+                بعد از اتمام دوره جهت دریافت پاسخ سوالات خود به صورت
+                <b>تلفنی</b>
+                و 
+                <b>حضوری</b>
+                با آموزشگاه و استاد مربوطه در تماس باشند.
+              </span>
             </div>
             <!--title-experts-->
             <!--left-icons-->
@@ -1058,84 +1099,242 @@
             <!--picture-sliders-->
             <div class="pic-slide-pagination2"></div>
           </section>
-          <!--picture-sliders-->
-          <div class="picture-sliders">
-            <div class="left-icons left-iconn visible-xl visible-xxl visible-lg">
-              <svg class="left-iconns" xmlns="http://www.w3.org/2000/svg" width="70.939" height="19.089"
-                viewBox="0 0 70.939 19.089">
-                <g id="Group_5744" data-name="Group 5744" transform="translate(0 1.157)">
-                  <g id="Group_5589" data-name="Group 5589" transform="translate(0)">
-                    <ellipse id="Ellipse_14" data-name="Ellipse 14" cx="8.387" cy="8.387" rx="8.387" ry="8.387"
-                      transform="translate(3.84)" fill="none" stroke="#ff1b25" stroke-miterlimit="10" stroke-width="2.314" />
-                    <ellipse id="Ellipse_30" data-name="Ellipse 30" cx="7.972" cy="7.972" rx="7.972" ry="7.972"
-                      transform="translate(0 1.039)" fill="#ff1b25" opacity="0.22" />
-                  </g>
-                  <g id="Group_5590" data-name="Group 5590" transform="translate(35.985 3.451)">
-                    <g id="Group_609" data-name="Group 609" transform="translate(0 0)">
-                      <path id="Path_1799" data-name="Path 1799"
-                        d="M295.968,94.978c-4.368,0-4.368-4.474-8.738-4.474s-4.369,4.474-8.739,4.474-4.369-4.474-8.739-4.474-4.37,4.474-8.739,4.474"
-                        transform="translate(-261.014 -84.45)" fill="none" stroke="#ff1b25" stroke-miterlimit="10"
-                        stroke-width="2" />
-                      <path id="Path_1800" data-name="Path 1800"
-                        d="M295.968,87.17c-4.368,0-4.368-4.475-8.738-4.475s-4.369,4.475-8.739,4.475-4.369-4.475-8.739-4.475-4.37,4.475-8.739,4.475"
-                        transform="translate(-261.014 -82.695)" fill="none" stroke="#ff1b25" stroke-miterlimit="10"
-                        stroke-width="2" />
-                    </g>
-                  </g>
-                </g>
-              </svg>
+          <!--------------------------- End album ------------------------------->
+          <section class="" id="CQs">
+            <div class="title-experts">
+              <h2>
+                سوالات متداول
+              </h2> 
             </div>
-            <!--left-icons-->
-            <div class="swiper-container picture-sliders" id="picture_slide">
-              <div class="swiper-wrapper">
-                <div class="swiper-slide pic-slide-item">
-                  <img src="assets/images/Image_10.png" alt="imh">
+            <div class="accordion pb-5 mb-5" id="accordionExample">
+              <div class="card py-3 px-4 my-2">
+                <div class="card-header" id="heading001">
+                  <div class="collapsed" data-toggle="collapse" data-target="#collapse001" aria-expanded="true" aria-controls="collapse001">
+                    <div class="row ">
+                      <div class="col-11 cqs-header d-flex">
+                        <div class="experts-content"><span><i class="fa fa-question fa-2x" aria-hidden="true"></i></span></div>
+                        <span class="pt-2">این دوره برای چه افرادی مناسب هست؟</span>
+                      </div>
+                      <div class="col-1 d-flex align-content-center justify-content-center pt-2 px-0 ">
+                        <div class="collapse-icon-plus collapse show">
+                          <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
+                        </div>
+                        <div class="collapse-icon-minus collapse">
+                          <i class="fa fa-minus fa-2x" aria-hidden="true"></i>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <!--pic-slide-item-->
-      
-                <div class="swiper-slide pic-slide-item">
-                  <img src="assets/images/Image_9.png" alt="imh">
+                <div class="pr-2 pt-4 collapse" id="collapse001" aria-labelledby="heading001" >
+                  <div class="card-body">
+                    این دوره برای علاقه مندان به تعمیرات موبایل و همچنین افرادی که تمایل به شغل پردرآمد دارند
+                    مناسب می باشد.
+                  </div>
                 </div>
-                <!--pic-slide-item-->
-      
-                <div class="swiper-slide pic-slide-item">
-                  <img src="assets/images/Image_12.png" alt="imh">
-                </div>
-                <!--pic-slide-item-->
-      
-                <div class="swiper-slide pic-slide-item">
-                  <img src="assets/images/Image_11.png" alt="imh">
-                </div>
-                <!--pic-slide-item-->
-      
-                <div class="swiper-slide pic-slide-item">
-                  <img src="assets/images/Image_6.png" alt="imh">
-                </div>
-                <!--pic-slide-item-->
               </div>
-              <div class="swiper-buttons-next swiper-buttons-nexts">
-                <span> <svg class="icon arrowleft">
-                    <use xlink:href="#arrowleft"></use>
-                  </svg> </span>
+              <div class="card py-3 px-4 my-2">
+                <div class="card-header" id="heading002">
+                  <div class="collapsed" data-toggle="collapse" data-target="#collapse002" aria-expanded="true" aria-controls="collapse002">
+                    <div class="row ">
+                      <div class="col-11 cqs-header d-flex">
+                        <div class="experts-content"><span><i class="fa fa-question fa-2x" aria-hidden="true"></i></span></div>
+                        <span class="pt-2">برای حضور در دوره شرایط سنی وجود دارد؟</span>
+                      </div>
+                      <div class="col-1 d-flex align-content-center justify-content-center pt-2 px-0 ">
+                        <div class="collapse-icon-plus collapse show">
+                          <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
+                        </div>
+                        <div class="collapse-icon-minus collapse">
+                          <i class="fa fa-minus fa-2x" aria-hidden="true"></i>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="pr-2 pt-4 collapse" id="collapse002" aria-labelledby="heading002" >
+                  <div class="card-body">
+                    خیر، تمامی افراد از 13 سال تا 60 سال می توانند در این دوره شرکت کنند، زیرا تمامی مباحث
+                    از پایه آموزش داده می شود.
+                  </div>
+                </div>
               </div>
-              <!--swiper-button-next-->
-      
-              <div class="swiper-buttons-prev">
-                <span> <svg class="icon arrow">
-                    <use xlink:href="#arrow"></use>
-                  </svg> </span>
+              <div class="card py-3 px-4 my-2">
+                <div class="card-header" id="heading003">
+                  <div class="collapsed" data-toggle="collapse" data-target="#collapse003" aria-expanded="true" aria-controls="collapse003">
+                    <div class="row ">
+                      <div class="col-11 cqs-header d-flex">
+                        <div class="experts-content"><span><i class="fa fa-question fa-2x" aria-hidden="true"></i></span></div>
+                        <span class="pt-2">کلاس ها به چه صورت برگزار می شود؟</span>
+                      </div>
+                      <div class="col-1 d-flex align-content-center justify-content-center pt-2 px-0 ">
+                        <div class="collapse-icon-plus collapse show">
+                          <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
+                        </div>
+                        <div class="collapse-icon-minus collapse">
+                          <i class="fa fa-minus fa-2x" aria-hidden="true"></i>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="pr-2 pt-4 collapse" id="collapse003" aria-labelledby="heading003" >
+                  <div class="card-body">
+                    کلاس ها روزانه 3 ساعت می باشد، که 5 / 1 ساعت به صورت تئوری و 5 / 1 ساعت به صورت عملی
+                    در کارگاه های مجهز برگزار می شود.
+                  </div>
+                </div>
               </div>
-              <!--swiper-button-prev-->
-      
+              <div class="card py-3 px-4 my-2">
+                <div class="card-header" id="heading004">
+                  <div class="collapsed" data-toggle="collapse" data-target="#collapse004" aria-expanded="true" aria-controls="collapse004">
+                    <div class="row ">
+                      <div class="col-11 cqs-header d-flex">
+                        <div class="experts-content"><span><i class="fa fa-question fa-2x" aria-hidden="true"></i></span></div>
+                        <span class="pt-2">دریافت مدرک در انتها دوره به چه صورت می باشد؟</span>
+                      </div>
+                      <div class="col-1 d-flex align-content-center justify-content-center pt-2 px-0 ">
+                        <div class="collapse-icon-plus collapse show">
+                          <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
+                        </div>
+                        <div class="collapse-icon-minus collapse">
+                          <i class="fa fa-minus fa-2x" aria-hidden="true"></i>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="pr-2 pt-4 collapse" id="collapse004" aria-labelledby="heading004" >
+                  <div class="card-body">
+                    در انتها دوره تمام کارآموزان به فنی و حرفه ای معرفی می شوند و بعد از برگزاری آزمون کتبی و
+                    عملی گواهینامه مربوطه را دریافت می کنید.
+                  </div>
+                </div>
+              </div>
+              <div class="card py-3 px-4 my-2">
+                <div class="card-header" id="heading005">
+                  <div class="collapsed" data-toggle="collapse" data-target="#collapse005" aria-expanded="true" aria-controls="collapse005">
+                    <div class="row ">
+                      <div class="col-11 cqs-header d-flex">
+                        <div class="experts-content"><span><i class="fa fa-question fa-2x" aria-hidden="true"></i></span></div>
+                        <span class="pt-2">بعد از اتمام دوره معرفی به کارورزی به چه صورت می باشد؟</span>
+                      </div>
+                      <div class="col-1 d-flex align-content-center justify-content-center pt-2 px-0 ">
+                        <div class="collapse-icon-plus collapse show">
+                          <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
+                        </div>
+                        <div class="collapse-icon-minus collapse">
+                          <i class="fa fa-minus fa-2x" aria-hidden="true"></i>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="pr-2 pt-4 collapse" id="collapse005" aria-labelledby="heading005  " >
+                  <div class="card-body">
+                    در انتها دوره تعدادی از کارآموزان با توجه به نمره کلاسی و تائید استاد دوره جهت کارورزی
+                    معرفی می شوند.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!--------------------------- End Common Questions ------------------------------->
+          <section class="" id="dorms">
+            <div class="title-experts ">
+              <h2>
+                خوابگاه
+              </h2>
+              <span>
+                برای کارآموزان خارج از تهران خوابگاه های 
+                <b>مورد تائید اماکن</b>
+                 در نظر گرفته شده است، که می
+                توانند بسته به بودجه در نظر گرفته شده خوابگاه خود را انتخاب کنند.
+              </span>
+            </div>
+            <div class="d-flex justify-content-center pb-5 mb-5">
+              <a href="assets/files/dorms.pdf" target="_blank" class="btn btn-red btn-xl"> دریافت لیست خوابگاه ها</a>
             </div>
             <!--picture-sliders-->
-            <div class="pic-slide-pagination"></div>
+            <div class="picture-sliders">
+              <div class="left-icons left-iconn visible-xl visible-xxl visible-lg">
+                <svg class="left-iconns" xmlns="http://www.w3.org/2000/svg" width="70.939" height="19.089"
+                  viewBox="0 0 70.939 19.089">
+                  <g id="Group_5744" data-name="Group 5744" transform="translate(0 1.157)">
+                    <g id="Group_5589" data-name="Group 5589" transform="translate(0)">
+                      <ellipse id="Ellipse_14" data-name="Ellipse 14" cx="8.387" cy="8.387" rx="8.387" ry="8.387"
+                        transform="translate(3.84)" fill="none" stroke="#ff1b25" stroke-miterlimit="10" stroke-width="2.314" />
+                      <ellipse id="Ellipse_30" data-name="Ellipse 30" cx="7.972" cy="7.972" rx="7.972" ry="7.972"
+                        transform="translate(0 1.039)" fill="#ff1b25" opacity="0.22" />
+                    </g>
+                    <g id="Group_5590" data-name="Group 5590" transform="translate(35.985 3.451)">
+                      <g id="Group_609" data-name="Group 609" transform="translate(0 0)">
+                        <path id="Path_1799" data-name="Path 1799"
+                          d="M295.968,94.978c-4.368,0-4.368-4.474-8.738-4.474s-4.369,4.474-8.739,4.474-4.369-4.474-8.739-4.474-4.37,4.474-8.739,4.474"
+                          transform="translate(-261.014 -84.45)" fill="none" stroke="#ff1b25" stroke-miterlimit="10"
+                          stroke-width="2" />
+                        <path id="Path_1800" data-name="Path 1800"
+                          d="M295.968,87.17c-4.368,0-4.368-4.475-8.738-4.475s-4.369,4.475-8.739,4.475-4.369-4.475-8.739-4.475-4.37,4.475-8.739,4.475"
+                          transform="translate(-261.014 -82.695)" fill="none" stroke="#ff1b25" stroke-miterlimit="10"
+                          stroke-width="2" />
+                      </g>
+                    </g>
+                  </g>
+                </svg>
+              </div>
+              <!--left-icons-->
+              <div class="swiper-container picture-sliders" id="picture_slide">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide pic-slide-item">
+                    <img src="assets/images/Image_10.png" alt="imh">
+                  </div>
+                  <!--pic-slide-item-->
+        
+                  <div class="swiper-slide pic-slide-item">
+                    <img src="assets/images/Image_9.png" alt="imh">
+                  </div>
+                  <!--pic-slide-item-->
+        
+                  <div class="swiper-slide pic-slide-item">
+                    <img src="assets/images/Image_12.png" alt="imh">
+                  </div>
+                  <!--pic-slide-item-->
+        
+                  <div class="swiper-slide pic-slide-item">
+                    <img src="assets/images/Image_11.png" alt="imh">
+                  </div>
+                  <!--pic-slide-item-->
+        
+                  <div class="swiper-slide pic-slide-item">
+                    <img src="assets/images/Image_6.png" alt="imh">
+                  </div>
+                  <!--pic-slide-item-->
+                </div>
+                <div class="swiper-buttons-next swiper-buttons-nexts">
+                  <span> <svg class="icon arrowleft">
+                      <use xlink:href="#arrowleft"></use>
+                    </svg> </span>
+                </div>
+                <!--swiper-button-next-->
+        
+                <div class="swiper-buttons-prev">
+                  <span> <svg class="icon arrow">
+                      <use xlink:href="#arrow"></use>
+                    </svg> </span>
+                </div>
+                <!--swiper-button-prev-->
+        
+              </div>
+              <!--picture-sliders-->
+              <div class="pic-slide-pagination"></div>
+            </div>
+            <!--picture-sliders-->
+        
+            
           </div>
-          <!--picture-sliders-->
-      
+        </section>
+        <!--------------------------- End dorms ------------------------------->
           
-        </div>
-        <!---------------------------picture-sliders------------------------------->
         <div class="col-12">
           <section class="register-form" id="register-form">
             <div class="container">
@@ -1292,19 +1491,34 @@
           </svg>
       
     <!--------------------------start(footer)--------------------------------->
-    <footer id="footer" class="container-fluid footer-wrap ltr">
-      <div class="row">
-        
-        <div class="col-6 d-flex justify-content-between pad-faccess">
-          <a href="https://academymobileset.com"><button class="btn btn-lg btn-transparent"><i class="fa fa-home fa-2x" aria-hidden="true" style="color: white;"></i></button></a>
-          <a href="https://instagram.com/academymobileset"><button class="btn btn-lg btn-transparent"><i class="fa fa-instagram fa-2x" aria-hidden="true" style="color: white;"></i></button></a>
-          <a href="https://t.me/academymobileset"><button class="btn btn-lg btn-transparent"><i class="fa fa-telegram fa-2x" aria-hidden="true" style="color: white;"></i></button></a>
-          <a href="https://api.whatsapp.com/send?phone=+989228482428"><button class="btn btn-lg btn-transparent"><i class="fa fa-whatsapp fa-2x" aria-hidden="true" style="color: white;"></i></button></a>
-          <a href="tel:+982188937172"><button class="btn btn-lg btn-transparent"><i class="fa fa-phone fa-2x" aria-hidden="true" style="color: white;"></i></button></a>
-          <a href="#" data-modal="#login_register_model"><button class="btn btn-lg btn-transparent"><i class="fa fa-map-marker fa-2x" aria-hidden="true" style="color: white;"></i></button></a>
+    <footer id="footer" class="container-fluid ltr">
+      <div class="row paddingx-footer">
+        <div class="col-md-6">
+          <div class="row">
+            <div class="col-2">
+              <a href="https://academymobileset.com"><button class="btn btn-lg btn-transparent"><i class="fa fa-home fa-2x" aria-hidden="true" style="color: white;"></i></button></a>
+            </div>
+            <div class="col-2">
+              <a href="https://instagram.com/academymobileset"><button class="btn btn-lg btn-transparent"><i class="fa fa-instagram fa-2x" aria-hidden="true" style="color: white;"></i></button></a>
+            </div>
+            <div class="col-2">
+              <a href="https://t.me/academymobileset"><button class="btn btn-lg btn-transparent"><i class="fa fa-telegram fa-2x" aria-hidden="true" style="color: white;"></i></button></a>
+            </div>
+            <div class="col-2">
+              <a href="https://api.whatsapp.com/send?phone=+989228482428"><button class="btn btn-lg btn-transparent"><i class="fa fa-whatsapp fa-2x" aria-hidden="true" style="color: white;"></i></button></a>
+            </div>
+            <div class="col-2">
+              <a href="tel:+982188937172"><button class="btn btn-lg btn-transparent"><i class="fa fa-phone fa-2x" aria-hidden="true" style="color: white;"></i></button></a>
+            </div>
+            <div class="col-2">
+              <a href="#" data-modal="#login_register_model"><button class="btn btn-lg btn-transparent"><i class="fa fa-map-marker fa-2x" aria-hidden="true" style="color: white;"></i></button></a>
+            </div>
+          </div>
+          
         </div>
-        <div class="col-6 d-flex align-items-center justify-content-center">
-          <h2>Copyright &copy; All rights reserved <b>Academyfarda</b></h2>
+        
+        <div class="col-md-6 col-12 d-flex align-items-center justify-content-center text-center pt-2">
+          <h2 >Copyright &copy; All rights reserved <b>Academyfarda</b></h2>
         </div>
       </div>
     </footer>
