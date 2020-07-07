@@ -4581,6 +4581,7 @@ button.close {
   line-height: 1.5;
   border-radius: .25rem;
   transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  cursor: pointer;
 }
 #main-list {
   position: -webkit-sticky;
@@ -4796,4 +4797,58 @@ footer h2 b{
 }
 .d-none {
   display: none !important;
+}
+.btn-blue {
+  color: #3303e2;
+  background-color: transparent ;
+  border: 3px solid #3303e2;
+}
+.btn-blue[aria-expanded=true] {
+  color: white;
+  background-color: #3303e2 ;
+  }
+.btn-blue:hover {
+  color: white;
+  background-color: #3303e2 ;
+  box-shadow: 0 4px 10px 1px #0011ff77;
+}
+.btn2  {
+  display: block!important;
+  font-family: yekan;
+  font-weight: 700;
+  font-size: 1.5rem;
+  padding-top: 2.5vh;
+  padding-bottom: 2vh;
+}
+.btn2-first{
+  border-top-right-radius: 18px;
+}
+.btn2-last {
+  border-top-left-radius: 18px;
+}
+.card-border {
+  border: 0px solid white;
+}
+#accordion001 .collapsing{
+  -webkit-transition: 0.01s ;
+       -o-transition: 0.01s;
+          transition: 0.01s;
+}
+#accordion001 .card-body{
+  padding: 10px;
+  color: #120b69;
+}
+#accordion001 .card-body h2{
+  font-family: yekan;
+  font-weight: 600;
+}
+#accordion001 .card-body span{
+  font-size: 14px;
+  color: #373737;
+}
+.line-hight-4em {
+  line-height: 4em;
+}
+.spacer-001 {
+  margin-bottom: 150px;
 }
