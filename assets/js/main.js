@@ -475,12 +475,23 @@ $(document).on('click', '[data-modal]', function(e) {
     //
     //slide register form
     //
-    document.querySelector('.img-btn').addEventListener('click', function()
-	{
-		document.querySelector('.register-form-wrap').classList.toggle('s-signup')
-	}
-    );
 
+    $(document).on('click', '#img-btn', function(e) {
+        e.preventDefault();
+        $(this).parents("#register-form-wrap").toggleClass("s-signup");
+    });
+    $(document).on('click', '.go-to-consult-form', function(e) {
+        $("#register-form-wrap").addClass("s-signup");
+    });
+    $(document).on('click', '.go-to-register-form', function(e) {
+        $("#register-form-wrap").removeClass("s-signup");
+    });
+    $(document).on('click', '.go-to-consult-form-1fs', function(e) {
+        $("#register-form-wrap").addClass("s-signup");
+        $("#question").val("می‌خواهم یک جلسه رایگان به عنوان مهمان در کلاس شرکت کنم.");
+        $("#question").removeClass("highlight001");
+        setTimeout(function(){ $("#question").addClass("highlight001"); }, 100);
+    });
 })(jQuery)
 
 
