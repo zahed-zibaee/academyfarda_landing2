@@ -4147,7 +4147,7 @@ footer {
   font-size: 22px;
 }
 .text-center{
-  text-align: center;
+  text-align: center !important;
 }
 .alert-info {
   color: #0c5460;
@@ -5042,16 +5042,16 @@ footer h2 b{
   top: 50px;
   width: 100%;
   padding: 0 5vh;
-  text-align: center;
+  text-align: right;
   color: #fff;
   -webkit-transition:-webkit-transform 1.2s ease-in-out;
   transition: -webkit-transform 1.2s ease-in-out;
   transition: transform 1.2s ease-in-out, -webkit-transform 1.2s ease-in-out;
   
 }
-.img-text h2{
-  margin-bottom: 10px;
-  font-weight: normal;
+.img-text h1{
+  font-family: Yekan;
+  font-weight: 800;
 }
 .img-text p{
   font-size: 14px;
@@ -5492,4 +5492,7 @@ footer h2 b{
   pointer-events: auto;
   content: "";
   background-color: rgba(0,0,0,0);
+}
+.text-right {
+  text-align: right;
 }
