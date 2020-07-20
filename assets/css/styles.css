@@ -2802,8 +2802,6 @@ div.wpcf7 .ajax-loader {
   font-weight: 900;
   font-family: yekan;
 }
-
-
 @media (min-width: 1600px) {
   .site-header .header-body .left-head-body h2 {
     font-size: 56px;
@@ -2820,7 +2818,6 @@ div.wpcf7 .ajax-loader {
     padding-right: 4vw;
   }
 }
-
 .site-header .header-body .left-head-body h2 span {
   color: #ffcf24;
   font-size: 80px;
@@ -2845,7 +2842,6 @@ div.wpcf7 .ajax-loader {
     margin-top: 0px;
   }
 }
-
 .site-header .header-body .left-head-body .bottom-txt,
 .site-header .header-body .left-head-body svg {
   margin-right: auto;
@@ -4910,6 +4906,7 @@ footer h2 b{
   }
   .site-header {
     height: 500px;
+  }
 }
 @media(max-width:767px){
   .site-header .bg-header {
@@ -4917,7 +4914,7 @@ footer h2 b{
   }
   .site-header {
     height: 450px;
-}
+  }
 }
 @media(max-width:340px){
   .site-header .header-body .left-head-body h2 {
