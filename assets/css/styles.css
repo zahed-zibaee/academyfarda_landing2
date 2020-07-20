@@ -3879,13 +3879,13 @@ body .left-bg {
 }
 .register-form-wrap .left-form .form-wrapper textarea {
   width: 100%;
-  height: 184px;
+  height: 245px;
   border-radius: 11px;
   background-color: #f1f4f8;
   border: none;
   resize: vertical;
   padding: 15px;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
   font-size: 12px;
 }
 .register-form-wrap .left-form .form-wrapper2 select {
@@ -3896,7 +3896,7 @@ body .left-bg {
   padding: 12px 10px;
   font-size: 12px;
   font-weight: 400;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
 }
 @media (min-width: 1600px) {
   .register-form-wrap .left-form .form-wrapper textarea {
@@ -3911,7 +3911,7 @@ body .left-bg {
   padding: 12px 32px;
   font-size: 12px;
   font-weight: 400;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
 }
 @media (min-width: 1600px) {
   .register-form-wrap .left-form .form-wrapper input {
@@ -5039,7 +5039,7 @@ footer h2 b{
   z-index: 10;
   position: absolute;
   left: 0;
-  top: 50px;
+  top: 20px;
   width: 100%;
   padding: 0 5vh;
   text-align: right;
@@ -5259,7 +5259,7 @@ footer h2 b{
   font-weight: 700;
 }
 .register-form-wrap .left-form .form-wrapper2 label {
-  margin-bottom: 25px;
+  margin-bottom: 20px;
   position: relative;
 }
 .register-form-wrap .left-form .form-wrapper2 span {
@@ -5283,7 +5283,7 @@ footer h2 b{
   padding: 12px 12px;
   font-size: 12px;
   font-weight: 400;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 .register-form-wrap .left-form .form-wrapper2 input {
   width: 100%;
@@ -5293,7 +5293,7 @@ footer h2 b{
   padding: 12px 12px;
   font-size: 12px;
   font-weight: 400;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 @media (min-width: 1600px) {
   .register-form-wrap .left-form .form-wrapper2 input {
@@ -5317,7 +5317,7 @@ footer h2 b{
   border: none;
   resize: vertical;
   padding: 15px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   font-size: 12px;
 }
 .spacer-002 {
@@ -5495,4 +5495,28 @@ footer h2 b{
 }
 .text-right {
   text-align: right;
+}
+.text-gray {
+  color: #ddd;
+}
+.form-warning {
+  color: #000;
+  font-size: 14;
+}
+.form-warning::before {
+  content: "*\00a0";
+  color: red;
+  font-size: 16px;
+}
+.font-18px {
+  font-size: 18px;
+}
+.font-16px {
+  font-size: 16px;
+}
+.font-14px {
+  font-size: 14px;
+}
+.spacer-003 {
+  margin-bottom: 100px;
 }
