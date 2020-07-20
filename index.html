@@ -41,10 +41,44 @@
     })(window, document, 'script', 'dataLayer', 'GTM-5TWN5MF');
   </script>
   <!-- End Google Tag Manager -->
+  <style>
+    .body-on-loading {
+      overflow: hidden;
+      height: 100vh;
+    }
+    #loading {
+      overflow: hidden;
+      position: fixed;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 99999;
+    }
+  </style>
+  <!-- End Loading Script -->
 </head>
 
-<body class="home">
-
+<body class="home body-on-loading">
+  <!-- Start Loading -->
+  <div id="loading">
+    <img src="assets/svg/ball-triangle.svg" width="200" alt="loading...">
+  </div>
+  <!-- End Loading -->
+  <!-- Loading Scripts -->
+  <script>
+    $(window).on("load", function () {
+      $("#loading").fadeOut("slow");
+      $("body").removeClass("body-on-loading")
+    });
+  </script>
+  <!-- end Loading Scripts -->
   <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="0" height="0"
     style="position:absolute">
 
@@ -346,6 +380,13 @@
       <clipPath id="header_background2" clipPathUnits="objectBoundingBox"
         transform="scale(5.205622071837585e-4  0.0012870012870013 )">
         <path fill="#1042c9"
+          d="M 1921 486 c -242 -133 -426 -19 -559 111 c -194 189 -659 221 -926 64 C 238 542 114 552 2 629 V 0.895 l 1920.176 0.186 z" />
+      </clipPath>
+    </defs>
+    <defs>
+      <clipPath id="header_background3" clipPathUnits="objectBoundingBox"
+        transform="scale(5.205622071837585e-4  0.0012870012870013 )">
+        <path fill="#1042c9"
           d="M 1932 660 c -236 -61 -331 -19 -599 39 c -277 59 -448 49 -715 -27 C 357 599 177 641 -3 690 V 0 l 1920.176 0.186 z" />
       </clipPath>
     </defs>
@@ -393,7 +434,7 @@
   <header class="site-header">
     <div class="head-item container grid-row">
       <a href="https://academymobileset.com">
-        <h1 class="site-logo d-flex align-items-center justify-content-center">
+        <h1 class="site-logo d-flex align-items-center justify-content-center pt-2">
           <img src="assets/images/500X500.png" alt="logo" width="80" height="80">
           <span class="text-nowarp">متخصصان فردا</span>
         </h1>
@@ -502,7 +543,7 @@
 
       <div class="address-modal">
         <span>
-          شعبه اصلی ولیعصر:
+          شعبه ولیعصر:
         </span>
 
         <p>
@@ -1335,7 +1376,7 @@
                     <div class="col-11 cqs-header d-flex">
                       <div class="experts-content"><span><i class="fa fa-question fa-2x" aria-hidden="true"></i></span>
                       </div>
-                      <span class="pt-2">دریافت مدرک در انتها دوره به چه صورت می باشد؟</span>
+                      <span class="pt-2">آزمون و دریافت مدرک در انتها دوره به چه صورت می باشد؟</span>
                     </div>
                     <div class="col-1 d-flex align-content-center justify-content-center pt-2 px-0 ">
                       <div class="collapse-icon-plus collapse show">
@@ -1380,6 +1421,60 @@
                 <div class="card-body">
                   در انتها دوره تعدادی از کارآموزان با توجه به نمره کلاسی و تائید استاد دوره جهت کارورزی
                   معرفی می شوند.
+                </div>
+              </div>
+            </div>
+            <div class="card py-3 px-4 my-2">
+              <div class="card-header" id="heading006">
+                <div class="collapsed" data-toggle="collapse" data-target="#collapse006" aria-expanded="true"
+                  aria-controls="collapse006">
+                  <div class="row ">
+                    <div class="col-11 cqs-header d-flex">
+                      <div class="experts-content"><span><i class="fa fa-question fa-2x" aria-hidden="true"></i></span>
+                      </div>
+                      <span class="pt-2">دوره های شما کامل است؟ یعنی بعد از دوره میتوانیم تعمیرات انجام دهیم؟</span>
+                    </div>
+                    <div class="col-1 d-flex align-content-center justify-content-center pt-2 px-0 ">
+                      <div class="collapse-icon-plus collapse show">
+                        <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
+                      </div>
+                      <div class="collapse-icon-minus collapse">
+                        <i class="fa fa-minus fa-2x" aria-hidden="true"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="pr-2 pt-4 collapse" id="collapse006" aria-labelledby="heading006">
+                <div class="card-body">
+                  متخصصان فردا از ابتدای آموزش تعمیرات موبایل تا ورود به بازار کار همراه شماست
+                </div>
+              </div>
+            </div>
+            <div class="card py-3 px-4 my-2">
+              <div class="card-header" id="heading007">
+                <div class="collapsed" data-toggle="collapse" data-target="#collapse007" aria-expanded="true"
+                  aria-controls="collapse007">
+                  <div class="row ">
+                    <div class="col-11 cqs-header d-flex">
+                      <div class="experts-content"><span><i class="fa fa-question fa-2x" aria-hidden="true"></i></span>
+                      </div>
+                      <span class="pt-2">من در رابطه با تعمیرات موبایل هیچ چیز نمیدانم! آیا این دوره برای من مناسب است؟</span>
+                    </div>
+                    <div class="col-1 d-flex align-content-center justify-content-center pt-2 px-0 ">
+                      <div class="collapse-icon-plus collapse show">
+                        <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
+                      </div>
+                      <div class="collapse-icon-minus collapse">
+                        <i class="fa fa-minus fa-2x" aria-hidden="true"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="pr-2 pt-4 collapse" id="collapse007" aria-labelledby="heading007">
+                <div class="card-body">
+                  کلاس های ما علاوه بر تخصصی بودن از مباحث کاملا مبتدی تا پیشرفته و فوق پیشرفته را شامل می‌شود.
                 </div>
               </div>
             </div>
@@ -1486,7 +1581,7 @@
         <section class="register-form hidden-md hidden-sm hidden-xs">
           <div class="container d-flex justify-content-center" id="forms">
             <div class="register-form-wrap" id="register-form-wrap">
-              <div class="form sign-in left-form">
+              <div class="form sign-in left-form ml-0">
                 <h3 class="title-form"> فرم ثبت‌نام </h3>
                 <form id="register_form" class="form-wrapper2">
                   <div class="form-row">
@@ -1577,42 +1672,33 @@
                         autocomplete="off" required></textarea>
                     </label>
                   </div>
-                  <div class="form-row mb-2">
-                    <div class="col-lg-6 p-1">
+                  <div class="form-row">
+                    <div class="col-lg-8 p-1 pl-3">
                       <div class="form-item">
                         <span class="required-star"> زمان کلاس </span>
-                        <label class="btn-radio">
-                          <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" id="customRadioInline001" name="class_time" class="custom-control-input">
-                            <label class="custom-control-label" for="customRadioInline001">9-12</label>
-                          </div>
-                          <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" id="customRadioInline002" name="class_time" class="custom-control-input">
-                            <label class="custom-control-label" for="customRadioInline002">13-16</label>
-                          </div>
-                          <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" id="customRadioInline003" name="class_time" class="custom-control-input">
-                            <label class="custom-control-label" for="customRadioInline003">17-20</label>
-                          </div>
+                        <label>
+                          <select id="gender" class="form-control" >  
+                            <option value="" disabled selected>...</option> 
+                            <option value="912">کلاس فشرده شنبه تا چهارشنبه ساعت ۹ تا ۱۲</option>
+                            <option value="1316">کلاس فشرده شنبه تا چهارشنبه ساعت ۱۳ تا ۱۶</option>
+                            <option value="1720Z">کلاس عادی زوج ساعت ۱۷ تا ۲۰</option>
+                            <option value="1720F">کلاس عادی فرد ساعت ۱۷ تا۲۰</option>
+                          </select>
                         </label>
                       </div>
                       <!--form-item-->
                     </div>
-                    <div class="col-lg-6 p-1">
+                    <div class="col-lg-4 p-1">
                       <div class="form-item">
-                        <span class="required-star"> زمان شروع کلاس </span>
+                        <span class="required-star pb-4"> نوع پرداخت </span>
                         <label class="btn-radio">
                           <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" id="customRadioInline004" name="class_start" class="custom-control-input" checked>
-                            <label class="custom-control-label" for="customRadioInline004">سریع ترین زمان</label>
+                            <input type="radio" id="customRadioInline004" name="class_start" class="custom-control-input">
+                            <label class="custom-control-label" for="customRadioInline005">اقساط</label>
                           </div>
                           <div class="custom-control custom-radio custom-control-inline">
                             <input type="radio" id="customRadioInline005" name="class_start" class="custom-control-input">
-                            <label class="custom-control-label" for="customRadioInline005">مرداد</label>
-                          </div>
-                          <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" id="customRadioInline006" name="class_start" class="custom-control-input">
-                            <label class="custom-control-label" for="customRadioInline006">شهریور</label>
+                            <label class="custom-control-label" for="customRadioInline006">نقدی</label>
                           </div>
                         </label>
                       </div>
@@ -1624,7 +1710,8 @@
                       <div class="">
                         <h4  class="form-warning">تنها با 150 هزار تومان به عنوان پیش پرداخت کلاس را رزرو می‌کنید.</h4>
                         <h4  class="form-warning">مراحل بعدی به جهت شرکت در کلاس در تماس بعدی کارشناسان با شما اعلام خواهد شد.</h4>
-                        <h4  class="form-warning">هزینه رزرو کلاس غیر قابل استرداد می‌باشد.</h4>
+                        <h4  class="form-warning">تاریخ شروع کلاس، نزدیک‌ترین دوره در "زمان کلاس" انتخاب شده توسط شما می‌باشد.</h4>
+                        <h4  class="form-warning">هزینه رزرو کلاس غیر قابل استرداد می‌باشد و کارآموز تنها  می‌تواند تاریخ شروع کلاس و یا زمان کلاس را تغییر دهد.</h4>
                       </div>
                       <!--form-item-->
                     </div>
@@ -1678,8 +1765,8 @@
                       <div class="col-2 d-flex justify-content-center ">
                         <i class="fa fa-phone fa-2x" aria-hidden="true"></i>
                       </div>
-                      <div class="col-10 d-flex justify-content-start font-18px yekan">
-                        <span class="font-weight-bolder">۰۲۱-۸۸۹۳۷۱۷۲</span>
+                      <div class="col-10 d-flex justify-content-start font-18px yekan px-0">
+                        <span class="font-weight-bolder pt-1">۰۲۱-۸۸۹۳۷۱۷۲</span>
                       </div>
                     </div>
                     <div class="row align-items-center text-gray">
@@ -1688,12 +1775,12 @@
                       </div>
                       <div class="col-10 d-flex justify-content-start text-right font-14px yekan">
                         <div class="row">
-                          <div class="col-12 pb-1">
+                          <div class="col-12 pb-1 px-0">
                             <span class="font-weight-bolder">شعبه انقلاب:<br></span>
                             <span class="text-justify">تهران، خیابان انقلاب، روبروی درب اصلی دانشگاه تهران، ابتدای خیابان فخر رازی، پلاک 85، طبقه چهارم، واحد 10<br></span>
                           </div>
-                          <div class="col-12">
-                            <span class="font-weight-bolder">شعبه اصلی ولیعصر:<br></span>
+                          <div class="col-12 px-0">
+                            <span class="font-weight-bolder">شعبه ولیعصر:<br></span>
                             <span class="text-justify">تهران، بالاتر از میدان ولیعصر، بعد از سینما استقلال، پلاک 1706، طبقه سوم</span>
                           </div>
                         </div>  
@@ -1710,8 +1797,8 @@
                       <div class="col-2 d-flex justify-content-center ">
                         <i class="fa fa-phone fa-2x" aria-hidden="true"></i>
                       </div>
-                      <div class="col-10 d-flex justify-content-start font-18px yekan">
-                        <span class="font-weight-bolder">۰۲۱-۸۸۹۳۷۱۷۲</span>
+                      <div class="col-10 d-flex justify-content-start font-18px yekan px-0">
+                        <span class="font-weight-bolder pt-1">۰۲۱-۸۸۹۳۷۱۷۲</span>
                       </div>
                     </div>
                     <div class="row align-items-center text-gray">
@@ -1720,12 +1807,12 @@
                       </div>
                       <div class="col-10 d-flex justify-content-start text-right font-14px yekan">
                         <div class="row">
-                          <div class="col-12 pb-1">
+                          <div class="col-12 pb-1 px-0">
                             <span class="font-weight-bolder">شعبه انقلاب:<br></span>
                             <span class="text-justify">تهران، خیابان انقلاب، روبروی درب اصلی دانشگاه تهران، ابتدای خیابان فخر رازی، پلاک 85، طبقه چهارم، واحد 10<br></span>
                           </div>
-                          <div class="col-12">
-                            <span class="font-weight-bolder">شعبه اصلی ولیعصر:<br></span>
+                          <div class="col-12 px-0">
+                            <span class="font-weight-bolder">شعبه ولیعصر:<br></span>
                             <span class="text-justify">تهران، بالاتر از میدان ولیعصر، بعد از سینما استقلال، پلاک 1706، طبقه سوم</span>
                           </div>
                         </div>  
