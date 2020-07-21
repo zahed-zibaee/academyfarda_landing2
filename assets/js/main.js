@@ -457,14 +457,11 @@ $(document).on('click', '[data-modal]', function(e) {
                 }
             });
         });
-    
         // Track all sections that have an `id` applied
         document.querySelectorAll('section[id]').forEach((section) => {
             observer.observe(section);
         });
-        
     });
-
     //
     //collapse icon + and - (toggle)
     //
@@ -475,7 +472,6 @@ $(document).on('click', '[data-modal]', function(e) {
     //
     //slide register form
     //
-
     $(document).on('click', '#img-btn', function(e) {
         e.preventDefault();
         $(this).parents("#register-form-wrap").toggleClass("s-signup");
@@ -491,6 +487,12 @@ $(document).on('click', '[data-modal]', function(e) {
         $("#question").val("می‌خواهم یک جلسه رایگان به عنوان مهمان در کلاس شرکت کنم.");
         $("#question").removeClass("highlight001");
         setTimeout(function(){ $("#question").addClass("highlight001"); }, 100);
+    });
+    //
+    //modal close by click on link
+    //
+    $(document).on('click', '.close-modal', function(e) {
+        $('#exampleModal001').modal('hide');
     });
 })(jQuery)
 

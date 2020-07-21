@@ -100,6 +100,17 @@
       </path>
     </symbol>
 
+    <symbol id="arrow" viewBox="0 0 11 18">
+      <path
+        d="M10.585 9.87l-7.723 7.723a1.257 1.257 0 1 1-1.78-1.778L7.918 8.98 1.083 2.147A1.258 1.258 0 0 1 2.863.368l7.722 7.724a1.253 1.253 0 0 1 0 1.778z">
+      </path>
+    </symbol>
+
+    <symbol id="arrowleft" viewBox="0 0 11 18">
+      <path
+        d="M1.075 9.87l7.723 7.724a1.257 1.257 0 1 0 1.779-1.78L3.743 8.982l6.834-6.834A1.258 1.258 0 0 0 8.797.37L1.075 8.092a1.253 1.253 0 0 0 0 1.778z">
+      </path>
+    </symbol>
   </svg>
 
 
@@ -1286,7 +1297,7 @@
               <div class="pr-2 pt-4 collapse" id="collapse011" aria-labelledby="heading011">
                 <div class="card-body">
                   این سوال از ما به کرات پرسیده می‌شود و جواب ما همیشه این است که اگر دیگران توانسته اند از طریق آموزشگاه ما تعمیرکار شوند شما هم می‌توانید ولی اگر خودتان برای یادگیری تلاش و تمرین نکنید راه حل جادویی برای یادگیری مهارت وجود ندارد.<br>
-                  در کل آموزشگاه متخصصان فردا اساتید مجرب، کارگاه های مجهز، و جدید ترین متد‌های آموزشی مبتنی بر بازار کار را در اختیار شما قرار داده که با استفاده از آن یادگیری برای هر فرد با هر سطح سوادی ممکن شده، این تضمین ما برای یادگیری شماست.
+                  در کل، آموزشگاه متخصصان فردا اساتید مجرب، کارگاه های مجهز، و جدید ترین متد‌های آموزشی مبتنی بر بازار کار را در اختیار شما قرار داده که با استفاده از آن یادگیری برای هر فرد با هر سطح سوادی ممکن شده، این تضمین ما برای یادگیری شماست.
                 </div>
               </div>
             </div>
@@ -1775,7 +1786,23 @@
   </svg>
 
   <!--------------------------start(footer)--------------------------------->
-  <footer id="footer" class="container-fluid ltr">
+  <footer id="footer" class="container-fluid paddingx-footer fixed-footer hidden-lg hidden-xl hidden-xxl hidden-xxxl">
+    <div class="row pb-1">
+      <div class="col-2 col-sm-4 px-1">
+        <a href="#forms" class="btn btn-secondary text-center py-footer-btn my-2" data-toggle="modal" data-target="#exampleModal001">
+          <span class="hidden-xs"> دسترسی سریع</span>
+          <i class="fa fa-list pb--1 hidden-sm hidden-md hidden-lg hidden-xl hidden-xxl hidden-xxxl" aria-hidden="true"></i>
+        </a>
+      </div>
+      <div class="col-5 col-sm-4 px-1">
+        <a href="#forms" class="btn btn-red text-center py-footer-btn my-2 go-to-register-form" data-toggle="modal" data-target="#exampleModal002">ثبت‌نام</a>
+      </div>
+      <div class="col-5 col-sm-4 px-1">
+        <a href="#forms" class="btn btn-green text-center py-footer-btn my-2 go-to-consult-form" data-toggle="modal" data-target="#exampleModal003">مشاوره رایگان</a>
+      </div>
+    </div>
+  </footer>
+  <footer id="footer" class="container-fluid hidden-md hidden-sm hidden-xs ltr">
     <div class="row paddingx-footer">
       <div class="col-md-6">
         <div class="row">
@@ -1804,16 +1831,289 @@
                   class="fa fa-map-marker fa-2x" aria-hidden="true" style="color: white;"></i></button></a>
           </div>
         </div>
-
       </div>
-
       <div class="col-md-6 col-12 d-flex align-items-center justify-content-center text-center pt-2">
         <h2>Copyright &copy; All rights reserved <b>Academyfarda</b></h2>
       </div>
     </div>
   </footer>
-
+  <!--------------------------- Modals Start ------------------------------>
+  <div class="modal fade" id="exampleModal001" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">دسترسی سریع</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="card card-blendin" id="main-list">
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">
+                <a class="d-flex align-content-center justify-content-center" href="tel:+982188937172">
+                  <h3 class="pt-1 pl-2">۰۲۱-۸۸۹۳۷۱۷۲</h3>
+                  <i class="fa fa-phone fa-2x" aria-hidden="true"></i>
+                </a>
+              </li>
+              <li class="list-group-item"><a class="stretched-link close-modal" href="#intro"> متخصصان فردا</a></li>
+              <li class="list-group-item"><a class="stretched-link close-modal" href="#courseinfo">معرفی دوره</a></li>
+              <li class="list-group-item"><a class="stretched-link close-modal" href="#topics">سر‌فصل‌ها</a></li>
+              <li class="list-group-item"><a class="stretched-link close-modal" href="#">شرایط و هزینه</a></li>
+              <li class="list-group-item"><a class="stretched-link close-modal" href="#license-course">گواهی نامه</a></li>
+              <li class="list-group-item"><a class="stretched-link close-modal" href="#class-location">محل برگزاری دوره</a></li>
+              <li class="list-group-item"><a class="stretched-link close-modal" href="#">اساتید</a></li>
+              <li class="list-group-item"><a class="stretched-link close-modal" href="#albums">پشتیبانی پس از دوره</a></li>
+              <li class="list-group-item"><a class="stretched-link close-modal" href="#CQs">سوالات متداول</a></li>
+              <li class="list-group-item"><a class="stretched-link close-modal" href="#dorms">خوابگاه</a></li>
+              <li class="list-group-item"></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
+  <!--------------------------- Modal fast access End ------------------------------>
+  <div class="modal fade" id="exampleModal002" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">ثبت‌نام</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="register-form-wrap ">
+            <div class="left-form">
+              <h3 class="title-form"> فرم ثبت‌نام </h3>
+              <form class="form-wrapper2">
+                <div class="form-row">
+                  <div class="col-lg-4 p-1">
+                    <div class="form-item">
+                      <span class="required-star"> نام </span>
+                      <label>
+                        <input name="name" type="text" pattern=".{3,30}" oninvalid="setCustomValidity('فرمت وارد شده صحیح نیست. ')" onchange="try{setCustomValidity('')}catch(e){}" autocomplete="off" required="">
+                      </label>
+                    </div>
+                    <!--form-item-->
+                  </div>
+                  <div class="col-lg-4 p-1">
+                    <div class="form-item">
+                      <span class="required-star"> نام خانوادگی </span>
+                      <label>
+                        <input name="family" type="text" pattern=".{3,30}" oninvalid="setCustomValidity('فرمت وارد شده صحیح نیست. ')" onchange="try{setCustomValidity('')}catch(e){}" autocomplete="off" required="">
+                      </label>
+                    </div>
+                    <!--form-item-->
+                  </div>
+                  <div class="col-lg-4 p-1">
+                    <div class="form-item">
+                      <span class="required-star"> جنسیت </span>
+                      <label>
+                        <select id="gender" class="form-control">  
+                          <option value="" disabled="" selected="">...</option> 
+                          <option value="M">مرد</option>
+                          <option value="F">زن</option>
+                        </select>
+                      </label>
+                    </div>
+                    <!--form-item-->
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="col-lg-4 p-1">
+                    <div class="form-item">
+                      <span class="required-star"> نام پدر </span>
+                      <label>
+                        <input name="father_name" type="text" pattern=".{3,30}" oninvalid="setCustomValidity('فرمت وارد شده صحیح نیست. ')" onchange="try{setCustomValidity('')}catch(e){}" autocomplete="off" required="">
+                      </label>
+                    </div>
+                    <!--form-item-->
+                  </div>
+                  <div class="col-lg-4 p-1">
+                    <div class="form-item">
+                      <span class="required-star"> شماره ملی </span>
+                      <label>
+                        <input name="code_meli" type="text" pattern=".{10,10}" oninvalid="setCustomValidity('فرمت وارد شده صحیح نیست. ')" onchange="try{setCustomValidity('')}catch(e){}" autocomplete="off" required="">
+                      </label>
+                    </div>
+                    <!--form-item-->
+                  </div>
+                  <div class="col-lg-4 p-1">
+                    <div class="form-item">
+                      <span class="required-star"> شماره تماس </span>
+                  <label>
+                    <input name="phone" type="text" pattern=".{8,11}" oninvalid="setCustomValidity('فرمت وارد شده صحیح نیست. ')" onchange="try{setCustomValidity('')}catch(e){}" placeholder="09XXXXXXXXX" autocomplete="off" required="">
+                    </label>
+                    </div>
+                    <!--form-item-->
+                  </div>
+                </div>
+                <div class="form-item">
+                  <span class="required-star"> آدرس </span>
+                  <label>
+                    <textarea name="phone" type="text" pattern=".{1,3000}" oninvalid="setCustomValidity('فرمت وارد شده صحیح نیست. ')" onchange="try{setCustomValidity('')}catch(e){}" autocomplete="off" required=""></textarea>
+                  </label>
+                </div>
+                <div class="form-row">
+                  <div class="col-lg-8 p-1 pl-3">
+                    <div class="form-item">
+                      <span class="required-star"> زمان کلاس </span>
+                      <label>
+                        <select id="gender" class="form-control">  
+                          <option value="" disabled="" selected="">...</option> 
+                          <option value="912">کلاس فشرده شنبه تا چهارشنبه ساعت ۹ تا ۱۲</option>
+                          <option value="1316">کلاس فشرده شنبه تا چهارشنبه ساعت ۱۳ تا ۱۶</option>
+                          <option value="1720Z">کلاس عادی زوج ساعت ۱۷ تا ۲۰</option>
+                          <option value="1720F">کلاس عادی فرد ساعت ۱۷ تا۲۰</option>
+                        </select>
+                      </label>
+                    </div>
+                    <!--form-item-->
+                  </div>
+                  <div class="col-lg-4 p-1">
+                    <div class="form-item">
+                      <span class="required-star pb-4"> نوع پرداخت </span>
+                      <label class="btn-radio">
+                        <div class="custom-control custom-radio custom-control-inline">
+                          <input type="radio" id="customRadioInline004" name="class_start" class="custom-control-input">
+                          <label class="custom-control-label" for="customRadioInline005">اقساط</label>
+                        </div>
+                        <div class="custom-control custom-radio custom-control-inline">
+                          <input type="radio" id="customRadioInline005" name="class_start" class="custom-control-input">
+                          <label class="custom-control-label" for="customRadioInline006">نقدی</label>
+                        </div>
+                      </label>
+                    </div>
+                    <!--form-item-->
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="col-12 p-1 pb-4">
+                    <div class="">
+                      <h4 class="form-warning">تنها با 150 هزار تومان به عنوان پیش پرداخت کلاس را رزرو می‌کنید.</h4>
+                      <h4 class="form-warning">مراحل بعدی به جهت شرکت در کلاس در تماس بعدی کارشناسان با شما اعلام خواهد شد.</h4>
+                      <h4 class="form-warning">تاریخ شروع کلاس، نزدیک‌ترین دوره در "زمان کلاس" انتخاب شده توسط شما می‌باشد.</h4>
+                      <h4 class="form-warning">هزینه رزرو کلاس غیر قابل استرداد می‌باشد و کارآموز تنها  می‌تواند تاریخ شروع کلاس و یا زمان کلاس را تغییر دهد.</h4>
+                    </div>
+                    <!--form-item-->
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="col-lg-12 p-1">
+                    <div class="btn-checkbox">
+                      <h3>
+                        کلیک بر روی «ثبت‌نام» به منزلهٔ این است که 
+                        <a href="#">
+                        قوانین و مقررات
+                        </a>
+                        را مطالعه نموده‌اید‌ و تایید می‌کنید.
+  
+                      </h3>
+                    </div>
+                    <!--form-item-->
+                  </div>
+                </div>
+  
+                <p class="success-message" style="display: none;">پیغام شما با موفقیت ارسال شد در اولین فرصت کارشناسان
+                  ما
+                  با شما تماس حاصل خواهند کرد.</p>
+                <p class="error-registeration" style="display: none;">اشکال در ثبت اطلاعات لطفا دوباره تلاش نمایید و یا
+                  با
+                  ما تماس حاصل فرمایید.</p>
+                <p class="error-phone-number-needed" style="display: none;">شماره همراه اشتباه است لطفا دوباره تلاش
+                  فرمایید.</p>
+                <p class="error-repeated-phone" style="display: none;">شماره تلفن وارد شده تکراری است لطفا دوباره تلاش
+                  فرمایید.</p>
+                <p class="error-name_needed" style="display: none;">نام و نام خانوادگی وارد شده اشتباه است لطفا دوباره
+                  تلاش فرمایید.</p>
+                <p class="error-server" style="display: none;">مشکلی از طرف سرور رخ داده لطفا دوباره تلاش نمایید و یا با
+                  ما تماس حاصل فرمایید.</p>
+                <p class="error-message" style="display: none;">متاسفیم. ارتباط با سرور موفقیت آمیز نبود لطفا دوباره
+                  تلاش
+                  نمایید و یا با ما تماس حاصل فرمایید.</p>
+                <button type="submit" class="send-form mt-2"> ثبت نام </button>
+              </form>
+              <!--left-form-->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--------------------------- Modal register End ------------------------------>
+  <div class="modal fade" id="exampleModal003" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">مشاوره رایگان</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="register-form-wrap">
+            <div class="left-form">
+              <h3 class="title-form" > فرم مشاوره رایگان </h3>
+              <form id="consult-form" class="form-wrapper">
+                <div class="form-item">
+                  <span class="required-star"> نام و نام خانوادگی </span>
+                  <label>
+                    <input name="name" type="text" pattern=".{3,30}"
+                      oninvalid="setCustomValidity('فرمت وارد شده صحیح نیست. ')"
+                      onchange="try{setCustomValidity('')}catch(e){}" placeholder="نام و نام خانوادگی خود را وارد کنید"
+                      autocomplete="off" required>
+                    <svg class="icon user-icon">
+                      <use xlink:href="#user-icon"></use>
+                    </svg>
+                  </label>
+                </div>
+                <!--form-item-->
+                <div class="form-item">
+                  <span class="required-star"> شماره تماس </span>
+                  <label>
+                    <input name="phone" type="text" pattern=".{8,11}"
+                      oninvalid="setCustomValidity('فرمت وارد شده صحیح نیست. ')"
+                      onchange="try{setCustomValidity('')}catch(e){}"
+                      placeholder="شماره تماس خود را وارد کنید (09XXXXXXXXX)" autocomplete="off" required>
+                    <svg class="icon phone-icon">
+                      <use xlink:href="#phone-icon"></use>
+                    </svg>
+                  </label>
+                </div>
+                <label>
+                  <span> توضیحات </span>
+                  <textarea class="" id="question" name="question" placeholder="سوال خود را از ما بپرسید." autocomplete="off"></textarea>
+                </label>
+                <p class="success-message" style="display: none;">پیغام شما با موفقیت ارسال شد در اولین فرصت کارشناسان
+                  ما
+                  با شما تماس حاصل خواهند کرد.</p>
+                <p class="error-registeration" style="display: none;">اشکال در ثبت اطلاعات لطفا دوباره تلاش نمایید و یا
+                  با
+                  ما تماس حاصل فرمایید.</p>
+                <p class="error-phone-number-needed" style="display: none;">شماره همراه اشتباه است لطفا دوباره تلاش
+                  فرمایید.</p>
+                <p class="error-repeated-phone" style="display: none;">شماره تلفن وارد شده تکراری است لطفا دوباره تلاش
+                  فرمایید.</p>
+                <p class="error-name_needed" style="display: none;">نام و نام خانوادگی وارد شده اشتباه است لطفا دوباره
+                  تلاش فرمایید.</p>
+                <p class="error-server" style="display: none;">مشکلی از طرف سرور رخ داده لطفا دوباره تلاش نمایید و یا با
+                  ما تماس حاصل فرمایید.</p>
+                <p class="error-message" style="display: none;">متاسفیم. ارتباط با سرور موفقیت آمیز نبود لطفا دوباره
+                  تلاش
+                  نمایید و یا با ما تماس حاصل فرمایید.</p>
+                <button type="submit" class="send-form"> درخواست مشاوره </button>
+              </form>
+              <!--left-form-->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--------------------------- Modal register End ------------------------------>
+  <!--------------------------- Modals End ------------------------------>
   <!--site-wrap-->
   <script src="assets/js/plugins.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
