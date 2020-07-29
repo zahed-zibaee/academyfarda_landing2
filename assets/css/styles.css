@@ -5833,3 +5833,7 @@ iframe {
 .accordion .card-header:hover .fa-minus {
   transform: scale(1.15);
 }
+.spacer-001 {
+  margin-left: 10vw;
+  margin-right: 10vw;
+}
