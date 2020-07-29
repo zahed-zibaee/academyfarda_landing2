@@ -2941,7 +2941,6 @@ body .left-bg {
 }
 .main-product {
   position: relative;
-  margin-bottom: 30px;
 }
 .main-product .left-icons {
   position: absolute;
@@ -3121,7 +3120,7 @@ body .left-bg {
   }
 }
 .global-organization {
-  margin: 0 auto 100px auto;
+  margin: 0 auto 0px auto;
   text-align: center;
   position: relative;
 }
@@ -3194,9 +3193,6 @@ body .left-bg {
     max-width: 395px;
     max-height: 374px;
   }
-}
-.why-experts {
-  margin-bottom: 150px;
 }
 .title-experts {
   margin: 0px auto 100px auto;
@@ -3279,7 +3275,7 @@ body .left-bg {
   width: 40px;
   height: 40px;
   box-shadow: 0 10px 11px rgba(141,141,214,0.1);
-  background-color: #f32f77;
+  background-color: #3303e2;
   line-height: 45px;
   border-radius: 100%;
   display: inline-block;
@@ -3474,14 +3470,13 @@ body .left-bg {
   }
 }
 .license-course {
-  margin-bottom: 140px;
   position: relative;
 }
 .license-course .mokaab4 {
   position: absolute;
   left: 9%;
   bottom: 8%;
-  z-index: 10;
+  z-index: 55;
 }
 .license-course .mokaab4 svg {
   width: 90px;
@@ -3749,9 +3744,6 @@ body .left-bg {
   .register-form {
     margin-bottom: 80px;
   }
-}
-.register-form .mokaab3 {
-  position: absolute;
 }
 .register-form .container {
   position: relative;
@@ -4344,7 +4336,6 @@ button.close {
   padding-right: 10vw;
 }
 .picture-sliders2 {
-  margin-bottom: 60px;
   position: relative;
 }
 .picture-sliders2 .swiper-slide {
@@ -4627,9 +4618,6 @@ table {
   border: 1px solid white;
   text-align: center;
 }
-.main-product{
-  padding-bottom: 75px;
-}
 .flex-column {
   -webkit-box-orient: vertical!important;
   -webkit-box-direction: normal!important;
@@ -4872,9 +4860,6 @@ footer h2 b{
 .line-hight-4em {
   line-height: 4em;
 }
-.spacer-001 {
-  margin-bottom: 150px;
-}
 .thanks {
   font-size: 3vw !important;
 }
@@ -5028,7 +5013,7 @@ footer h2 b{
   top: 0;
   width: 65vw;
   height: 100%;
-  background-image: url(../images/970.jpg);
+  background-image: url(../images/980.jpg);
   background-size: cover;
   transition: -webkit-transform 1.2s ease-in-out;
   transition: transform 1.2s ease-in-out, -webkit-transform 1.2s ease-in-out;
@@ -5045,7 +5030,7 @@ footer h2 b{
   top: 0;
   width: 100%;
   height: 100%;
-  background: rgba(6, 21, 231, 0.7);
+  background: rgba(48, 62, 255, 0.616);
   z-index: 2;
 }
 .register-form-wrap.s-signup .img:before{
@@ -5788,4 +5773,44 @@ input {
   border-style: inset;
   border-color: -internal-light-dark(rgb(118, 118, 118), rgb(195, 195, 195));
   border-image: initial;
+}
+iframe {
+  border: 1px solid rgba(51, 3, 226, 0.1);
+}
+.spacer-004 {
+  margin-bottom: 170px;
+}
+.experts-content .topic-icons img {
+  width: 40px;
+  height: 40px;
+}
+.experts-content .topic-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  padding: 5px;
+  box-shadow: 0 10px 11px rgba(141,141,214,0.1);
+  background-color: #f32f77;
+  border-radius: 100%;
+  margin-right: -40px;
+  margin-left: 20px;
+}
+
+#accordionExample2 .collapsing {
+  display: none;
+}
+.accordion .card-header:hover .card-text {
+  transform: scale(1.15);
+}
+.accordion .card-header:hover .experts-content .topic-icons {
+  background-color: #fa2271;
+  box-shadow: 0 2px 5px 1px #0000007e;
+}
+.accordion .card-header:hover .fa-plus {
+  transform: scale(1.15);
+}
+.accordion .card-header:hover .fa-minus {
+  transform: scale(1.15);
 }

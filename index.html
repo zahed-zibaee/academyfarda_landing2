@@ -6,28 +6,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, user-scalable=no">
-  responsibilityresponsibility  <meta name="Designer" content="Made with love by dornaweb, UI design by ivahid.com, and Academyfarda">
-  <style>
-    .body-on-loading {
-      overflow: hidden;
-      height: 100vh;
-    }
-    #loading {
-      overflow: hidden;
-      position: fixed;
-      top: 0;
-      left: 0;
-      bottom: 0;
-      right: 0;
-      width: 100%;
-      height: 100%;
-      background-color: #fff;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      z-index: 99999;
-    }
-  </style>
+  <meta name="Designer" content="Made with love by dornaweb, UI design by ivahid.com, and Academyfarda">
   <!-- End Loading Script -->
   <link rel="stylesheet" href="assets/css/plugins.css">
   <link rel="stylesheet" href="assets/css/bootstrap-grid.min.css">
@@ -67,6 +46,30 @@
 </head>
 
 <body class="home body-on-loading">
+  <!------------------------------------------------------------------------------------>
+  <!-------------------------- Start Loading Scripts ----------------------------------->
+  <!------------------------------------------------------------------------------------>
+  <style>
+    .body-on-loading {
+      overflow: hidden;
+      height: 100vh;
+    }
+    #loading {
+      overflow: hidden;
+      position: fixed;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 99999;
+    }
+  </style>
   <!-- Start Loading -->
   <div id="loading">
     <img src="assets/svg/ball-triangle.svg" width="200" alt="loading...">
@@ -74,12 +77,14 @@
   <!-- End Loading -->
   <!-- Loading Scripts -->
   <script>
-    $(window).on("load", function () {
+    setTimeout(function(){
       $("#loading").fadeOut("slow");
-      $("body").removeClass("body-on-loading")
-    });
+      $("body").removeClass("body-on-loading")}
+      , 4000);
   </script>
-  <!-- end Loading Scripts -->
+  <!------------------------------------------------------------------------------------>
+  <!-------------------------- End Loading Scripts ------------------------------------->
+  <!------------------------------------------------------------------------------------>
   <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="0" height="0"
     style="position:absolute">
 
@@ -137,6 +142,7 @@
       </clipPath>
     </defs>
   </svg>
+  <!------------------------------- End SVG Load ----------------------------------->
   <!-------------------------------start-header----------------------------------->
   <header class="site-header">
     <div class="head-item container grid-row">
@@ -342,6 +348,8 @@
           </div>
         </section>
         <!---------------------------end(intro)------------------------------------------>
+        <div class="spacer-004"></div>
+        <!---------------------------Spacer------------------------------------------>
         <section class="global-organization container">
           <!--  <span class="job-global-organ"> مدرک قابل ترجمه و معتبر در سازمان جهانی کار</span>-->
 
@@ -431,7 +439,9 @@
             </svg>
           </a>
         </section>
-        <!---------------------------end(intro)------------------------------------------>
+        <!---------------------------end(banner)------------------------------------------>
+        <div class="spacer-004"></div>
+        <!---------------------------Spacer------------------------------------------>
         <section class="main-product " id="courseinfo">
           <div class="">
             <div class="product-wrap">
@@ -473,6 +483,8 @@
         </section>
         <!--main-product-->
         <!---------------------------end(course-info)------------------------------------------>
+        <div class="spacer-004"></div>
+        <!---------------------------Spacer------------------------------------------>
         <section class="why-experts" id="topics">
           <div class="title-experts">
             <h2>
@@ -495,184 +507,641 @@
               از پایه آموزش داده می شود. </span>
           </div>
           <!--title-experts-->
-
-          <div class="experts-wrapper">
-            <div class="experts-items">
-              <div class="experts-content">
-                <span>۱</span>
-                <div class="txt-experts">
-                  <h3> آموزش اصول مبانی الکترونیک عمومی</h3>
+          <div class="accordion" id="accordionExample2">
+            <div class="card py-3 px-4 my-2">
+              <div class="card-header" id="heading100">
+                <div class="collapsed" data-toggle="collapse" data-target="#collapse100" aria-expanded="true"
+                  aria-controls="collapse100">
+                  <div class="row ">
+                    <div class="col-11 cqs-header d-flex align-items-center">
+                      <div class="experts-content">
+                        <div class="topic-icons">
+                          <img src="assets/images/intro.png" alt="intro icon">
+                        </div>
+                      </div>
+                      <span class="card-text pt-2">معارفه</span>
+                    </div>
+                    <div class="col-1 d-flex align-items-center justify-content-center px-0 ">
+                      <div class="collapse-icon-plus collapse show">
+                        <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
+                      </div>
+                      <div class="collapse-icon-minus collapse">
+                        <i class="fa fa-minus fa-2x" aria-hidden="true"></i>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
-              <!--experts-content-->
-            </div>
-            <!--experts-item-->
-            <div class="experts-items">
-              <div class="experts-content">
-                <span>2</span>
-                <div class="txt-experts">
-                  <h3> شناخت کامل گوشی و بخش های آن</h3>
+              <div class="pr-2 pt-4 collapse" id="collapse100" aria-labelledby="heading100">
+                <div class="card-body">
+                  <div class="experts-wrapper">
+                    <div class="experts-items">
+                      <div class="experts-content">
+                        <span>۱</span>
+                        <div class="txt-experts">
+                          <h3> شناخت کامل گوشی و بخش های آن</h3>
+                        </div>
+                      </div>
+                      <!--experts-content-->
+                    </div>
+                    <div class="experts-items">
+                      <div class="experts-content">
+                        <span>۲</span>
+                        <div class="txt-experts">
+                          <h3>آشنایی با اندروید و IOS </h3>
+                        </div>
+                      </div>
+                      <!--experts-content-->
+                    </div>
+                    <div class="experts-items">
+                      <div class="experts-content">
+                        <span>۳</span>
+                        <div class="txt-experts">
+                          <h3>اقدامات پیشگیری حوادث و ایجاد امنیت در کارگاه</h3>
+                        </div>
+                      </div>
+                      <!--experts-content-->
+                    </div>
+                    
+                  </div>
                 </div>
               </div>
-              <!--experts-content-->
             </div>
-            <!--experts-item-->
-            <div class="experts-items">
-              <div class="experts-content">
-                <span>3</span>
-                <div class="txt-experts">
-                  <h3> شناخت کامل لوازم کارگاه و روش استفاده صحیح آنها</h3>
+            <div class="card py-3 px-4 my-2">
+              <div class="card-header" id="heading101">
+                <div class="collapsed" data-toggle="collapse" data-target="#collapse101" aria-expanded="true"
+                  aria-controls="collapse101">
+                  <div class="row ">
+                    <div class="col-11 cqs-header d-flex align-items-center">
+                      <div class="experts-content">
+                        <div class="topic-icons">
+                          <img src="assets/images/tools.png" alt="tools icon">
+                        </div>
+                      </div>
+                      <span class="card-text pt-2">شناخت ابزار</span>
+                    </div>
+                    <div class="col-1 d-flex align-items-center justify-content-center px-0 ">
+                      <div class="collapse-icon-plus collapse show">
+                        <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
+                      </div>
+                      <div class="collapse-icon-minus collapse">
+                        <i class="fa fa-minus fa-2x" aria-hidden="true"></i>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
-              <!--experts-content-->
-            </div>
-            <!--experts-item-->
-            <div class="experts-items">
-              <div class="experts-content">
-                <span>4</span>
-                <div class="txt-experts">
-                  <h3>آموزش کامل عیب یابی و تست قطعات الکترونیک</h3>
+              <div class="pr-2 pt-4 collapse" id="collapse101" aria-labelledby="heading101">
+                <div class="card-body">
+                  <div class="experts-wrapper">
+                    <div class="experts-items">
+                      <div class="experts-content">
+                        <span>۱</span>
+                        <div class="txt-experts">
+                          <h3>آشنایی با ابزار تعمیرات</h3>
+                        </div>
+                      </div>
+                      <!--experts-content-->
+                    </div>
+                    <div class="experts-items">
+                      <div class="experts-content">
+                        <span>۲</span>
+                        <div class="txt-experts">
+                          <h3> شناخت کامل لوازم کارگاه و روش استفاده صحیح آنها</h3>
+                        </div>
+                      </div>
+                      <!--experts-content-->
+                    </div>
+                  </div>
                 </div>
               </div>
-              <!--experts-content-->
             </div>
-            <!--experts-item-->
-            <div class="experts-items">
-              <div class="experts-content">
-                <span>5</span>
-                <div class="txt-experts">
-                  <h3>بررسی تخصصی مدارات موبایل و نقشه خوانی انواع گوشی های اندروید و ios</h3>
+            <div class="card py-3 px-4 my-2">
+              <div class="card-header" id="heading110">
+                <div class="collapsed" data-toggle="collapse" data-target="#collapse110" aria-expanded="true"
+                  aria-controls="collapse110">
+                  <div class="row ">
+                    <div class="col-11 cqs-header d-flex align-items-center">
+                      <div class="experts-content">
+                        <div class="topic-icons">
+                          <img src="assets/images/assem.png" alt="disassembly icon">
+                        </div>
+                      </div>
+                      <span class="card-text pt-2">باز و بسته کردن</span>
+                    </div>
+                    <div class="col-1 d-flex align-items-center justify-content-center px-0 ">
+                      <div class="collapse-icon-plus collapse show">
+                        <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
+                      </div>
+                      <div class="collapse-icon-minus collapse">
+                        <i class="fa fa-minus fa-2x" aria-hidden="true"></i>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
-              <!--experts-content-->
-            </div>
-            <!--experts-item-->
-            <div class="experts-items">
-              <div class="experts-content">
-                <span>6</span>
-                <div class="txt-experts">
-                  <h3>تحلیل و عیب یابی گوشی های خاموش</h3>
+              <div class="pr-2 pt-4 collapse" id="collapse110" aria-labelledby="heading110">
+                <div class="card-body">
+                  <div class="experts-wrapper">
+                    <div class="experts-items">
+                      <div class="experts-content">
+                        <span>۱</span>
+                        <div class="txt-experts">
+                          <h3> آموزش باز و بسته کردن گوشی ها با خار باز کن و پیچ‌گوشتی</h3>
+                        </div>
+                      </div>
+                      <!--experts-content-->
+                    </div>
+                    <div class="experts-items">
+                      <div class="experts-content">
+                        <span>۲</span>
+                        <div class="txt-experts">
+                          <h3>باز و بسته کردن گوشی های چسبی به وسیله هات پلیت</h3>
+                        </div>
+                      </div>
+                      <!--experts-content-->
+                    </div>   
+                    <div class="experts-items">
+                      <div class="experts-content">
+                        <span>۳</span>
+                        <div class="txt-experts">
+                          <h3>ردیابی پیچ ها در آیفون</h3>
+                        </div>
+                      </div>
+                      <!--experts-content-->
+                    </div> 
+                    <div class="experts-items">
+                      <div class="experts-content">
+                        <span>۴</span>
+                        <div class="txt-experts">
+                          <h3>باز و بسته کردن گوشی های جدید</h3>
+                        </div>
+                      </div>
+                      <!--experts-content-->
+                    </div>           
+                  </div>
                 </div>
               </div>
-              <!--experts-content-->
             </div>
-            <!--experts-item-->
-            <div class="experts-items">
-              <div class="experts-content">
-                <span>7</span>
-                <div class="txt-experts">
-                  <h3>آموزش باز و بسته کردن گوشی ها و تعویض قطعات مانند LCD</h3>
+            <div class="card py-3 px-4 my-2">
+              <div class="card-header" id="heading102">
+                <div class="collapsed" data-toggle="collapse" data-target="#collapse102" aria-expanded="true"
+                  aria-controls="collapse102">
+                  <div class="row ">
+                    <div class="col-11 cqs-header d-flex align-items-center">
+                      <div class="experts-content">
+                        <div class="topic-icons">
+                          <img src="assets/images/electronics.png" alt="electronics icon">
+                        </div>
+                      </div>
+                      <span class="card-text pt-2">الکترونیک</span>
+                    </div>
+                    <div class="col-1 d-flex align-items-center justify-content-center px-0 ">
+                      <div class="collapse-icon-plus collapse show">
+                        <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
+                      </div>
+                      <div class="collapse-icon-minus collapse">
+                        <i class="fa fa-minus fa-2x" aria-hidden="true"></i>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
-              <!--experts-content-->
-            </div>
-            <!--experts-item-->
-            <div class="experts-items">
-              <div class="experts-content">
-                <span>8</span>
-                <div class="txt-experts">
-                  <h3>شناخت، عیب یابی و احیا انواع باتری ها</h3>
+              <div class="pr-2 pt-4 collapse" id="collapse102" aria-labelledby="heading102">
+                <div class="card-body">
+                  <div class="experts-wrapper">
+                    <div class="experts-items">
+                      <div class="experts-content">
+                        <span>۱</span>
+                        <div class="txt-experts">
+                          <h3> آموزش اصول مبانی الکترونیک عمومی</h3>
+                        </div>
+                      </div>
+                      <!--experts-content-->
+                    </div>
+                    <div class="experts-items">
+                      <div class="experts-content">
+                        <span>۲</span>
+                        <div class="txt-experts">
+                          <h3>شناخت قطعات برد‌های SMD</h3>
+                        </div>
+                      </div>
+                      <!--experts-content-->
+                    </div>
+                    <div class="experts-items">
+                      <div class="experts-content">
+                        <span>۳</span>
+                        <div class="txt-experts">
+                          <h3>تست قطعات برد‌های SMD</h3>
+                        </div>
+                      </div>
+                      <!--experts-content-->
+                    </div>
+                    <div class="experts-items">
+                      <div class="experts-content">
+                        <span>۴</span>
+                        <div class="txt-experts">
+                          <h3>مبانی IC ها</h3>
+                        </div>
+                      </div>
+                      <!--experts-content-->
+                    </div>
+                    <div class="experts-items">
+                      <div class="experts-content">
+                        <span>۵</span>
+                        <div class="txt-experts">
+                          <h3>شناخت IC ها روی برد</h3>
+                        </div>
+                      </div>
+                      <!--experts-content-->
+                    </div>
+                    <div class="experts-items">
+                      <div class="experts-content">
+                        <span>۶</span>
+                        <div class="txt-experts">
+                          <h3>اصول و مبانی آنتن دهی و سیمکارت</h3>
+                        </div>
+                      </div>
+                      <!--experts-content-->
+                    </div>
+                  </div>
                 </div>
               </div>
-              <!--experts-content-->
             </div>
-            <!--experts-item-->
-            <div class="experts-items">
-              <div class="experts-content">
-                <span>9</span>
-                <div class="txt-experts">
-                  <h3>تعویض انواع قطعات الکترونیک و سوکت ها</h3>
+            <div class="card py-3 px-4 my-2">
+              <div class="card-header" id="heading103">
+                <div class="collapsed" data-toggle="collapse" data-target="#collapse103" aria-expanded="true"
+                  aria-controls="collapse103">
+                  <div class="row ">
+                    <div class="col-11 cqs-header d-flex align-items-center">
+                      <div class="experts-content">
+                        <div class="topic-icons">
+                          <img src="assets/images/hardware.png" alt="hardware icon">
+                        </div>
+                      </div>
+                      <span class="card-text pt-2">سخت‌افزار</span>
+                    </div>
+                    <div class="col-1 d-flex align-items-center justify-content-center px-0 ">
+                      <div class="collapse-icon-plus collapse show">
+                        <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
+                      </div>
+                      <div class="collapse-icon-minus collapse">
+                        <i class="fa fa-minus fa-2x" aria-hidden="true"></i>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
-              <!--experts-content-->
-            </div>
-            <!--experts-item-->
-            <div class="experts-items">
-              <div class="experts-content">
-                <span>10</span>
-                <div class="txt-experts">
-                  <h3>آموزش پایه سازی و تعویض IC </h3>
+              <div class="pr-2 pt-4 collapse" id="collapse103" aria-labelledby="heading103">
+                <div class="card-body">
+                  <div class="experts-wrapper">
+                    <div class="experts-items">
+                      <div class="experts-content">
+                        <span>۱</span>
+                        <div class="txt-experts">
+                          <h3>تعویض انواع قطعات سوکتی مثل LCD، برد‌ها، ویبراتور، دوربین، و...</h3>
+                        </div>
+                      </div>
+                      <!--experts-content-->
+                    </div>
+                    <div class="experts-items">
+                      <div class="experts-content">
+                        <span>۲</span>
+                        <div class="txt-experts">
+                          <h3>تعویض انواع قطعات الکترونیکی</h3>
+                        </div>
+                      </div>
+                      <!--experts-content-->
+                    </div>
+                    <div class="experts-items">
+                      <div class="experts-content">
+                        <span>۳</span>
+                        <div class="txt-experts">
+                          <h3>تعویض انواع قطعات پلاستیکی و سوکت شارژ</h3>
+                        </div>
+                      </div>
+                      <!--experts-content-->
+                    </div>
+                    <div class="experts-items">
+                      <div class="experts-content">
+                        <span>۴</span>
+                        <div class="txt-experts">
+                          <h3>شوک باتری</h3>
+                        </div>
+                      </div>
+                      <!--experts-content-->
+                    </div>
+                    <div class="experts-items">
+                      <div class="experts-content">
+                        <span>۵</span>
+                        <div class="txt-experts">
+                          <h3>برداشتن، شابلون زدن ، تعویض و ریبال کردن IC ها</h3>
+                        </div>
+                      </div>
+                      <!--experts-content-->
+                    </div>
+                    <div class="experts-items">
+                      <div class="experts-content">
+                        <span>۶</span>
+                        <div class="txt-experts">
+                          <h3>سیم کشی روی برد، روی فلت و زیر IC</h3>
+                        </div>
+                      </div>
+                      <!--experts-content-->
+                    </div>
+                  </div>
                 </div>
               </div>
-              <!--experts-content-->
             </div>
-            <!--experts-item-->
-            <div class="experts-items">
-              <div class="experts-content">
-                <span>11</span>
-                <div class="txt-experts">
-                  <h3>آشنایی با نرم افزارهای مرتبط با فلش، بک آپ ، ریستور و...</h3>
+            <div class="card py-3 px-4 my-2">
+              <div class="card-header" id="heading104">
+                <div class="collapsed" data-toggle="collapse" data-target="#collapse104" aria-expanded="true"
+                  aria-controls="collapse104">
+                  <div class="row ">
+                    <div class="col-11 cqs-header d-flex align-items-center">
+                      <div class="experts-content">
+                        <div class="topic-icons">
+                          <img src="assets/images/diag.png" alt="diagnostig icon">
+                        </div>
+                      </div>
+                      <span class="card-text pt-2">عیب یابی</span>
+                    </div>
+                    <div class="col-1 d-flex align-items-center justify-content-center px-0 ">
+                      <div class="collapse-icon-plus collapse show">
+                        <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
+                      </div>
+                      <div class="collapse-icon-minus collapse">
+                        <i class="fa fa-minus fa-2x" aria-hidden="true"></i>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
-              <!--experts-content-->
-            </div>
-            <!--experts-item-->
-            <div class="experts-items">
-              <div class="experts-content">
-                <span>12</span>
-                <div class="txt-experts">
-                  <h3>آشنایی کامل با گوگل اکانت و FRP</h3>
+              <div class="pr-2 pt-4 collapse" id="collapse104" aria-labelledby="heading104">
+                <div class="card-body">
+                  <div class="experts-wrapper">
+                    <div class="experts-items">
+                      <div class="experts-content">
+                        <span>۱</span>
+                        <div class="txt-experts">
+                          <h3>عیب یابی (اصول و مبانی) ایرادات متداول</h3>
+                        </div>
+                      </div>
+                      <!--experts-content-->
+                    </div>
+                    <div class="experts-items">
+                      <div class="experts-content">
+                        <span>۲</span>
+                        <div class="txt-experts">
+                          <h3>آموزش کامل عیب یابی و تست قطعات الکترونیک از روی نقشه و سلوشن</h3>
+                        </div>
+                      </div>
+                      <!--experts-content-->
+                    </div>
+                    <div class="experts-items">
+                      <div class="experts-content">
+                        <span>۳</span>
+                        <div class="txt-experts">
+                          <h3>تحلیل و عیب یابی گوشی های خاموش</h3>
+                        </div>
+                      </div>
+                      <!--experts-content-->
+                    </div>
+                    <div class="experts-items">
+                      <div class="experts-content">
+                        <span>۴</span>
+                        <div class="txt-experts">
+                          <h3>تحلیل و عیب یابی گوشی های آب خورده</h3>
+                        </div>
+                      </div>
+                      <!--experts-content-->
+                    </div>
+                    <div class="experts-items">
+                      <div class="experts-content">
+                        <span>۵</span>
+                        <div class="txt-experts">
+                          <h3>تحلیل و عیب یابی گوشی های بر اساسی جریان کشی</h3>
+                        </div>
+                      </div>
+                      <!--experts-content-->
+                    </div>
+                    <div class="experts-items">
+                      <div class="experts-content">
+                        <span>۶</span>
+                        <div class="txt-experts">
+                          <h3>شناخت، عیب یابی انواع باتری ها</h3>
+                        </div>
+                      </div>
+                      <!--experts-content-->
+                    </div>
+                    <div class="experts-items">
+                      <div class="experts-content">
+                        <span>۷</span>
+                        <div class="txt-experts">
+                          <h3>مفاهیم و اصطلاحات کاربردی مهم درعیب یابی نرم افزاری</h3>
+                        </div>
+                      </div>
+                      <!--experts-content-->
+                    </div>
+                  </div>
                 </div>
               </div>
-              <!--experts-content-->
             </div>
-            <!--experts-item-->
-            <div class="experts-items">
-              <div class="experts-content">
-                <span>13</span>
-                <div class="txt-experts">
-                  <h3>مفاهیم و اصطلاحات کاربردی مهم درعیب یابی نرم افزاری</h3>
+            <div class="card py-3 px-4 my-2">
+              <div class="card-header" id="heading105">
+                <div class="collapsed" data-toggle="collapse" data-target="#collapse105" aria-expanded="true"
+                  aria-controls="collapse105">
+                  <div class="row ">
+                    <div class="col-11 cqs-header d-flex align-items-center">
+                      <div class="experts-content">
+                        <div class="topic-icons">
+                          <img src="assets/images/sche.png" alt="sche icon">
+                        </div>
+                      </div>
+                      <span class="card-text pt-2">نقشه خوانی</span>
+                    </div>
+                    <div class="col-1 d-flex align-items-center justify-content-center px-0 ">
+                      <div class="collapse-icon-plus collapse show">
+                        <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
+                      </div>
+                      <div class="collapse-icon-minus collapse">
+                        <i class="fa fa-minus fa-2x" aria-hidden="true"></i>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
-              <!--experts-content-->
-            </div>
-            <!--experts-item-->
-            <div class="experts-items">
-              <div class="experts-content">
-                <span>14</span>
-                <div class="txt-experts">
-                  <h3>آموزش فرآیند ریکاوری رام رسمی و کاستوم و نحوه فرمت کردن گوشی از طریق آن بکاپ گیری</h3>
+              <div class="pr-2 pt-4 collapse" id="collapse105" aria-labelledby="heading105">
+                <div class="card-body">
+                  <div class="experts-wrapper">
+                    <div class="experts-items">
+                      <div class="experts-content">
+                        <span>۱</span>
+                        <div class="txt-experts">
+                          <h3>بررسی تخصصی مدارات موبایل و نقشه خوانی انواع گوشی های اندروید و ios</h3>
+                        </div>
+                      </div>
+                      <!--experts-content-->
+                    </div>
+                    <div class="experts-items">
+                      <div class="experts-content">
+                        <span>۲</span>
+                        <div class="txt-experts">
+                          <h3>نحوه پیدا کردن و استفاده از سلوشن ها</h3>
+                        </div>
+                      </div>
+                      <!--experts-content-->
+                    </div>
+                    <div class="experts-items">
+                      <div class="experts-content">
+                        <span>۳</span>
+                        <div class="txt-experts">
+                          <h3>معرفی باکس ZXW</h3>
+                        </div>
+                      </div>
+                      <!--experts-content-->
+                    </div>
+                  </div>
                 </div>
               </div>
-              <!--experts-content-->
             </div>
-            <!--experts-item-->
-            <div class="experts-items">
-              <div class="experts-content">
-                <span>15</span>
-                <div class="txt-experts">
-                  <h3>آموزش فرآیند آپدیت و ریستور دیوایس های اپل</h3>
+            <div class="card py-3 px-4 my-2">
+              <div class="card-header" id="heading106">
+                <div class="collapsed" data-toggle="collapse" data-target="#collapse106" aria-expanded="true"
+                  aria-controls="collapse106">
+                  <div class="row ">
+                    <div class="col-11 cqs-header d-flex align-items-center">
+                      <div class="experts-content">
+                        <div class="topic-icons">
+                          <img src="assets/images/software.png" alt="flash icon">
+                        </div>
+                      </div>
+                      <span class="card-text pt-2">نرم‌ا‌افزار</span>
+                    </div>
+                    <div class="col-1 d-flex align-items-center justify-content-center px-0 ">
+                      <div class="collapse-icon-plus collapse show">
+                        <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
+                      </div>
+                      <div class="collapse-icon-minus collapse">
+                        <i class="fa fa-minus fa-2x" aria-hidden="true"></i>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
-              <!--experts-content-->
-            </div>
-            <!--experts-item-->
-            <div class="experts-items">
-              <div class="experts-content">
-                <span>16</span>
-                <div class="txt-experts">
-                  <h3>آموزش ساخت اپل آی دی</h3>
+              <div class="pr-2 pt-4 collapse" id="collapse106" aria-labelledby="heading006">
+                <div class="card-body">
+                  <div class="experts-wrapper">
+                    <div class="experts-items">
+                      <div class="experts-content">
+                        <span>۱</span>
+                        <div class="txt-experts">
+                          <h3>آشنایی با نرم افزارهای مرتبط با فلش، بک آپ ، ریستور و...</h3>
+                        </div>
+                      </div>
+                      <!--experts-content-->
+                    </div>
+                    <div class="experts-items">
+                      <div class="experts-content">
+                        <span>۲</span>
+                        <div class="txt-experts">
+                          <h3>آشنایی کامل با گوگل اکانت و FRP</h3>
+                        </div>
+                      </div>
+                      <!--experts-content-->
+                    </div>
+                    <div class="experts-items">
+                      <div class="experts-content">
+                        <span>۳</span>
+                        <div class="txt-experts">
+                          <h3>آموزش فرآیند ریکاوری رام رسمی و کاستوم و نحوه فرمت کردن گوشی از طریق آن بکاپ گیری</h3>
+                        </div>
+                      </div>
+                      <!--experts-content-->
+                    </div>
+                    <div class="experts-items">
+                      <div class="experts-content">
+                        <span>۴</span>
+                        <div class="txt-experts">
+                          <h3>آموزش فرآیند آپدیت و ریستور دیوایس های اپل</h3>
+                        </div>
+                      </div>
+                      <!--experts-content-->
+                    </div>
+                    <div class="experts-items">
+                      <div class="experts-content">
+                        <span>۵</span>
+                        <div class="txt-experts">
+                          <h3>آموزش ساخت اپل آی دی</h3>
+                        </div>
+                      </div>
+                      <!--experts-content-->
+                    </div>
+                    <div class="experts-items">
+                      <div class="experts-content">
+                        <span>۶</span>
+                        <div class="txt-experts">
+                          <h3>نصب رام(فلش کردن) گوشی های اندرویدی MTK بدون باکس</h3>
+                        </div>
+                      </div>
+                      <!--experts-content-->
+                    </div>
+                    <div class="experts-items">
+                      <div class="experts-content">
+                        <span>۷</span>
+                        <div class="txt-experts">
+                          <h3>نصب رام(فلش کردن) گوشی های سامسونگ، هواوی و...</h3>
+                        </div>
+                      </div>
+                      <!--experts-content-->
+                    </div>
+                    <div class="experts-items">
+                      <div class="experts-content">
+                        <span>۸</span>
+                        <div class="txt-experts">
+                          <h3> آموزش کار با باکس Z3X یا Octopus</h3>
+                        </div>
+                      </div>
+                      <!--experts-content-->
+                    </div>
+                    <div class="experts-items">
+                      <div class="experts-content">
+                        <span>۹</span>
+                        <div class="txt-experts">
+                          <h3>مفاهیم آشنایی با مفاهیم قانونی در تعمیر IMEI و برداشتن قفل</h3>
+                        </div>
+                      </div>
+                      <!--experts-content-->
+                    </div>
+                    <div class="experts-items">
+                      <div class="experts-content">
+                        <span>۱۰</span>
+                        <div class="txt-experts">
+                          <h3>آموزش کار با باکس Sigma</h3>
+                        </div>
+                      </div>
+                      <!--experts-content-->
+                    </div>
+                    <div class="experts-items">
+                      <div class="experts-content">
+                        <span>۱۱</span>
+                        <div class="txt-experts">
+                          <h3>آموزش روت کردن گوشی ها</h3>
+                        </div>
+                      </div>
+                      <!--experts-content-->
+                    </div>
+                  </div>
                 </div>
               </div>
-              <!--experts-content-->
             </div>
-            <!--experts-item-->
-            <div class="experts-items">
-              <div class="experts-content">
-                <span>17</span>
-                <div class="txt-experts">
-                  <h3>آموزش روت کردن گوشی ها</h3>
-                </div>
-              </div>
-              <!--experts-content-->
-            </div>
-            <!--experts-item-->
-
           </div>
           <!--experts-wrap-->
         </section>
         <!--why-experts-->
         <!-------------------------------------end(topics)------------------->
+        <div class="spacer-004"></div>
+        <!---------------------------Spacer------------------------------------------>
         <section class="license-course" id="license-course">
           <div class="title-experts">
             <h2>
@@ -767,6 +1236,8 @@
         </section>
         <!--license-course-->
         <!--------------------------------------end(license-course)------------------------->
+        <div class="spacer-004"></div>
+        <!---------------------------Spacer------------------------------------------>
         <section id="class-location">
           <div class="title-experts">
             <h2>
@@ -780,7 +1251,7 @@
               برگزارمی شود
             </span>
           </div>
-          <div id="accordion001" class="spacer-001">
+          <div id="accordion001">
             <div class="card card-border text-center">
               <div class="card-header">
                 <div class="row">
@@ -842,10 +1313,10 @@
                     </div>
                   </div>
                 </div>
-                <div class="row px-4 pb-3">
+                <div class="row px-5 pb-4">
                   <iframe class="pt-0"
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d681.0247007247775!2d51.406802220143184!3d35.713484998500824!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f8e016502c439c3%3A0xb3f9374055e0bf25!2smotekhasesan%20Farda!5e0!3m2!1sen!2sus!4v1592216804861!5m2!1sen!2sus"
-                    width="2000" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false"
+                    width="2000" height="450" frameborder="0" allowfullscreen="" aria-hidden="false"
                     tabindex="0"></iframe>
                 </div>
               </div>
@@ -898,20 +1369,20 @@
                     </div>
                   </div>
                 </div>
-                <div class="row px-4 pb-3">
+                <div class="row px-5 pb-4">
                   <iframe
                     src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d202.50230995215682!2d51.3962267!3d35.7007081!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f8e0151a1889c4f%3A0xfff501eafd3b64e8!2z2YXYqtiu2LXYtdin2YYg2YHYsdiv2Kc!5e0!3m2!1sen!2snl!4v1592215288733!5m2!1sen!2snl"
-                    width="2000" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false"
+                    width="2000" height="450" frameborder="0" allowfullscreen="" aria-hidden="false"
                     tabindex="0"></iframe>
                 </div>
               </div>
             </div>
           </div>
-
         </section>
-
         <!--------------------------------------end(class-location)------------------------->
-        <section class="picture-sliders2 spacer-001" id="albums">
+        <div class="spacer-004"></div>
+        <!---------------------------Spacer------------------------------------------>
+        <section class="picture-sliders2" id="albums">
           <div class="title-experts">
             <h2>
               پشتیبانی پس از دوره
@@ -922,7 +1393,13 @@
               <b>تلفنی</b>
               و
               <b>حضوری</b>
-              با آموزشگاه و استاد مربوطه در تماس باشند.
+              با آموزشگاه و 
+              استاد مربوطه در تماس باشند.
+              همچنین می‌توانند در طول دوره و یا پس از پایان دوره از 
+              <b>کارگاه</b>
+               های ما به صورت 
+              <b>رایگان</b>
+               استفاده کنند.
             </span>
           </div>
           <!--title-experts-->
@@ -984,13 +1461,15 @@
           <div class="pic-slide-pagination2"></div>
         </section>
         <!--------------------------- End album ------------------------------->
+        <div class="spacer-004"></div>
+        <!---------------------------Spacer------------------------------------------>
         <section class="" id="CQs">
           <div class="title-experts">
             <h2>
               سوالات متداول
             </h2>
           </div>
-          <div class="accordion pb-5 mb-5" id="accordionExample">
+          <div class="accordion" id="accordionExample">
             <div class="card py-3 px-4 my-2">
               <div class="card-header" id="heading001">
                 <div class="collapsed" data-toggle="collapse" data-target="#collapse001" aria-expanded="true"
@@ -1001,7 +1480,7 @@
                       </div>
                       <span class="pt-2">کلاس ها به چه صورت برگزار میشود؟ شهریه و ساعت کلاس ها به چه صورت است؟</span>
                     </div>
-                    <div class="col-1 d-flex align-content-center justify-content-center pt-2 px-0 ">
+                    <div class="col-1 d-flex align-items-center justify-content-center px-0 ">
                       <div class="collapse-icon-plus collapse show">
                         <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
                       </div>
@@ -1032,7 +1511,7 @@
                       </div>
                       <span class="pt-2">دوره های شما کامل است؟ یعنی بعد از دوره میتوانیم تعمیرات انجام دهیم؟</span>
                     </div>
-                    <div class="col-1 d-flex align-content-center justify-content-center pt-2 px-0 ">
+                    <div class="col-1 d-flex align-items-center justify-content-center px-0 ">
                       <div class="collapse-icon-plus collapse show">
                         <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
                       </div>
@@ -1059,7 +1538,7 @@
                       </div>
                       <span class="pt-2">من در رابطه با تعمیرات موبایل هیچ چیز نمیدانم! آیا این دوره برای من مناسب است؟</span>
                     </div>
-                    <div class="col-1 d-flex align-content-center justify-content-center pt-2 px-0 ">
+                    <div class="col-1 d-flex align-items-center justify-content-center px-0 ">
                       <div class="collapse-icon-plus collapse show">
                         <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
                       </div>
@@ -1087,7 +1566,7 @@
                       </div>
                       <span class="pt-2">بعد از اتمام دوره معرفی به کار به چه صورت می باشد؟</span>
                     </div>
-                    <div class="col-1 d-flex align-content-center justify-content-center pt-2 px-0 ">
+                    <div class="col-1 d-flex align-items-center justify-content-center px-0 ">
                       <div class="collapse-icon-plus collapse show">
                         <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
                       </div>
@@ -1115,7 +1594,7 @@
                       </div>
                       <span class="pt-2">برای حضور در دوره شرایط سنی وجود دارد؟</span>
                     </div>
-                    <div class="col-1 d-flex align-content-center justify-content-center pt-2 px-0 ">
+                    <div class="col-1 d-flex align-items-center justify-content-center px-0 ">
                       <div class="collapse-icon-plus collapse show">
                         <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
                       </div>
@@ -1143,7 +1622,7 @@
                       </div>
                       <span class="pt-2">آزمون و دریافت مدرک در انتها دوره به چه صورت می باشد؟</span>
                     </div>
-                    <div class="col-1 d-flex align-content-center justify-content-center pt-2 px-0 ">
+                    <div class="col-1 d-flex align-items-center justify-content-center px-0 ">
                       <div class="collapse-icon-plus collapse show">
                         <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
                       </div>
@@ -1171,7 +1650,7 @@
                       </div>
                       <span class="pt-2">این دوره برای چه افرادی مناسب هست؟</span>
                     </div>
-                    <div class="col-1 d-flex align-content-center justify-content-center pt-2 px-0 ">
+                    <div class="col-1 d-flex align-items-center justify-content-center px-0 ">
                       <div class="collapse-icon-plus collapse show">
                         <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
                       </div>
@@ -1199,7 +1678,7 @@
                       </div>
                       <span class="pt-2">آیا شما خوابگاه هم دارید؟</span>
                     </div>
-                    <div class="col-1 d-flex align-content-center justify-content-center pt-2 px-0 ">
+                    <div class="col-1 d-flex align-items-center justify-content-center px-0 ">
                       <div class="collapse-icon-plus collapse show">
                         <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
                       </div>
@@ -1226,7 +1705,7 @@
                       </div>
                       <span class="pt-2">اساتید شما فقط آموزش می‌دهند یا خودشان مغازه دار نیز می‌باشند؟</span>
                     </div>
-                    <div class="col-1 d-flex align-content-center justify-content-center pt-2 px-0 ">
+                    <div class="col-1 d-flex align-items-center justify-content-center px-0 ">
                       <div class="collapse-icon-plus collapse show">
                         <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
                       </div>
@@ -1255,7 +1734,7 @@
                       </div>
                       <span class="pt-2">کلاس ها تئوری است یا به صورت عملی برگزار می‌شود؟</span>
                     </div>
-                    <div class="col-1 d-flex align-content-center justify-content-center pt-2 px-0 ">
+                    <div class="col-1 d-flex align-items-center justify-content-center px-0 ">
                       <div class="collapse-icon-plus collapse show">
                         <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
                       </div>
@@ -1283,7 +1762,7 @@
                       </div>
                       <span class="pt-2">آیا تضمینی برای یادگیری وجود دارد؟</span>
                     </div>
-                    <div class="col-1 d-flex align-content-center justify-content-center pt-2 px-0 ">
+                    <div class="col-1 d-flex align-items-center justify-content-center px-0 ">
                       <div class="collapse-icon-plus collapse show">
                         <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
                       </div>
@@ -1301,12 +1780,11 @@
                 </div>
               </div>
             </div>
-
-            
-            
           </div>
         </section>
         <!--------------------------- End Common Questions ------------------------------->
+        <div class="spacer-004"></div>
+        <!---------------------------Spacer------------------------------------------>
         <section class="" id="dorms">
           <div class="title-experts ">
             <h2>
@@ -1395,14 +1873,12 @@
             </div>
             <!--picture-sliders-->
             <div class="pic-slide-pagination"></div>
-          </div>
-          <!--picture-sliders-->
-
-
+      
+        </section>
       </div>
-      </section>
       <!--------------------------- End dorms ------------------------------->
-  
+      <div class="spacer-004 hidden-lg hidden-xl hidden-xxl hidden-xxxl"></div>
+      <!---------------------------Spacer------------------------------------------>
       <div class="container spacer-002">
         <section class="register-form hidden-md hidden-sm hidden-xs">
           <div class="container d-flex justify-content-center" id="forms">
@@ -1522,7 +1998,7 @@
                             <label class="form-check-label" for="inlineRadio1">اقساط</label>
                           </div>
                           <div class="form-check form-check-inline mb-2">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions2" id="inlineRadio2" value="option2">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
                             <label class="form-check-label" for="inlineRadio2">نقدی</label>
                           </div>
                       </div>
@@ -1974,12 +2450,12 @@
                     <div class="form-item">
                       <span class="required-star pb-3"> نوع پرداخت </span>
                       <div class="form-check form-check-inline mb-2">
-                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
-                        <label class="form-check-label" for="inlineRadio1">اقساط</label>
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option1">
+                        <label class="form-check-label" for="inlineRadio3">اقساط</label>
                       </div>
                       <div class="form-check form-check-inline mb-2">
-                        <input class="form-check-input" type="radio" name="inlineRadioOptions2" id="inlineRadio2" value="option2">
-                        <label class="form-check-label" for="inlineRadio2">نقدی</label>
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio4" value="option2">
+                        <label class="form-check-label" for="inlineRadio4">نقدی</label>
                       </div>
                     </div>
                     <!--form-item-->
