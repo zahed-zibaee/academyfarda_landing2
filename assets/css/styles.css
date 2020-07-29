@@ -2820,7 +2820,7 @@ div.wpcf7 .ajax-loader {
   }
 }
 .site-header .header-body .left-head-body h2 span {
-  color: #ffcf24;
+  color: #ffae00;
   font-size: 80px;
 }
 @media (max-width: 1199px) {
@@ -3206,7 +3206,7 @@ body .left-bg {
   width: 75px;
   height: 6px;
   border-radius: 4px;
-  background-color: #f48725;
+  background-color: #ff9100;
   bottom: -15%;
   left: 50%;
   -ms-transform: translateX(-50%);
@@ -3323,7 +3323,7 @@ body .left-bg {
   }
 }
 .experts-wrapper .experts-items .experts-content .txt-experts h3 {
-  color: #3303e2;
+  color: #1b1b1b;
   font-family: yekan;
   font-size: 14px;
   font-weight: 700;
@@ -3622,19 +3622,14 @@ body .left-bg {
 }
 .license-slide-pagination .swiper-pagination-bullet-active {
   border-radius: 6px;
-  background-image: -ms-linear-gradient(180deg, #f2741e 0%, #ff9f5e 100%);
-  background-image: linear-gradient(270deg, #f2741e 0%, #ff9f5e 100%);
+  background-image: -ms-linear-gradient(180deg, #ffb300 0%, #ffe8b1 100%);
+  background-image: linear-gradient(270deg, #ffb300 0%, #ffe8b1 100%);
   width: 15px;
   height: 9px;
 }
 .pic-slide-pagination {
   margin: 20px auto 0px auto;
   display: table;
-}
-@media (max-width: 767px) {
-  .pic-slide-pagination {
-    margin-top: -40px;
-  }
 }
 .pic-slide-pagination .swiper-pagination-bullet {
   width: 10px;
@@ -3644,8 +3639,8 @@ body .left-bg {
 }
 .pic-slide-pagination .swiper-pagination-bullet-active {
   border-radius: 6px;
-  background-image: -ms-linear-gradient(180deg, #f2741e 0%, #ff9f5e 100%);
-  background-image: linear-gradient(270deg, #f2741e 0%, #ff9f5e 100%);
+  background-image: -ms-linear-gradient(180deg, #ffb300 0%, #ffe8b1 100%);
+  background-image: linear-gradient(270deg, #ffb300 0%, #ffe8b1 100%);
   width: 15px;
   height: 9px;
 }
@@ -3843,7 +3838,7 @@ body .left-bg {
   width: 100%;
   height: 50px;
   border-radius: 11px;
-  background-color: #41b300;
+  background-color: #ff9100;
   border: none;
   color: #fff;
   font-family: "Yekan";
@@ -3856,7 +3851,7 @@ body .left-bg {
 .register-form-wrap .left-form .form-wrapper .send-form:hover {
   font-size: 18px;
   box-shadow: 0 4px 10px 1px #0000003b;
-  background-color: #46c000;
+  background-color: #ffa600;
   color: #fff;
 }
 .register-form-wrap .left-form .form-wrapper label {
@@ -4427,11 +4422,6 @@ button.close {
   margin: 20px auto 0px auto;
   display: table;
 }
-@media (max-width: 767px) {
-  .pic-slide-pagination2 {
-    margin-top: -40px;
-  }
-}
 .pic-slide-pagination2 .swiper-pagination-bullet {
   width: 10px;
   height: 9px;
@@ -4440,8 +4430,8 @@ button.close {
 }
 .pic-slide-pagination2 .swiper-pagination-bullet-active {
   border-radius: 6px;
-  background-image: -ms-linear-gradient(180deg, #f2741e 0%, #ff9f5e 100%);
-  background-image: linear-gradient(270deg, #f2741e 0%, #ff9f5e 100%);
+  background-image: -ms-linear-gradient(180deg, #ffb300 0%, #ffe8b1 100%);
+  background-image: linear-gradient(270deg, #ffb300 0%, #ffe8b1 100%);
   width: 15px;
   height: 9px;
 }
@@ -4538,18 +4528,18 @@ button.close {
   border-color:#3303e2;
   font-weight: 700;
 }
-.btn-green {
+.btn-orange {
   color: #fff;
-  background-color: #4ebe2b;
-  border-color: #4ebe2b;
+  background-color: #ff9100;
+  border-color: #ff9100;
   font-weight: 600;
   font-family: "Yekan";
   font-size: 18px;
 }
-.btn-green:hover {
+.btn-orange:hover {
   color: #fff;
-  background-color: #34d304;
-  border-color: #34d304;
+  background-color: #ffa600;
+  border-color: #ffa600;
   box-shadow: 0 4px 10px 1px #0000003b;
   font-weight: 700  ;
 }
@@ -5179,8 +5169,8 @@ footer h2 b{
 .register-form-wrap .img-btn{
   color: #fff;
   
-  background-color: #4ebe2b;
-  border-color: #4ebe2b;
+  background-color: #ff9100;
+  border-color: #ff9100;
   font-weight: 600;
   font-family: "Yekan";
   font-size: 18px;
@@ -5188,8 +5178,8 @@ footer h2 b{
 .register-form-wrap .img-btn:hover{
   color: #fff;
   
-  background-color: #34d304;
-  border-color: #34d304;
+  background-color: #ffa600;
+  border-color: #ffa600;
   box-shadow: 0 4px 10px 1px #000000c4;
   font-weight: 700;
 }
@@ -5329,7 +5319,7 @@ footer h2 b{
   font-size: 12px;
 }
 .spacer-002 {
-  margin-top: 100px;
+  margin-top: 150px;
 }
 @media (max-width: 576px) {
   .justify-content-xs-center{
@@ -5347,8 +5337,8 @@ footer h2 b{
   }
 }
 .highlight001 {
-  -webkit-animation: yourAnimation 2s ease 0s 3 normal none;
-              animation: yourAnimation 2s ease 0s 3 normal none;
+  -webkit-animation: yourAnimation 5s ease 0s 1 normal none;
+              animation: yourAnimation 5s ease 0s 1 normal none;
 
 }
 @keyframes yourAnimation {
@@ -5357,20 +5347,42 @@ footer h2 b{
     transform: scale(1);
     font-weight: 500;
   }
-  24.7%{
+  10%{
     color: green;
     transform: scale(1.05);
     font-weight: 500;
   }
-  49.7%{
-    color: black;
+  20%{
     transform: scale(1);
-    font-weight: 500;
-  }
-  74.5%{
     color: green;
+  }
+  30%{
     transform: scale(1.05);
-    font-weight: 500;
+    color: green;
+  }
+  40%{
+    transform: scale(1);
+    color: green;
+  }
+  50%{
+    transform: scale(1.05);
+    color: green;
+  }
+  60%{
+    transform: scale(1);
+    color: green;
+  }
+  70%{
+    transform: scale(1.05);
+    color: green;
+  }
+  80%{
+    transform: scale(1);
+    color: green;
+  }
+  90%{
+    transform: scale(1.05);
+    color: green;
   }
   100%{
     color: black;
@@ -5780,6 +5792,11 @@ iframe {
 .spacer-004 {
   margin-bottom: 170px;
 }
+@media (max-width: 991px){
+  .spacer-004 {
+    margin-bottom: 120px;
+  }
+}
 .experts-content .topic-icons img {
   width: 40px;
   height: 40px;
@@ -5792,12 +5809,14 @@ iframe {
   height: 60px;
   padding: 5px;
   box-shadow: 0 10px 11px rgba(141,141,214,0.1);
-  background-color: #f32f77;
+  background-color: #ff9100;
   border-radius: 100%;
   margin-right: -40px;
   margin-left: 20px;
 }
-
+#accordionExample2 {
+  margin-right: 10px;
+}
 #accordionExample2 .collapsing {
   display: none;
 }
@@ -5805,7 +5824,7 @@ iframe {
   transform: scale(1.15);
 }
 .accordion .card-header:hover .experts-content .topic-icons {
-  background-color: #fa2271;
+  background-color: #ff8800;
   box-shadow: 0 2px 5px 1px #0000007e;
 }
 .accordion .card-header:hover .fa-plus {

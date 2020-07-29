@@ -7,7 +7,9 @@ function dwtoast( txt ) {
     // After 3 seconds, remove the show class from DIV
     setTimeout(function(){ $toast.removeClass('show') }, 12000 );
 }
-
+function getBootstrapDeviceSize() {
+    return $('#users-device-size').find('div:visible').first().attr('id');
+}
 (function($){
     /**
     * dornawebtimer - Countdown by dornaweb
@@ -494,6 +496,23 @@ $(document).on('click', '[data-modal]', function(e) {
     $(document).on('click', '.close-modal', function(e) {
         $('#exampleModal001').modal('hide');
     });
+    //modal open on click on link
+    if (getBootstrapDeviceSize() == "xs" || getBootstrapDeviceSize() == "sm" || getBootstrapDeviceSize() == "md") {
+        $(document).on('click', '.go-to-register-form', function(e) {
+            $('#exampleModal002').modal('show');
+        });
+        $(document).on('click', '.go-to-consult-form-1fs', function(e) {
+            $("#question2").val("می‌خواهم یک جلسه رایگان به عنوان مهمان در کلاس شرکت کنم.");
+            $("#question2").removeClass("highlight001");
+            $('#exampleModal003').modal('show');
+            setTimeout(function(){ $("#question2").addClass("highlight001"); }, 100);
+        });
+        $(document).on('click', '.go-to-consult-form', function(e) {
+            $('#exampleModal003').modal('show');
+        });
+    }
+    
+    
 })(jQuery)
 
 
