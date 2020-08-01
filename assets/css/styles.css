@@ -2555,7 +2555,6 @@ div.wpcf7 .ajax-loader {
   position: relative;
   background-size: 100% 100%;
   overflow: hidden;
-  margin-bottom: 30px;
 }
 .site-header:before {
   position: absolute;
@@ -2891,8 +2890,8 @@ div.wpcf7 .ajax-loader {
   }
 }
 body {
-  background-image: -ms-linear-gradient(270deg, #f9f9ff 0%, #fff 100%);
-  background-image: linear-gradient(180deg, #f9f9ff 0%, #fff 100%);
+  background-image: -ms-linear-gradient(270deg, #f5f5fa 0%, #fff 100%);
+  background-image: linear-gradient(180deg, #f5f5fa 0%, #fff 100%);
   position: relative;
   overflow-x: hidden;
 }
@@ -2968,7 +2967,7 @@ body .left-bg {
 }
 @media (max-width: 767px) {
   .main-product .product-wrap .title-product {
-    font-size: 18px;
+    font-size: 20px;
   }
 }
 @media (min-width: 1600px) {
@@ -4690,7 +4689,7 @@ table {
   font-size: 1.6rem;
 }
 .text-justify {
-  text-align: justify!important;
+  text-align: justify !important;
 }
 footer h2 {
   color: white;
@@ -5836,4 +5835,90 @@ iframe {
 .spacer-001 {
   margin-left: 10vw;
   margin-right: 10vw;
+}
+.media {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: start;
+  align-items: center;
+}
+.media-body {
+  -ms-flex: 1;
+  flex: 1;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 1px solid transparent;
+  box-shadow: 0 12px 26px rgba(141,141,214,0.1);
+  border-radius: 18px;
+  padding: 3vh 1.5vw;
+}
+.media-body-right {
+  border-bottom-left-radius: 90px;
+  padding-bottom: 45px;
+}
+.media-body-left {
+  border-bottom-right-radius: 90px;
+  padding-bottom: 45px;
+}
+.media-head {
+  color: #3303e2;
+  font-family: yekan;
+  font-size: 20px;
+  font-weight: 700;
+  padding-bottom: 0.5rem;
+}
+.media-body span {
+  font-size: 12px;
+}
+.masters-pic {
+  height: 15vw;
+  width: 15vw;
+  border: 1px solid #1100802f;
+  border-radius: 20%;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+@media (max-width: 991px){
+  .masters-pic {
+    height: 20vw;
+    width: 20vw;
+  }
+  .media-body span {
+    font-size: 12px;
+  }
+  .media-head {
+    font-size: 18px;
+  }
+}
+@media (max-width: 767px){
+  .media-body-right {
+    border-bottom-left-radius: 18px;
+    padding: 2vh 2vw;
+    margin-left: 3vw;
+    margin-right: 3vw;
+  }
+  .media-body-left {
+    border-bottom-right-radius: 18px;
+    padding: 2vh 2vw;
+    margin-left: 3vw;
+    margin-right: 3vw;
+  }
+  .masters-pic {
+    display: block;
+    height: 30vmax;
+    width: 30vmax;
+    margin-bottom: 1vh;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .media-body span {
+    font-size: 10px;
+  }
+  .media-head {
+    font-size: 16px;
+  }
+  .media {
+    display: block;
+    padding-top: 30px;
+  }
 }
