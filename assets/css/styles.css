@@ -4594,18 +4594,63 @@ button.close {
   margin-bottom: 1rem;
   background-color: transparent;
 }
-table {
-  border-collapse: collapse;
+.table {
+  border-collapse: collapse !important;
 }
-.table-bordered {
-  border: 1px solid white;
-}
-.bg-primary {
-  font-size: 18px;
-  background-color: #3303e2!important;
-  color: white;
-  border: 1px solid white;
+.table td{
+  background-color: inherit;
   text-align: center;
+  line-height: 2.5em;
+  font-size: 12px;
+}
+.table th {
+  background-color: #3303e2;
+  color: #fff;
+  text-align: center;
+  font-family: Yekan;
+  font-size: 17px;
+  line-height: 2.5em;
+}
+.table .inactive{
+  background-color: #eee;
+  color: #999;
+  text-decoration: line-through;
+}
+.table .inactive:hover{
+  background-color: #eee;
+  color: #999;
+}
+.table-bordered th,
+.table-bordered td {
+  border: 1px solid #dee2e6 !important;
+}
+.table-dark {
+  color: inherit;
+}
+.table-dark th,
+.table-dark td,
+.table-dark thead th,
+.table-dark tbody + tbody {
+  border-color: #dee2e6;
+}
+.table .thead-dark th {
+  color: inherit;
+  border-color: #dee2e6;
+}
+thead {
+  display: table-header-group;
+}
+.table-hover tbody tr:hover {
+  color: #000;
+  background-color: rgba(0, 0, 0, 0.05);
+}
+@media (max-width: 767px){
+  .table td{
+    font-size: 10px;
+  }
+  .table th {
+    font-size: 12px;
+  }
 }
 .flex-column {
   -webkit-box-orient: vertical!important;
@@ -5921,4 +5966,53 @@ iframe {
     display: block;
     padding-top: 30px;
   }
+}
+.main-product .product-wrap .software-hardware {
+  font-size: 2.2rem;
+  font-family: Yekan;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 50px;
+}
+.main-product .product-wrap .software-hardware .first-part{
+  color: #2400a5;
+}
+.main-product .product-wrap .software-hardware .second-part{
+  color: #2400a5;
+}
+.main-product .product-wrap .software-hardware .plus-part{
+  font-size: 4rem;
+  color: #3303e2;
+  padding-left: 1em;
+  padding-right: 1em;
+}
+@media (max-width: 991px){
+  .main-product .product-wrap .software-hardware {
+    font-size: 1.7rem;
+    padding-bottom: 40px;
+  }
+  .main-product .product-wrap .software-hardware .plus-part{
+    font-size: 2.2rem;
+  }
+}
+@media (max-width: 767px){
+  .main-product .product-wrap .software-hardware {
+    font-size: 1.3rem;
+    padding-bottom: 30px;
+  }
+  .main-product .product-wrap .software-hardware .plus-part{
+    font-size: 2rem;
+    padding-left: 0.6em;
+    padding-right: 0.6em;
+  }
+}
+.bullet::before {
+  font-family: FontAwesome;
+  content: "\f096\00a0";
+  color: #f32f77;
+}
+.main-product .product-wrap .towork {
+  color: #f32f77;
 }
