@@ -6076,3 +6076,8 @@ iframe {
 #license_slide .swiper-slide {
   width: 100%;
 }
+@media (max-width: 767px){
+  .main-product .product-wrap p{
+    font-size: 12px;
+  }
+}
