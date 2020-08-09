@@ -2819,7 +2819,7 @@ div.wpcf7 .ajax-loader {
   }
 }
 .site-header .header-body .left-head-body h2 span {
-  color: #ffae00;
+  color: #ffd700;
   font-size: 80px;
 }
 @media (max-width: 1199px) {
@@ -3205,7 +3205,7 @@ body .left-bg {
   width: 75px;
   height: 6px;
   border-radius: 4px;
-  background-color: #ff9100;
+  background-color: #ffc000;
   bottom: -15%;
   left: 50%;
   -ms-transform: translateX(-50%);
@@ -3621,8 +3621,8 @@ body .left-bg {
 }
 .license-slide-pagination .swiper-pagination-bullet-active {
   border-radius: 6px;
-  background-image: -ms-linear-gradient(180deg, #ffb300 0%, #ffe8b1 100%);
-  background-image: linear-gradient(270deg, #ffb300 0%, #ffe8b1 100%);
+  background-image: -ms-linear-gradient(180deg, #ffb800 0%, #ffe8b1 100%);
+  background-image: linear-gradient(270deg, #ffb800 0%, #ffe8b1 100%);
   width: 15px;
   height: 9px;
 }
@@ -3638,8 +3638,8 @@ body .left-bg {
 }
 .pic-slide-pagination .swiper-pagination-bullet-active {
   border-radius: 6px;
-  background-image: -ms-linear-gradient(180deg, #ffb300 0%, #ffe8b1 100%);
-  background-image: linear-gradient(270deg, #ffb300 0%, #ffe8b1 100%);
+  background-image: -ms-linear-gradient(180deg, #ffb800 0%, #ffe8b1 100%);
+  background-image: linear-gradient(270deg, #ffb800 0%, #ffe8b1 100%);
   width: 15px;
   height: 9px;
 }
@@ -3837,7 +3837,7 @@ body .left-bg {
   width: 100%;
   height: 50px;
   border-radius: 11px;
-  background-color: #ff9100;
+  background-color: #ffc000;
   border: none;
   color: #fff;
   font-family: "Yekan";
@@ -3850,7 +3850,7 @@ body .left-bg {
 .register-form-wrap .left-form .form-wrapper .send-form:hover {
   font-size: 18px;
   box-shadow: 0 4px 10px 1px #0000003b;
-  background-color: #ffa600;
+  background-color: #ffb800;
   color: #fff;
 }
 .register-form-wrap .left-form .form-wrapper label {
@@ -4429,8 +4429,8 @@ button.close {
 }
 .pic-slide-pagination2 .swiper-pagination-bullet-active {
   border-radius: 6px;
-  background-image: -ms-linear-gradient(180deg, #ffb300 0%, #ffe8b1 100%);
-  background-image: linear-gradient(270deg, #ffb300 0%, #ffe8b1 100%);
+  background-image: -ms-linear-gradient(180deg, #ffb800 0%, #ffe8b1 100%);
+  background-image: linear-gradient(270deg, #ffb800 0%, #ffe8b1 100%);
   width: 15px;
   height: 9px;
 }
@@ -4528,34 +4528,31 @@ button.close {
   font-weight: 700;
 }
 .btn-orange {
-  color: #fff;
-  background-color: #ff9100;
-  border-color: #ff9100;
-  font-weight: 600;
+  color: #f8f8f8;
+  background-color: #ffb000;
+  border-color: #ffb000;
+  font-weight: 800;
   font-family: "Yekan";
   font-size: 18px;
 }
 .btn-orange:hover {
-  color: #fff;
-  background-color: #ffa600;
-  border-color: #ffa600;
+  background-color: #ffa000;
+  border-color: #ffa000;
   box-shadow: 0 4px 10px 1px #0000003b;
-  font-weight: 700  ;
 }
 .btn-red {
-  color: #fff;
+  color: #f8f8f8;
   background-color: #f32f77;
   border-color: #f32f77;
-  font-weight: 600;
+  font-weight: 800;
   font-family: "Yekan";
   font-size: 18px;
+
 }
 .btn-red:hover {
-  color: #fff;
   background-color: #fc2071;
   border-color: #f8206f;
   box-shadow: 0 4px 10px 1px #0000003b;
-  font-weight: 700  ;
 }
 .btn {
   display: block;
@@ -5213,8 +5210,8 @@ footer h2 b{
 .register-form-wrap .img-btn{
   color: #fff;
   
-  background-color: #ff9100;
-  border-color: #ff9100;
+  background-color: #ffc000;
+  border-color: #ffc000;
   font-weight: 600;
   font-family: "Yekan";
   font-size: 18px;
@@ -5222,8 +5219,8 @@ footer h2 b{
 .register-form-wrap .img-btn:hover{
   color: #fff;
   
-  background-color: #ffa600;
-  border-color: #ffa600;
+  background-color: #ffb800;
+  border-color: #ffb800;
   box-shadow: 0 4px 10px 1px #000000c4;
   font-weight: 700;
 }
@@ -5853,7 +5850,7 @@ iframe {
   height: 60px;
   padding: 5px;
   box-shadow: 0 10px 11px rgba(141,141,214,0.1);
-  background-color: #ff9100;
+  background-color: #ffb000;
   border-radius: 100%;
   margin-right: -40px;
   margin-left: 20px;
@@ -5868,7 +5865,7 @@ iframe {
   transform: scale(1.15);
 }
 .accordion .card-header:hover .experts-content .topic-icons {
-  background-color: #ff8800;
+  background-color: #ffa000;
   box-shadow: 0 2px 5px 1px #0000007e;
 }
 .accordion .card-header:hover .fa-plus {
@@ -6013,6 +6010,69 @@ iframe {
   content: "\f096\00a0";
   color: #f32f77;
 }
+.bullet2::before {
+  font-family: FontAwesome;
+  content: "\f10c\00a0";
+  color: #f32f77;
+}
 .main-product .product-wrap .towork {
   color: #f32f77;
+}
+.payment-big {
+  font-family: Yekan;
+  font-size: 84px;
+  text-decoration: line-through;
+  color: #000;
+  line-height: 0.7em;
+}
+.payment-toman {
+  font-family: Yekan;
+  font-size: 38px;
+  color: #f32f77;
+  font-weight: 800;
+}
+.payment-mosavab {
+  color: #888;
+  font-size: 16px;
+}
+.payment-bigblack {
+  font-family: Yekan;
+  font-size: 84px;
+  color: #f32f77;
+  text-decoration: none;
+  line-height: 0.7em;
+}
+.spacer-005 {
+  padding-bottom: 20px;
+}
+@media (max-width: 991px){
+  .payment-big {
+    font-size: 64px;
+  }
+  .payment-toman {
+    font-size: 28px;
+  }
+  .payment-mosavab {
+    font-size: 14px;
+  }
+  .payment-bigblack {
+    font-size: 64px;
+  }
+}
+@media (max-width: 767px){
+  .payment-big {
+    font-size: 54px;
+  }
+  .payment-toman {
+    font-size: 22px;
+  }
+  .payment-mosavab {
+    font-size: 12px;
+  }
+  .payment-bigblack {
+    font-size: 54px;
+  }
+}
+#license_slide .swiper-slide {
+  width: 100%;
 }
