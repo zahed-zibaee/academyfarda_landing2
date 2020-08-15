@@ -4531,7 +4531,7 @@ button.close {
   color: #f8f8f8;
   background-color: #ffb000;
   border-color: #ffb000;
-  font-weight: 800;
+  font-weight: 700;
   font-family: "Yekan";
   font-size: 18px;
 }
@@ -4544,7 +4544,7 @@ button.close {
   color: #f8f8f8;
   background-color: #f32f77;
   border-color: #f32f77;
-  font-weight: 800;
+  font-weight: 700;
   font-family: "Yekan";
   font-size: 18px;
 
@@ -5483,7 +5483,7 @@ footer h2 b{
   color: #fff;
   background-color: #272526;
   border-color: #272526;
-  font-weight: 600;
+  font-weight: 700;
   font-family: "Yekan";
   font-size: 18px;
 }
@@ -6079,5 +6079,13 @@ iframe {
 @media (max-width: 767px){
   .main-product .product-wrap p{
     font-size: 12px;
+  }
+}
+.spacer-006 {
+  margin-top: 100px;
+}
+@media (max-width: 991px){
+  .spacer-006 {
+    margin-top: 0px;
   }
 }

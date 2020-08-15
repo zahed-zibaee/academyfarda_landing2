@@ -12,70 +12,6 @@ function getBootstrapDeviceSize() {
 }
 (function($){
     /**
-    * dornawebtimer - Countdown by dornaweb
-    *
-    * @param integer s - seconds to countdown
-    * @param string selector - jquery element selector
-    * @copyright Allrights reserved dornaweb
-    */
-    function dornawebtimer ( s , selector, wrap ) {
-        var fm = [
-             Math.floor(s / 60 / 60 / 24), // DAYS
-             Math.floor(s / 60 / 60) % 24, // HOURS
-             Math.floor(s / 60) % 60, // MINUTES
-             s % 60 // SECONDS
-         ];
-         fm = $.map(fm, function(v, i) { return ((v < 10) ? '0' : '') + v; });
-         $.each( fm, function( index, value ) {
-             fm[index] = value.split("");
-         });
-
-         if( s > 0 ) {
-             if( wrap ) {
-                 $(".day"   , selector).html( '<span>' + fm[0][0] + '</span>' + '<span>' + fm[0][1] + '</span>' );
-                 $(".hour"  , selector).html( '<span>' + fm[1][0] + '</span>' + '<span>' + fm[1][1] + '</span>' );
-                 $(".minute", selector).html( '<span>' + fm[2][0] + '</span>' + '<span>' + fm[2][1] + '</span>' );
-                 $(".second", selector).html( '<span>' + fm[3][0] + '</span>' + '<span>' + fm[3][1] + '</span>' );
-
-             } else{
-                 $(".day"   , selector).html( fm[0][0] + '' + fm[0][1] );
-                 $(".hour"  , selector).html( fm[1][0] + '' + fm[1][1] );
-                 $(".minute", selector).html( fm[2][0] + '' + fm[2][1] );
-                 $(".second", selector).html( fm[3][0] + '' + fm[3][1] );
-
-             }
-        }
-    }
-
-    /**
-     * dornaweb_countdown - Countdown by dornaweb
-     *
-     * @param integer time - seconds to countdown
-     * @param string selector - jquery element selector
-     * @Copyright Allrights reserved dornaweb
-     */
-    function dornaweb_countdown(time, selector) {
-        var timer = setInterval(function() {
-
-            time--;
-
-            var wrap = $(selector).hasClass('wrap-units') ? true : false;
-
-            dornawebtimer( time , selector, wrap );
-
-            if (time == 0) {
-                alert("finished");
-                clearInterval(timer);
-            }
-        }, 1000);
-    }
-
-    $(".timer").each(function() {
-        var seconds = $(this).data("seconds");
-        dornaweb_countdown( seconds, this );
-    });
-    	
-    /**
      * "Scroll to" links
     */
     $("a.scroll_link").click(function(e) {
@@ -170,7 +106,7 @@ $(document).on('click', '[data-modal]', function(e) {
     }
 });
 
-      $(window).on('ready resize' , function(){
+        $(window).on('ready resize' , function(){
         var swiper = new Swiper('#license_slide', {
             grabCursor: true,
             centeredSlides: false,
@@ -178,15 +114,15 @@ $(document).on('click', '[data-modal]', function(e) {
             direction: 'vertical',
             effect: 'coverflow',
             coverflowEffect: {
-              rotate: 0,
-              stretch: 250,
-              depth: 150,
-              modifier: 2,
-              slideShadows : true,
+                rotate: 0,
+                stretch: 250,
+                depth: 150,
+                modifier: 2,
+                slideShadows : true,
             },
             pagination: {
-              el: '.license-slide-pagination',
-              clickable: true
+                el: '.license-slide-pagination',
+                clickable: true
             },
             breakpoints:{
                 991:{
@@ -246,7 +182,7 @@ $(document).on('click', '[data-modal]', function(e) {
                     },
                 },
 
-          }});
+            }});
 
         if ($(window).width() < 560) {
             swiper.destroy()
@@ -257,8 +193,8 @@ $(document).on('click', '[data-modal]', function(e) {
                 centeredSlides:false,
                 freeMode: false,
                 pagination: {
-                  el: '.license-slide-pagination',
-                  clickable: true
+                    el: '.license-slide-pagination',
+                    clickable: true
                 },
                 breakpoints:{
                     991:{
@@ -318,7 +254,7 @@ $(document).on('click', '[data-modal]', function(e) {
                         },
                     },
 
-              }});
+                }});
 
 
 
