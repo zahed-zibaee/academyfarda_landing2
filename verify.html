@@ -132,9 +132,10 @@
             <h2 class="title-product">تایید مشخصات</h2>
             <div class="mb-4">
               <h4 class="form-warning">تنها با 150 هزار تومان به عنوان پیش پرداخت کلاس را رزرو می‌کنید.</h4>
+              <h4 class="form-warning">کلاس به صورت حضوری در شعبه ولیعصر یا انقلاب تشکیل خواهد شد.</h4>
               <h4 class="form-warning">مراحل بعدی به جهت شرکت در کلاس در تماس بعدی کارشناسان با شما اعلام خواهد شد.</h4>
               <h4 class="form-warning">تاریخ شروع کلاس، نزدیک‌ترین دوره در "زمان کلاس" انتخاب شده توسط شما می‌باشد.</h4>
-              <h4 class="form-warning">هزینه رزرو کلاس غیر قابل استرداد می‌باشد و کارآموز تنها می‌تواند تاریخ شروع کلاس، زمان کلاس و یا نحوه پرداخت را تغییر دهد.</h4>
+              <h4 class="form-warning">هزینه رزرو کلاس غیر قابل استرداد می‌باشد و کارآموز تنها می‌تواند تاریخ شروع کلاس، زمان کلاس، شعبه و یا نحوه پرداخت را تغییر دهد.</h4>
             </div>
             <table class="table table-dark table-bordered table-hover mt-3 mb-5">
               <tbody class="bg-primary">
@@ -174,7 +175,7 @@
                   <th>
                     کد ملی
                   </th>
-                  <td id=meli_code>
+                  <td id=code_meli>
                     
                   </td>
                 </tr>
@@ -215,10 +216,10 @@
             <div class="row">
               <div class="col-md-2 col-lg-4"></div>
               <div class="col-md-4 col-lg-2 col-6 d-flex justify-content-center align-items-centers">
-                <a href="#" class="btn btn-secondary">بازگشت</a>
+                <a id="back" class="btn btn-secondary">بازگشت</a>
               </div>
               <div class="col-md-4 col-lg-2 col-6 d-flex justify-content-center align-items-center">
-                <a class="btn btn-red"> تایید مشخصات</a>
+                <a class="btn btn-red" data-toggle="modal" data-target="#exampleModal001"> تایید مشخصات</a>
               </div>
               <div class="col-md-2 col-lg-4"></div>
             </div>
@@ -302,11 +303,29 @@
           </div>
         </div>
       </footer>
+      <!------------------------END Footer-------------------->
+      <div class="modal fade" id="exampleModal001" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">تایید مشخصات</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-----------------------END Modal------------------------------------>
     </div>
     <!--site-wrap-->
 
     <script src="assets/js/plugins.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
     <script src="assets/js/main-thanks.js"></script>
+    <script src="assets/js/main-verify.js"></script>
   </body>
 </html>

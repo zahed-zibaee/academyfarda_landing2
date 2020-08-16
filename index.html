@@ -8,6 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, user-scalable=no">
   <meta name="Designer" content="Made with love by dornaweb, UI design by ivahid.com, and Academyfarda">
   <!-- End Loading Script -->
+  <link rel="stylesheet" href="assets/css/loading.css">
   <link rel="stylesheet" href="assets/css/plugins.css">
   <link rel="stylesheet" href="assets/css/bootstrap-grid.min.css">
   <link rel="stylesheet" href="assets/css/styles.css">
@@ -46,45 +47,11 @@
 </head>
 
 <body class="home body-on-loading">
-  <!------------------------------------------------------------------------------------>
-  <!-------------------------- Start Loading Scripts ----------------------------------->
-  <!------------------------------------------------------------------------------------>
-  <style>
-    .body-on-loading {
-      overflow: hidden;
-      height: 100vh;
-    }
-    #loading {
-      overflow: hidden;
-      position: fixed;
-      top: 0;
-      left: 0;
-      bottom: 0;
-      right: 0;
-      width: 100%;
-      height: 100%;
-      background-color: #fff;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      z-index: 99999;
-    }
-  </style>
   <!-- Start Loading -->
   <div id="loading">
     <img src="assets/svg/ball-triangle.svg" width="200" alt="loading...">
   </div>
   <!-- End Loading -->
-  <!-- Loading Scripts -->
-  <script>
-    setTimeout(function(){
-      $("#loading").fadeOut("slow");
-      $("body").removeClass("body-on-loading")}
-      , 4000);
-  </script>
-  <!------------------------------------------------------------------------------------>
-  <!-------------------------- End Loading Scripts ------------------------------------->
-  <!------------------------------------------------------------------------------------>
   <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="0" height="0"
     style="position:absolute">
 
@@ -2161,7 +2128,7 @@
             <div class="register-form-wrap" id="register-form-wrap">
               <div class="form sign-in left-form ml-0">
                 <h3 class="title-form"> فرم ثبت‌نام </h3>
-                <form id="register_form" class="form-wrapper2">
+                <form id="register_form2" class="form-wrapper2">
                   <div class="form-row">
                     <div class="col-lg-6 p-1">
                       <div class="form-item">
@@ -2194,7 +2161,7 @@
                       <div class="form-item">
                         <span class="required-star"> جنسیت </span>
                         <label>
-                          <select id="gender" class="form-control" >  
+                          <select name="gender" class="form-control" >  
                             <option value="" disabled selected>...</option> 
                             <option value="M">مرد</option>
                             <option value="F">زن</option>
@@ -2245,7 +2212,7 @@
                   <div class="form-item">
                     <span class="required-star"> آدرس </span>
                     <label>
-                      <textarea name="phone" type="text" pattern=".{1,3000}"
+                      <textarea name="address" type="text" pattern=".{1,3000}"
                         oninvalid="setCustomValidity('فرمت وارد شده صحیح نیست. ')"
                         onchange="try{setCustomValidity('')}catch(e){}"
                         autocomplete="off" required></textarea>
@@ -2256,7 +2223,7 @@
                       <div class="form-item">
                         <span class="required-star"> زمان کلاس </span>
                         <label>
-                          <select id="gender" class="form-control" >  
+                          <select name="class_time" class="form-control" >  
                             <option value="" disabled selected>...</option> 
                             <option value="912">کلاس فشرده شنبه تا چهارشنبه ساعت ۹ تا ۱۲</option>
                             <option value="1316">کلاس فشرده شنبه تا چهارشنبه ساعت ۱۳ تا ۱۶</option>
@@ -2271,11 +2238,11 @@
                       <div class="form-item">
                         <span class="required-star pb-3"> نوع پرداخت </span>
                           <div class="form-check form-check-inline mb-2">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                            <input class="form-check-input" type="radio" name="payment_type" id="inlineRadio1" value="option1">
                             <label class="form-check-label" for="inlineRadio1">اقساط</label>
                           </div>
                           <div class="form-check form-check-inline mb-2">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                            <input class="form-check-input" type="radio" name="payment_type" id="inlineRadio2" value="option2">
                             <label class="form-check-label" for="inlineRadio2">نقدی</label>
                           </div>
                       </div>
@@ -2627,7 +2594,7 @@
           <div class="register-form-wrap ">
             <div class="left-form">
               <h3 class="title-form"> فرم ثبت‌نام </h3>
-              <form class="form-wrapper2">
+              <form id="register_form2" class="form-wrapper2">
                 <div class="form-row">
                   <div class="col-lg-6 p-1">
                     <div class="form-item">
@@ -2651,7 +2618,7 @@
                     <div class="form-item">
                       <span class="required-star"> جنسیت </span>
                       <label>
-                        <select id="gender" class="form-control">  
+                        <select name="gender" class="form-control">  
                           <option value="" disabled="" selected="">...</option> 
                           <option value="M">مرد</option>
                           <option value="F">زن</option>
@@ -2693,7 +2660,7 @@
                 <div class="form-item">
                   <span class="required-star"> آدرس </span>
                   <label>
-                    <textarea name="phone" type="text" pattern=".{1,3000}" oninvalid="setCustomValidity('فرمت وارد شده صحیح نیست. ')" onchange="try{setCustomValidity('')}catch(e){}" autocomplete="off" required=""></textarea>
+                    <textarea name="address" type="text" pattern=".{1,3000}" oninvalid="setCustomValidity('فرمت وارد شده صحیح نیست. ')" onchange="try{setCustomValidity('')}catch(e){}" autocomplete="off" required=""></textarea>
                   </label>
                 </div>
                 <div class="form-row">
@@ -2701,7 +2668,7 @@
                     <div class="form-item">
                       <span class="required-star"> زمان کلاس </span>
                       <label>
-                        <select id="gender" class="form-control">  
+                        <select name="class_time" class="form-control">  
                           <option value="" disabled="" selected="">...</option> 
                           <option value="912">کلاس فشرده شنبه تا چهارشنبه ساعت ۹ تا ۱۲</option>
                           <option value="1316">کلاس فشرده شنبه تا چهارشنبه ساعت ۱۳ تا ۱۶</option>
@@ -2716,11 +2683,11 @@
                     <div class="form-item">
                       <span class="required-star pb-3"> نوع پرداخت </span>
                       <div class="form-check form-check-inline mb-2">
-                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option1">
+                        <input class="form-check-input" type="radio" name="payment_type" id="inlineRadio3" value="option1">
                         <label class="form-check-label" for="inlineRadio3">اقساط</label>
                       </div>
                       <div class="form-check form-check-inline mb-2">
-                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio4" value="option2">
+                        <input class="form-check-input" type="radio" name="payment_type" id="inlineRadio4" value="option2">
                         <label class="form-check-label" for="inlineRadio4">نقدی</label>
                       </div>
                     </div>

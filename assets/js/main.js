@@ -10,6 +10,29 @@ function dwtoast( txt ) {
 function getBootstrapDeviceSize() {
     return $('#users-device-size').find('div:visible').first().attr('id');
 }
+//////
+////// LOADING
+//////
+$urlParam = function(name){
+    var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
+    if (results != null){
+        return results[1] || 0;
+    }else {
+        return null;
+    }
+}
+if ($urlParam('loading') == "off") {
+    setTimeout(function(){
+      $("#loading").fadeOut("fast");
+      $("body").removeClass("body-on-loading")}
+      , 0);
+}else {
+    setTimeout(function(){
+        $("#loading").fadeOut("slow");
+        $("body").removeClass("body-on-loading")}
+        , 6000);
+}
+//end loading
 (function($){
     /**
      * "Scroll to" links
@@ -27,7 +50,7 @@ function getBootstrapDeviceSize() {
 
         return false;
     });
-
+  //this is for send lead
   $('#register_form').submit(function(e) {
     e.preventDefault();
 
@@ -80,7 +103,32 @@ function getBootstrapDeviceSize() {
       }
     });
   });
-
+  // this is for buy course
+  $('#register_form2').submit(function(e) {
+    e.preventDefault();
+    var $form = $(this);
+    var data  = $form.serializeArray();
+    var result = { };
+    $.each(data, function() {
+        result[this.name] = this.value;
+    });
+    var url = './verify.html?name=' + result.name + '&' + 'family=' + result.family + '&' + 'gender=' + result.gender + '&' + 'father_name=' + result.father_name + '&' + 'code_meli=' + result.code_meli + '&' + 'phone=' + result.phone + '&' + 'address=' + result.address + '&' + 'class_time=' + result.class_time + '&' + 'payment_type=' + result.payment_type + '&'
+    $.ajax({
+      url: url,
+      method: 'GET',
+      data: data,
+      crossDomain: true,
+      success: function(res) {
+        console.log(res);
+        setTimeout(function() {
+            window.location.href = url
+        }, 1000)
+      },
+      error: function(e, v) {
+        dwtoast($form.find('.error-message').html())
+      }
+    });
+  });
     /**
      * modal definations
     */
