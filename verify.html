@@ -140,74 +140,74 @@
             <table class="table table-dark table-bordered table-hover mt-3 mb-5">
               <tbody class="bg-primary">
                 <tr>
-                  <th class="text-nowarp px-2">
+                  <th class="text-nowarp spacer-007">
                     نام
                   </th>
-                  <td id=name>
+                  <td class="text-right pr-3 font-verify" id=name>
                     
                   </td>
                 </tr>
                 <tr>
-                  <th class="text-nowarp px-2">
+                  <th class="text-nowarp spacer-007">
                     نام خانوادگی
                   </th>
-                  <td id=family>
+                  <td class="text-right pr-3 font-verify" id=family>
                     
                   </td>
                 </tr>
                 <tr>
-                  <th class="text-nowarp px-2">
+                  <th class="text-nowarp spacer-007">
                     جنسیت
                   </th>
-                  <td id=gender>
+                  <td class="text-right pr-3 font-verify" id=gender>
                     
                   </td>
                 </tr>
                 <tr>
-                  <th class="text-nowarp px-2">
+                  <th class="text-nowarp spacer-007">
                     نام پدر
                   </th>
-                  <td id=father_name>
+                  <td class="text-right pr-3 font-verify" id=father_name>
                     
                   </td>
                 </tr>
                 <tr>
-                  <th class="text-nowarp px-2">
+                  <th class="text-nowarp spacer-007">
                     کد ملی
                   </th>
-                  <td id=code_meli>
+                  <td class="text-right pr-3 font-verify" id=code_meli>
                     
                   </td>
                 </tr>
                 <tr>
-                  <th class="text-nowarp px-2">
+                  <th class="text-nowarp spacer-007">
                     شماره تماس
                   </th>
-                  <td id=phone>
+                  <td class="text-right pr-3 font-verify" id=phone>
                     
                   </td>
                 </tr>
                 <tr>
-                  <th class="text-nowarp px-2">
+                  <th class="text-nowarp spacer-007">
                     آدرس
                   </th>
-                  <td id=address>
+                  <td class="text-right pr-3 font-verify" id=address>
                     
                   </td>
                 </tr>
                 <tr>
-                  <th class="text-nowarp px-2">
+                  <th class="text-nowarp spacer-007">
                     زمان کلاس
                   </th>
-                  <td id=class_time>
+                  <td class="text-right pr-3 font-verify" id=class_time>
                     
                   </td>
                 </tr>
                 <tr>
-                  <th class="text-nowarp px-2">
+                  <th class="text-nowarp spacer-007">
                     نوع پرداخت
                   </th>
-                  <td id=payment_type>
+                  <td class="text-right pr-3 font-verify" id=payment_type>
                     
                   </td>
                 </tr>
@@ -219,7 +219,7 @@
                 <a id="back" class="btn btn-secondary">بازگشت</a>
               </div>
               <div class="col-md-4 col-lg-2 col-6 d-flex justify-content-center align-items-center">
-                <a class="btn btn-red" data-toggle="modal" data-target="#exampleModal001"> تایید مشخصات</a>
+                <a class="btn btn-red" id="verify" data-toggle="modal" data-target="#exampleModal001"> تایید مشخصات</a>
               </div>
               <div class="col-md-2 col-lg-4"></div>
             </div>
@@ -308,13 +308,31 @@
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">تایید مشخصات</h5>
+              <h5 class="modal-title" id="exampleModalLabel">احراز هویت</h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
             <div class="modal-body">
-              
+              <span class="">کد تایید به شماره شما ارسال شد.</span>
+              <div class="d-flex justify-content-center py-4">
+                <div id="wrapper">
+                  <form class="ltr" id="form">
+                    <input class="first" id="num1" type="number" maxLength="1" size="1" min="0" max="9" pattern="[0-9]{1}" />
+                    <input id="num2" type="number" maxLength="1" size="1" min="0" max="9" pattern="[0-9]{1}" />
+                    <input id="num3" type="number" maxLength="1" size="1" min="0" max="9" pattern="[0-9]{1}" />
+                    <input id="num4" type="number" maxLength="1" size="1" min="0" max="9" pattern="[0-9]{1}" />
+                    <input id="num5" type="number" maxLength="1" size="1" min="0" max="9" pattern="[0-9]{1}" />
+                    <input class="last" id="num6" type="number" maxLength="1" size="1" min="0" max="9" pattern="[0-9]{1}" />
+                  </form>
+                </div>
+              </div>
+              <span>60 sec</span>
+              <a href="">ارسال دوباره کد</a>
+              <a class="" href="">من کد نخفیف دارم</a>
+              <div class="fade">
+                aaa
+              </div>
             </div>
           </div>
         </div>
@@ -322,10 +340,10 @@
       <!-----------------------END Modal------------------------------------>
     </div>
     <!--site-wrap-->
-
-    <script src="assets/js/plugins.js"></script>
+    <script src="assets/js/jQuery.persianNumbers-1.0.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
     <script src="assets/js/main-thanks.js"></script>
     <script src="assets/js/main-verify.js"></script>
+    
   </body>
 </html>
