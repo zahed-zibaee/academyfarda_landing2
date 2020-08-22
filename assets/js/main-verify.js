@@ -105,48 +105,34 @@ $(function() {
 });
 
 
-
 var sent = false;
-var ip = "";
-$.ajax({
-    url: "https://api.ipify.org",
-    method: 'GET',
-    crossDomain: true,
-    success: function(res) {
-        ip = res;
-    },
-    error: function(e, v) {
-        alert("آدرس ip شما مشخص نیست");
-    }
-});
-$("#send_sms_validator_but").click(function(e) {
+var verify_id = 0;
+$("#send_sms_validator").click(function(e) {
     e.preventDefault();
-    e.stopPropagation();
     if (sent == false){
         var phone = $urlParam('phone');
-        var data = "phone=" + phone + "&ip=" + ip 
+        var data = "phone=" + phone
         var url = "http://127.0.0.1:8000/SMS/lookup";
         $.ajax({
             url: url,
-            method: 'POST',
+            type: 'POST',
             data: data,
             crossDomain: true,
             success: function(res) {
-                console.log(res.status);
-                if (json.status == 0){
-                    sent = true;
+                if (res.status == 200){
+                    verify_id = res.id;
+                    console.log(res);
                 }else{
-                    sent = false;
-                    alert("اشکال در ارسال اس ام اس ارور " + json.status)
+                    alert("پیام ارسال نشد. " + res.status_message);
                 }
+                sent = true;
             },
-            error: function(xhr, status, error) {
-                console.log(status);
-                alert("اشکال در ارسال اس ام اس ")
+            error: function(error) {
+                alert("اشکال در ارسال اس ام اس" + error.responseText)
             }
         });
     }
     setTimeout(() => {
         $('#num1')[0].focus();
-    }, 500)
+    }, 1000)
 });
