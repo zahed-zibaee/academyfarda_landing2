@@ -106,37 +106,47 @@ $(function() {
 
 
 
-$(document).on('click', '#verify', function(e) {
+var sent = false;
+var ip = "";
+$.ajax({
+    url: "https://api.ipify.org",
+    method: 'GET',
+    crossDomain: true,
+    success: function(res) {
+        ip = res;
+    },
+    error: function(e, v) {
+        alert("آدرس ip شما مشخص نیست");
+    }
+});
+$("#send_sms_validator_but").click(function(e) {
     e.preventDefault();
-    var ip = "";
-    $.ajax({
-        url: "https://api.ipify.org",
-        method: 'GET',
-        crossDomain: true,
-        success: function(res) {
-            ip = res;
-        },
-        error: function(e, v) {
-            alert("آدرس ip شما مشخص نیست");
-        }
-    });
-    var phone  = $urlParam('phone');
-    var url = "https://academyfarda.com/SMS/lookup"
-    $.ajax({
-        url: url,
-        method: 'POST',
-        data: phone,
-        crossDomain: true,
-        success: function(res) {
-          alert("sms sent");
-        },
-        error: function(e, v) {
-          dwtoast($form.find('.error-message').html())
-        }
-    });
-
+    e.stopPropagation();
+    if (sent == false){
+        var phone = $urlParam('phone');
+        var data = "phone=" + phone + "&ip=" + ip 
+        var url = "http://127.0.0.1:8000/SMS/lookup";
+        $.ajax({
+            url: url,
+            method: 'POST',
+            data: data,
+            crossDomain: true,
+            success: function(res) {
+                console.log(res.status);
+                if (json.status == 0){
+                    sent = true;
+                }else{
+                    sent = false;
+                    alert("اشکال در ارسال اس ام اس ارور " + json.status)
+                }
+            },
+            error: function(xhr, status, error) {
+                console.log(status);
+                alert("اشکال در ارسال اس ام اس ")
+            }
+        });
+    }
     setTimeout(() => {
         $('#num1')[0].focus();
     }, 500)
 });
-    
