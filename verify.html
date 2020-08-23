@@ -213,8 +213,8 @@
                 </tr>
               </tbody>
             </table>
-            
-            <form class="pb-5 mb-5" id="form-discount">
+            <a href="" id="open-discount">اگر کد تخفیف دارید اینجا کلیک کنید.</a>
+            <form class="pb-5 mb-5 hide" id="form-discount">
               <div class="row justify-content-center">
                 <h4 class="text-center pb-2">اگر کد تخفیف دارید میتوانید در کادر زیر وارد کنید.</h4>
               </div>
@@ -222,20 +222,19 @@
                 <div class="col-md-4">
                   <div class="row">
                     <div class="col-8 d-flex justify-content-center align-content-center">
-                      <input class="form-control" type="text">
+                      <input id="input-discount"  class="form-control" type="text">
                     </div>
                     <div class="col-4">
-                      <a class="btn btn-orange">اعمال کد</a>
+                      <a id="check_discount" class="btn btn-orange">اعمال کد</a>
                     </div>
                   </div>
                 </div> 
               </div>
               <div class="row d-flex justify-content-center pt-3">
-                <h3 id="discount-ans" class="good hide">کد تخفیف <span id="discount-code"></span> اعمال شد. قابل پرداخت <span id="amount"></span> تومان</h3>
-                <h3 id="discount-ans" class="bad hide">کد تخفیف اشتباه است یا تاریخ آن گذشته.</h3>
+                <h3 id="discount-ans-g" class="hide">کد تخفیف <span id="discount-code"></span> اعمال شد. مبلغ نهایی قابل پرداخت <span id="amount"></span> تومان</h3>
+                <h3 id="discount-ans-b" class=" hide">کد تخفیف اشتباه است یا تاریخ آن گذشته.</h3>
               </div>
             </form>
-            
             <div class="row">
               <div class="col-md-2 col-lg-4"></div>
               <div class="col-md-4 col-lg-2 col-6">
@@ -343,19 +342,15 @@
                   <form class="ltr" id="form">
                     <input class="first" id="num1" type="number" maxLength="1" size="1" min="0" max="9" pattern="[0-9]{1}" />
                     <input id="num2" type="number" maxLength="1" size="1" min="0" max="9" pattern="[0-9]{1}" />
-                    <input id="num3" type="number" maxLength="1" size="1" min="0" max="9" pattern="[0-9]{1}" />
-                    <input id="num4" type="number" maxLength="1" size="1" min="0" max="9" pattern="[0-9]{1}" />
+                    <input class="mr-4" id="num3" type="number" maxLength="1" size="1" min="0" max="9" pattern="[0-9]{1}" />
+                    <input class="ml-4" id="num4" type="number" maxLength="1" size="1" min="0" max="9" pattern="[0-9]{1}" />
                     <input id="num5" type="number" maxLength="1" size="1" min="0" max="9" pattern="[0-9]{1}" />
                     <input class="last" id="num6" type="number" maxLength="1" size="1" min="0" max="9" pattern="[0-9]{1}" />
                   </form>
                 </div>
               </div>
-              <span>60 sec</span>
-              <a href="">ارسال دوباره کد</a>
-              <a class="" href="">من کد نخفیف دارم</a>
-              <div class="fade">
-                aaa
-              </div>
+              <span class=""></span>
+              <a id="resend" class="hide" href="">ارسال دوباره کد</a>
             </div>
           </div>
         </div>

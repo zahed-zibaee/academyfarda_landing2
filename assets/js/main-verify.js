@@ -33,9 +33,7 @@ if (decodeURIComponent($urlParam('payment_type')) == "option1" ) {
     $("#payment_type").text("اقساط");
 }
 
-//
-// Mobile Verification
-//
+// Mobile Verification input
 $(function() {
     'use strict';
 
@@ -103,7 +101,39 @@ $(function() {
     body.on('click', 'input', onFocus);
 
 });
-
+//function sms send
+function smssend(e){
+    e.preventDefault();
+    var phone = $urlParam('phone');
+    var data = "phone=" + phone
+    var url = "http://127.0.0.1:8000/SMS/lookup";
+    $.ajax({
+        url: url,
+        type: 'POST',
+        data: data,
+        crossDomain: true,
+        success: function(res) {
+            if (res.status == 200){
+                verify_id = res.id;
+                console.log(res);
+                $('#exampleModal001').modal('show');
+                setTimeout(() => {
+                    $('#num1')[0].focus();
+                }, 1000)
+                sent = true;
+                lock = false;
+            }else{
+                alert("پیام ارسال نشد. " + res.status_message);
+                lock = false;
+            }
+        },
+        error: function(error) {
+            alert("اشکال در ارسال اس ام اس")
+            lock = false;
+        }
+    });
+}
+//send validation sms
 var lock = false;
 var sent = false;
 var verify_id = 0;
@@ -112,34 +142,7 @@ $("#send_sms_validator").click(function(e) {
     if (lock == false){
         lock = true;
         if (sent == false){
-            var phone = $urlParam('phone');
-            var data = "phone=" + phone
-            var url = "http://127.0.0.1:8000/SMS/lookup";
-            $.ajax({
-                url: url,
-                type: 'POST',
-                data: data,
-                crossDomain: true,
-                success: function(res) {
-                    if (res.status == 200){
-                        verify_id = res.id;
-                        console.log(res);
-                        $('#exampleModal001').modal('show');
-                        setTimeout(() => {
-                            $('#num1')[0].focus();
-                        }, 1000)
-                        sent = true;
-                        lock = false;
-                    }else{
-                        alert("پیام ارسال نشد. " + res.status_message);
-                        lock = false;
-                    }
-                },
-                error: function(error) {
-                    alert("اشکال در ارسال اس ام اس")
-                    lock = false;
-                }
-            });
+            sendsms(this);
         }else{
             $('#exampleModal001').modal('show');
             setTimeout(() => {
@@ -149,3 +152,81 @@ $("#send_sms_validator").click(function(e) {
         }
     }
 });
+// discount code show
+$("#open-discount").click(function(e) {
+    e.preventDefault();
+    $("#form-discount").removeClass("hide");
+    $('#open-discount').addClass("force-hide");
+});
+//checking discount
+var discount_code = "NULL"
+$("#check_discount").click(function(e){
+    e.preventDefault();
+    var discount_c = $("#input-discount").val();
+    var course_id = $urlParam('class_time');
+    var data = "discount_code=" + discount_c + "&" + "course_id=" + course_id
+    var url = "http://127.0.0.1:8000/payments/checkdiscountcourse";
+            $.ajax({
+                url: url,
+                type: 'POST',
+                data: data,
+                crossDomain: true,
+                success: function(res) {
+                    discount_code = discount_c;
+                    $("#discount-ans-g").removeClass("hide");
+                    $("#discount-ans-b").addClass("hide");
+                    $("#discount-code").html(discount_code);
+                    $("#amount").html($.persianNumbers(res.amount));
+                    console.log(res);
+                },
+                error: function(error) {
+                    discount_code = "NULL";
+                    $("#discount-ans-g").addClass("hide");
+                    $("#discount-ans-b").removeClass("hide");
+                    console.log(error);
+                }
+            });
+});
+//verify and submit all data and get payment url
+function submit(e) {
+    e.preventDefault();
+    var url = './index.html?loading=off'
+    var data = ""
+    $.ajax({
+      url: url,
+      type: 'POST',
+      data: data,
+      crossDomain: true,
+      success: function(res) {
+        console.log(res);
+        setTimeout(function() {
+            window.location.href = url
+        }, 1000)
+      },
+      error: function(e, v) {
+        dwtoast($form.find('.error-message').html())
+      }
+    });
+}
+//back to index with loading off
+$('#back').click(function(e) {
+    e.preventDefault();
+    var url = './index.html?loading=off'
+    var data = ""
+    $.ajax({
+      url: url,
+      method: 'GET',
+      data: data,
+      crossDomain: true,
+      success: function(res) {
+        console.log(res);
+        setTimeout(function() {
+            window.location.href = url
+        }, 1000)
+      },
+      error: function(e, v) {
+        dwtoast($form.find('.error-message').html())
+      }
+    });
+});
+//resend sms after 60 sec
