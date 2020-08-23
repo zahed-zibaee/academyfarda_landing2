@@ -6141,3 +6141,9 @@ margin: 0;
   background: transparent;
   color: black;
 }
+#discount-ans.good{
+  color: green !important;
+}
+#discount-ans.bad{
+  color: red !important; 
+}

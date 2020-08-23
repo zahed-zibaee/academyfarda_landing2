@@ -213,13 +213,36 @@
                 </tr>
               </tbody>
             </table>
+            
+            <form class="pb-5 mb-5" id="form-discount">
+              <div class="row justify-content-center">
+                <h4 class="text-center pb-2">اگر کد تخفیف دارید میتوانید در کادر زیر وارد کنید.</h4>
+              </div>
+              <div class="row justify-content-center">
+                <div class="col-md-4">
+                  <div class="row">
+                    <div class="col-8 d-flex justify-content-center align-content-center">
+                      <input class="form-control" type="text">
+                    </div>
+                    <div class="col-4">
+                      <a class="btn btn-orange">اعمال کد</a>
+                    </div>
+                  </div>
+                </div> 
+              </div>
+              <div class="row d-flex justify-content-center pt-3">
+                <h3 id="discount-ans" class="good hide">کد تخفیف <span id="discount-code"></span> اعمال شد. قابل پرداخت <span id="amount"></span> تومان</h3>
+                <h3 id="discount-ans" class="bad hide">کد تخفیف اشتباه است یا تاریخ آن گذشته.</h3>
+              </div>
+            </form>
+            
             <div class="row">
               <div class="col-md-2 col-lg-4"></div>
-              <div class="col-md-4 col-lg-2 col-6 d-flex justify-content-center align-items-centers">
+              <div class="col-md-4 col-lg-2 col-6">
                 <a id="back" class="btn btn-secondary">بازگشت</a>
               </div>
-              <div class="col-md-4 col-lg-2 col-6 d-flex justify-content-center align-items-center">
-                <a id="send_sms_validator" class="btn btn-red" id="verify" data-toggle="modal" data-target="#exampleModal001">تایید مشخصات</a>
+              <div class="col-md-4 col-lg-2 col-6">
+                <a id="send_sms_validator" class="btn btn-red">تایید مشخصات</a>
               </div>
               <div class="col-md-2 col-lg-4"></div>
             </div>

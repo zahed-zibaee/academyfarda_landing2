@@ -104,35 +104,48 @@ $(function() {
 
 });
 
-
+var lock = false;
 var sent = false;
 var verify_id = 0;
 $("#send_sms_validator").click(function(e) {
     e.preventDefault();
-    if (sent == false){
-        var phone = $urlParam('phone');
-        var data = "phone=" + phone
-        var url = "http://127.0.0.1:8000/SMS/lookup";
-        $.ajax({
-            url: url,
-            type: 'POST',
-            data: data,
-            crossDomain: true,
-            success: function(res) {
-                if (res.status == 200){
-                    verify_id = res.id;
-                    console.log(res);
-                }else{
-                    alert("پیام ارسال نشد. " + res.status_message);
+    if (lock == false){
+        lock = true;
+        if (sent == false){
+            var phone = $urlParam('phone');
+            var data = "phone=" + phone
+            var url = "http://127.0.0.1:8000/SMS/lookup";
+            $.ajax({
+                url: url,
+                type: 'POST',
+                data: data,
+                crossDomain: true,
+                success: function(res) {
+                    if (res.status == 200){
+                        verify_id = res.id;
+                        console.log(res);
+                        $('#exampleModal001').modal('show');
+                        setTimeout(() => {
+                            $('#num1')[0].focus();
+                        }, 1000)
+                        sent = true;
+                        lock = false;
+                    }else{
+                        alert("پیام ارسال نشد. " + res.status_message);
+                        lock = false;
+                    }
+                },
+                error: function(error) {
+                    alert("اشکال در ارسال اس ام اس")
+                    lock = false;
                 }
-                sent = true;
-            },
-            error: function(error) {
-                alert("اشکال در ارسال اس ام اس" + error.responseText)
-            }
-        });
+            });
+        }else{
+            $('#exampleModal001').modal('show');
+            setTimeout(() => {
+                $('#num1')[0].focus();
+            }, 1000)
+            lock = false;
+        }
     }
-    setTimeout(() => {
-        $('#num1')[0].focus();
-    }, 1000)
 });
