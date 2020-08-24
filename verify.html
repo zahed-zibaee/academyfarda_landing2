@@ -56,6 +56,9 @@
   </head>
 
   <body class="home">
+    <div id="loading2" class="force-hide">
+      <img src="assets/svg/ball-triangle.svg" width="200" alt="loading...">
+    </div>
     <div class="site-wrap" id="site_wrap">
       <!-------------------------------start-header----------------------------------->
       <header class="site-header site-header-200px">
@@ -349,8 +352,17 @@
                   </form>
                 </div>
               </div>
-              <span class=""></span>
-              <a id="resend" class="hide" href="">ارسال دوباره کد</a>
+              <div class="row justify-content-center">
+                <span id="wrong-code" class="hide" style="color:red;">کد وارد شده شتباه است.</span>
+              </div>
+              <div id="aaa"></div>
+              <div class="row justify-content-center">
+                <h3 id="timer">
+                  <span id="timeleft"></span>
+                  <span>ثانیه تا ارسال دوباره کد</span>
+                </h3>
+                <a id="resend-btn" class="" href="">ارسال دوباره کد</a>
+              </div>
             </div>
           </div>
         </div>

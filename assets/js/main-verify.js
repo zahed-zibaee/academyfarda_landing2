@@ -1,4 +1,4 @@
-//verify informations
+//get url parameters
 $urlParam = function(name){
     var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
     if (results != null){
@@ -7,6 +7,16 @@ $urlParam = function(name){
         return null;
     }
 }
+//global var
+var discount_code = "NULL";
+var timeLeft = 0;
+var lock = false;
+var sent = false;
+var verify_id = 0;
+var course_id = decodeURIComponent($urlParam('class_time'));
+var token1 = "";
+var token2 = "";
+//put data to table
 $("#name").text(decodeURIComponent($urlParam('name')));
 $("#family").text(decodeURIComponent($urlParam('family')));
 if (decodeURIComponent($urlParam('gender')) == "M" ) {
@@ -32,7 +42,27 @@ if (decodeURIComponent($urlParam('payment_type')) == "option1" ) {
 }else{
     $("#payment_type").text("اقساط");
 }
-
+//back to landing page with loading off
+$('#back').click(function(e) {
+    e.preventDefault();
+    var url = './index.html?loading=off'
+    var data = ""
+    $.ajax({
+      url: url,
+      method: 'GET',
+      data: data,
+      crossDomain: true,
+      success: function(res) {
+        console.log(res);
+        setTimeout(function() {
+            window.location.href = url;
+        }, 1000)
+      },
+      error: function(e, v) {
+        dwtoast($form.find('.error-message').html())
+      }
+    });
+});
 // Mobile Verification input
 $(function() {
     'use strict';
@@ -42,21 +72,24 @@ $(function() {
 
     
     function goToPreviousInput(e){
-        var t = $(e.target),
-        sib = t.prev('input');
-
-        t[0].value = "";
-        sib.select().focus();    
+        $("#num1")[0].focus()
+        badsmsinputremover();   
     }
 
     function goToNextInput(e) {
         var key = e.which,
         t = $(e.target),
         sib = t.next('input');
-
-        
         if (t.hasClass("last")){
             flag_last = true;
+            loadingadd();
+            if (check_course_validation() == true && check_data_validation() == true){
+                gettokens();
+                submit();
+            }else{
+                loadingremove();
+                alert("اطلاعات وارد شده را بررسی کنید و یا با پشتیبانی تماس حاصل کنید.")
+            }
         }else{
             flag_last = false;
         }
@@ -82,7 +115,11 @@ $(function() {
         }, 50);  
     }
     function onKeyDown(e) {
-        var key = e.which;
+        var key = e.which,
+        t = $(e.target);
+        if (t[0].value.length == 1){
+            goToNextInput(e);
+        }
         if (key === 8){
             goToPreviousInput(e);
         }
@@ -94,6 +131,7 @@ $(function() {
     }
     function onFocus(e) {
         $(e.target).select();
+        badsmsinputremover();
     }
 
     body.on('keyup', 'input', goToNextInput);
@@ -102,8 +140,7 @@ $(function() {
 
 });
 //function sms send
-function smssend(e){
-    e.preventDefault();
+function sendsms(){
     var phone = $urlParam('phone');
     var data = "phone=" + phone
     var url = "http://127.0.0.1:8000/SMS/lookup";
@@ -130,19 +167,18 @@ function smssend(e){
         error: function(error) {
             alert("اشکال در ارسال اس ام اس")
             lock = false;
+            console.log(error);
         }
     });
 }
-//send validation sms
-var lock = false;
-var sent = false;
-var verify_id = 0;
+//send validation sms 
 $("#send_sms_validator").click(function(e) {
     e.preventDefault();
     if (lock == false){
         lock = true;
         if (sent == false){
-            sendsms(this);
+            sendsms();
+            timeLeft = 61;
         }else{
             $('#exampleModal001').modal('show');
             setTimeout(() => {
@@ -152,81 +188,211 @@ $("#send_sms_validator").click(function(e) {
         }
     }
 });
-// discount code show
+//discount code show
 $("#open-discount").click(function(e) {
     e.preventDefault();
     $("#form-discount").removeClass("hide");
     $('#open-discount').addClass("force-hide");
 });
-//checking discount
-var discount_code = "NULL"
-$("#check_discount").click(function(e){
-    e.preventDefault();
+//verify data for validation functions
+function check_course_validation(){
+    var data = "course_id=" + course_id
+    var url = "http://127.0.0.1:8000/payments/checkcourse";
+    var aj = $.ajax({
+        url: url,
+        type: 'POST',
+        data: data,
+        async: false,
+        crossDomain: true,
+        success: function(res) {
+            console.log(res);
+        },
+        error: function(error) {
+            console.log("دوره انتخاب شده فعال نیست و یا اصلا وجود ندارد.");
+        }
+    });
+    if (aj.status == 200){
+        return true;
+    }else{
+        return false;
+    }
+}
+function check_discount_validation() {
     var discount_c = $("#input-discount").val();
     var course_id = $urlParam('class_time');
     var data = "discount_code=" + discount_c + "&" + "course_id=" + course_id
     var url = "http://127.0.0.1:8000/payments/checkdiscountcourse";
-            $.ajax({
-                url: url,
-                type: 'POST',
-                data: data,
-                crossDomain: true,
-                success: function(res) {
-                    discount_code = discount_c;
-                    $("#discount-ans-g").removeClass("hide");
-                    $("#discount-ans-b").addClass("hide");
-                    $("#discount-code").html(discount_code);
-                    $("#amount").html($.persianNumbers(res.amount));
-                    console.log(res);
-                },
-                error: function(error) {
-                    discount_code = "NULL";
-                    $("#discount-ans-g").addClass("hide");
-                    $("#discount-ans-b").removeClass("hide");
-                    console.log(error);
-                }
-            });
-});
-//verify and submit all data and get payment url
-function submit(e) {
+    $.ajax({
+        url: url,
+        type: 'POST',
+        data: data,
+        crossDomain: true,
+        success: function(res) {
+            discount_code = discount_c;
+            $("#discount-ans-g").removeClass("hide");
+            $("#discount-ans-b").addClass("hide");
+            $("#discount-code").html(discount_code);
+            $("#amount").html($.persianNumbers(res.amount));
+            console.log(res);
+            return true;
+        },
+        error: function(error) {
+            discount_code = "NULL";
+            $("#discount-ans-g").addClass("hide");
+            $("#discount-ans-b").removeClass("hide");
+            console.log(error);
+            return false;
+        }
+    });
+}
+function check_data_validation(){
+    var regex_failed = false;
+    var regex_names = RegExp("^.{3,200}$");
+    if (regex_names.test(decodeURIComponent($urlParam('name'))) == false ){
+        console.log("نام شما کمتر از سه حرف یا بیشتر از مقدار در نظر گرفته شده می‌باشد.");
+        regex_failed = true;
+    }
+    if (regex_names.test(decodeURIComponent($urlParam('family'))) == false ){
+        console.log("نام خانوادگی شما کمتر از سه حرف یا بیشتر از مقدار در نظر گرفته شده می‌باشد.");
+        regex_failed = true;
+    }
+    if (regex_names.test(decodeURIComponent($urlParam('father_name'))) == false ){
+        console.log("نام پدر شما کمتر از سه حرف یا بیشتر از مقدار در نظر گرفته شده می‌باشد.");
+        regex_failed = true;
+    }
+    var regex_gender = RegExp("^[M,F]$");
+    if (regex_gender.test(decodeURIComponent($urlParam('gender'))) == false ){
+        console.log("نام خانوادگی شما کمتر از سه حرف یا بیشتر از مقدار در نظر گرفته شده می‌باشد.");
+        regex_failed = true;
+    }
+    var regex_meli = RegExp("^[0-9]{10}$");
+    if (regex_meli.test(decodeURIComponent($urlParam('code_meli'))) == false ){
+        console.log("کد ملی باید شامل 10 رقم باشد.");
+        regex_failed = true;
+    }
+    var regex_phone = RegExp("^09[0-9]{9}$");
+    if (regex_phone.test(decodeURIComponent($urlParam('phone'))) == false ){
+        console.log("شماره موبایل باید با 09 شروع و 9 رقم ادامه داشته باشد.");
+        regex_failed = true;
+    }
+    var regex_address = RegExp("^.{10,2000}$");
+    if (regex_address.test(decodeURIComponent($urlParam('address'))) == false ){
+        console.log("آدرس شما بسیار کوتاه و یا بسیار طولانی است.");
+        regex_failed = true;
+    }
+    var regex_payment_type = RegExp("^option[1-2]$");
+    if (regex_payment_type.test(decodeURIComponent($urlParam('payment_type'))) == false ){
+        console.log("نوع پرداخت باید یکی از دو حالت قسطی و یا نقدی باشد.");
+        regex_failed = true;
+    }
+    if (regex_failed == false){
+        return true
+    }else{
+        return false
+    }
+}
+//checking discount on click
+$("#check_discount").click(function(e){
     e.preventDefault();
-    var url = './index.html?loading=off'
-    var data = ""
+    discount_code = check_discount_validation();
+});
+//sms code input and loading functions
+function badsmsinputremover(){
+    $("#num1").val("");
+    $("#num2").val("");
+    $("#num3").val("");
+    $("#num4").val("");
+    $("#num5").val("");
+    $("#num6").val("");
+    $("#num1").removeClass("bad");
+    $("#num2").removeClass("bad");
+    $("#num3").removeClass("bad");
+    $("#num4").removeClass("bad");
+    $("#num5").removeClass("bad");
+    $("#num6").removeClass("bad");
+    $('#num1')[0].focus();
+    $('#wrong-code').addClass('hide');
+}
+function badsmsinput(){  
+    $("#num1").addClass("bad");
+    $("#num2").addClass("bad");
+    $("#num3").addClass("bad");
+    $("#num4").addClass("bad");
+    $("#num5").addClass("bad");
+    $("#num6").addClass("bad");
+    $('#wrong-code').removeClass('hide');
+}
+function clearsmsinput(){  
+    $("#num1").val("");
+    $("#num2").val("");
+    $("#num3").val("");
+    $("#num4").val("");
+    $("#num5").val("");
+    $("#num6").val("");
+    $('#num1')[0].focus();
+}
+function loadingadd(){
+    $("body").addClass("body-on-loading");
+    $("#loading2").removeClass("force-hide");
+}
+function loadingremove(){
+    $("body").removeClass("body-on-loading");
+    $("#loading2").addClass("force-hide");
+}
+//submit all data and get payment url function
+function submit() {
+    var url = 'http://127.0.0.1:8000/payments/cartcoursecreate'
+    var data = 'course_id=' + course_id + '&' + 'verify_id=' + verify_id + '&' + 'token1=' + token1 + '&' + 'token2=' + token2 + '&';
+    data = data + 'name=' + decodeURIComponent($urlParam('name')) + '&' + 'family=' + decodeURIComponent($urlParam('family')) + '&';
+    data = data + 'gender=' + decodeURIComponent($urlParam('gender')) + '&' + 'father_name=' + decodeURIComponent($urlParam('father_name')) + '&';
+    data = data + 'code_meli=' + decodeURIComponent($urlParam('code_meli')) + '&' + 'address=' + decodeURIComponent($urlParam('address')) + '&';
+    data = data + 'payment_type=' + decodeURIComponent($urlParam('payment_type'));
+    if (discount_code != "NULL"){
+        data = data + "&discount_code=" + discount_code;
+    }
+    console.log(data);
     $.ajax({
       url: url,
       type: 'POST',
       data: data,
       crossDomain: true,
       success: function(res) {
-        console.log(res);
         setTimeout(function() {
-            window.location.href = url
-        }, 1000)
+            window.location.href = res.url;
+        }, 1000);
       },
-      error: function(e, v) {
-        dwtoast($form.find('.error-message').html())
+      error: function(e) {
+        console.log(e);
+        loadingremove();
+        badsmsinput();
       }
     });
 }
-//back to index with loading off
-$('#back').click(function(e) {
-    e.preventDefault();
-    var url = './index.html?loading=off'
-    var data = ""
-    $.ajax({
-      url: url,
-      method: 'GET',
-      data: data,
-      crossDomain: true,
-      success: function(res) {
-        console.log(res);
-        setTimeout(function() {
-            window.location.href = url
-        }, 1000)
-      },
-      error: function(e, v) {
-        dwtoast($form.find('.error-message').html())
-      }
-    });
-});
+//count down
+function countDown() {
+    timeLeft = (timeLeft - 1);
+    return timeLeft
+}
+setInterval(function() {
+    var time = countDown(timeLeft);
+    if (time > 0){
+        $("#timeleft").html($.persianNumbers(time));
+        $("#timer").removeClass("hide");
+        $("#resend-btn").addClass("hide");
+    }else{
+        $("#timer").addClass("hide");
+        $("#resend-btn").removeClass("hide");
+    }
+}, 1000);
 //resend sms after 60 sec
+$("#resend-btn").click(function(e){
+    e.preventDefault();
+    sendsms();
+    timeLeft = 61;
+});
+//get 2 tokens from inputs
+function gettokens(){
+    token1 = $("#num1").val().toString() + $("#num2").val().toString() + $("#num3").val().toString();
+    token2 = $("#num4").val().toString() + $("#num5").val().toString() + $("#num6").val().toString();
+}
+ 

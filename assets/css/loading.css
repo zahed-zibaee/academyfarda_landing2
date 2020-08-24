@@ -1,7 +1,7 @@
 .body-on-loading {
     overflow: hidden;
     height: 100vh;
-  }
+}
 #loading {
 overflow: hidden;
 position: fixed;
