@@ -10,7 +10,6 @@ $urlParam = function(name){
 //global var
 var discount_code = "NULL";
 var timeLeft = 0;
-var lock = false;
 var sent = false;
 var verify_id = 0;
 var course_id = decodeURIComponent($urlParam('class_time'));
@@ -28,14 +27,16 @@ $("#father_name").text(decodeURIComponent($urlParam('father_name')));
 $("#code_meli").text($.persianNumbers(decodeURIComponent($urlParam('code_meli'))));
 $("#phone").text($.persianNumbers(decodeURIComponent($urlParam('phone'))));
 $("#address").text($.persianNumbers(decodeURIComponent($urlParam('address'))));
-if (decodeURIComponent($urlParam('class_time')) == "912" ) {
+if (decodeURIComponent($urlParam('class_time')) == "1" ) {
     $("#class_time").text("کلاس فشرده شنبه تا چهارشنبه ساعت ۹ تا ۱۲");
-}else if(decodeURIComponent($urlParam('class_time')) == "1316" ) {
+}else if(decodeURIComponent($urlParam('class_time')) == "2" ) {
     $("#class_time").text("کلاس فشرده شنبه تا چهارشنبه ساعت ۱۳ تا ۱۶");
-}else if(decodeURIComponent($urlParam('class_time')) == "1720Z" ) {
+}else if(decodeURIComponent($urlParam('class_time')) == "3" ) {
     $("#class_time").text("کلاس عادی زوج ساعت ۱۷ تا ۲۰");
-}else {
+}else if(decodeURIComponent($urlParam('class_time')) == "4" ){
     $("#class_time").text("کلاس عادی فرد ساعت ۱۷ تا ۲۰");
+}else {
+    $("#class_time").text("کلاس مورد نظز پیدا نشد.");
 }
 if (decodeURIComponent($urlParam('payment_type')) == "option1" ) {
     $("#payment_type").text("نقدی");
@@ -158,15 +159,15 @@ function sendsms(){
                     $('#num1')[0].focus();
                 }, 1000)
                 sent = true;
-                lock = false;
+                loadingremove();
             }else{
                 alert("پیام ارسال نشد. " + res.status_message);
-                lock = false;
+                loadingremove();
             }
         },
         error: function(error) {
             alert("اشکال در ارسال اس ام اس")
-            lock = false;
+            loadingremove();
             console.log(error);
         }
     });
@@ -174,18 +175,16 @@ function sendsms(){
 //send validation sms 
 $("#send_sms_validator").click(function(e) {
     e.preventDefault();
-    if (lock == false){
-        lock = true;
-        if (sent == false){
-            sendsms();
-            timeLeft = 61;
-        }else{
-            $('#exampleModal001').modal('show');
-            setTimeout(() => {
-                $('#num1')[0].focus();
-            }, 1000)
-            lock = false;
-        }
+    loadingremove();
+    if (sent == false){
+        sendsms();
+        timeLeft = 61;
+    }else{
+        $('#exampleModal001').modal('show');
+        setTimeout(() => {
+            $('#num1')[0].focus();
+        }, 1000)
+        lock = false;
     }
 });
 //discount code show
