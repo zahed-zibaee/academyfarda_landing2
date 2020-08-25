@@ -37,6 +37,105 @@ if ($urlParam("loading") == "off") {
   }, 6000);
 }
 //end loading
+//check for connection with server
+setInterval(function() {
+  $.ajax({
+    url: "http://127.0.0.1:8000/hi",
+    method: "POST",
+    crossDomain: true,
+    success: function (res) {
+      if (res.ans == "hi"){
+        setTimeout(function () {
+          $("#serverconnectionerror").removeClass("show").addClass("hide");
+        }, 1);
+      }else{
+        setTimeout(function () {
+          $("#serverconnectionerror").removeClass("hide").addClass("show");
+        }, 1);
+      }
+    },
+    error: function (error) {
+      console.log(error);
+      setTimeout(function () {
+        $("#serverconnectionerror").removeClass("hide").addClass("show");
+      }, 1);
+    },
+  });
+}, 10000);
+//end check for server connection
+//get all courses
+$.ajax({
+  url: "http://127.0.0.1:8000/payments/getcourses",
+  method: "POST",
+  crossDomain: true,
+  success: function (res) {
+    console.log(res.course[0]);
+    var trHTML = '';
+    $.each(res.course, function (i ,item) {
+      if (item.active == true){
+        trHTML += '<tr><td>'
+      }else{
+        trHTML += '<tr class="inactive"><td>'
+      }
+      if(item.time == 912){
+        trHTML += "۹ تا ۱۲"
+      }else if(item.time == 1316){
+        trHTML += "۱۳ تا ۱۶"
+      }else if(item.time == 1720){
+        trHTML += "۱۷ تا ۲۰"
+      }else{
+        trHTML += "نا مشخص"
+      }
+      trHTML += '</td><td>' 
+      if (item.day=="STW"){
+        trHTML += "شنبه تا چهار‌شنبه"
+      }else if(item.day=="STT"){
+        trHTML += "شنبه تا پنج‌شنبه "
+      }else if(item.day=="O"){
+        trHTML += "فرد"
+      }else if(item.day=="E"){
+        trHTML += "زوج"
+      }else{
+        trHTML += "نا مشخص"
+      }
+      trHTML += '</td><td>' 
+      if (item.type=="I"){
+        trHTML += "فشرده"
+      }else if(item.type=="R"){
+        trHTML += "عادی"
+      }else{
+        trHTML += "نا مشخص"
+      }
+      trHTML += '</td><td>' 
+      if (item.type=="I"){
+        trHTML += "دو ماه"
+      }else if(item.type=="R"){
+        trHTML += "یک ماه و یک هفته"
+      }else{
+        trHTML += "نا مشخص"
+      }
+    });
+    
+    $('#tbody-courses').append(trHTML);
+    trHTML = '';
+    $.each(res.course, function (i ,item) {
+      if (item.active == true){
+        trHTML += "<option value=" + item.id + ">" + item.name + "</option>"
+      }else{
+        trHTML += "<option value=" + item.id + " disabled>" + item.name + "</option>"
+      }
+    });
+    $('#class_time1').append(trHTML);
+    $('#class_time2').append(trHTML);
+  },
+  error: function (error) {
+    console.log(error);
+    setTimeout(function () {
+      $("#serverconnectionerror").removeClass("hide").addClass("show");
+    }, 1);
+  }
+});
+//end get courses
 (function ($) {
   /**
    * "Scroll to" links

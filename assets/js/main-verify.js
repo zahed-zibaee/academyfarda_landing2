@@ -15,6 +15,33 @@ var verify_id = 0;
 var course_id = decodeURIComponent($urlParam('class_time'));
 var token1 = "";
 var token2 = "";
+//check for connection with server
+setInterval(function() {
+    $.ajax({
+      url: "http://127.0.0.1:8000/hi",
+      method: "POST",
+      crossDomain: true,
+      success: function (res) {
+        console.log(res);
+        if (res.ans == "hi"){
+          setTimeout(function () {
+            $("#serverconnectionerror").removeClass("show").addClass("hide");
+          }, 1);
+        }else{
+          setTimeout(function () {
+            $("#serverconnectionerror").removeClass("hide").addClass("show");
+          }, 1);
+        }
+      },
+      error: function (error) {
+        console.log(res);
+        setTimeout(function () {
+          $("#serverconnectionerror").removeClass("hide").addClass("show");
+        }, 1);
+      },
+    });
+}, 10000);
+//end check for server connection
 //put data to table
 $("#name").text(decodeURIComponent($urlParam('name')));
 $("#family").text(decodeURIComponent($urlParam('family')));

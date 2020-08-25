@@ -111,6 +111,13 @@
       </defs>
     </svg>
     <!------------------------------- End SVG Load ----------------------------------->
+    <div id="serverconnectionerror" class="alert alert-danger text-center alert-dismissible fade hide" role="alert">
+      <span>ارتباط با سرور ممکن نیست. ممکن است بعضی از قسمت ها به درستی کار نکنند...</span>
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <!------------------------------- End Connection error ----------------------------------->
     <!-------------------------------start-header----------------------------------->
     <header class="site-header">
       <div class="head-item container grid-row">
@@ -417,71 +424,8 @@
                     </th>
                   </tr>
                 </thead>
-                <tbody>
-                  <tr class="inactive">
-                    <td >
-                      <span>۹</span>
-                      تا
-                      <span>۱۲</span>
-                    </td>
-                    <td >
-                      شنبه تا چهار شنبه
-                    </td>
-                    <td >
-                      فشرده
-                    </td>
-                    <td >
-                      یک ماه و یک هفته
-                    </td>
-                  </tr>
-                  <tr>
-                    <td >
-                      <span>۱۳</span>
-                      تا
-                      <span>۱۶</span>
-                    </td>
-                    <td >
-                      شنبه تا چهار شنبه
-                    </td>
-                    <td >
-                      فشرده
-                    </td>
-                    <td >
-                      یک ماه و یک هفته
-                    </td>
-                  </tr>
-                  <tr>
-                    <td >
-                      <span>۱۸</span>
-                      تا
-                      <span>۲۰</span>
-                    </td>
-                    <td >
-                      روز های زوج
-                    </td>
-                    <td >
-                      عادی
-                    </td>
-                    <td >
-                      دو ماه
-                    </td>
-                  </tr>
-                  <tr>
-                    <td >
-                      <span>۱۸</span>
-                      تا
-                      <span>۲۰</span>
-                    </td>
-                    <td >
-                      روز های فرد
-                    </td>
-                    <td >
-                      عادی
-                    </td>
-                    <td >
-                      دو ماه
-                    </td>
-                  </tr>
+                <tbody id="tbody-courses">
+                  
                 </tbody>
               </table>         
             </div>
@@ -2098,7 +2042,7 @@
                   <h3 class="title-form"> فرم ثبت‌نام </h3>
                   <form id="register_form2" class="form-wrapper2">
                     <div class="form-row">
-                      <div class="col-lg-6 p-1">
+                      <div class="col-lg-6 p-2">
                         <div class="form-item">
                           <span class="required-star"> نام </span>
                           <label>
@@ -2110,7 +2054,7 @@
                         </div>
                         <!--form-item-->
                       </div>
-                      <div class="col-lg-6 p-1">
+                      <div class="col-lg-6 p-2">
                         <div class="form-item">
                           <span class="required-star"> نام خانوادگی </span>
                           <label>
@@ -2125,7 +2069,7 @@
                       </div>
                     </div>
                     <div class="form-row">
-                      <div class="col-lg-6 p-1">
+                      <div class="col-lg-6 p-2">
                         <div class="form-item">
                           <span class="required-star"> جنسیت </span>
                           <label>
@@ -2138,7 +2082,7 @@
                         </div>
                         <!--form-item-->
                       </div>
-                      <div class="col-lg-6 p-1">
+                      <div class="col-lg-6 p-2">
                         <div class="form-item">
                           <span class="required-star"> نام پدر </span>
                           <label>
@@ -2152,7 +2096,7 @@
                       </div>
                     </div>
                     <div class="form-row">
-                      <div class="col-lg-6 p-1">
+                      <div class="col-lg-6 p-2">
                         <div class="form-item">
                           <span class="required-star"> شماره ملی </span>
                           <label>
@@ -2164,7 +2108,7 @@
                         </div>
                         <!--form-item-->
                       </div>
-                      <div class="col-lg-6 p-1">
+                      <div class="col-lg-6 p-2">
                         <div class="form-item">
                           <span class="required-star"> شماره تماس </span>
                       <label>
@@ -2191,12 +2135,8 @@
                         <div class="form-item">
                           <span class="required-star"> زمان کلاس </span>
                           <label>
-                            <select name="class_time" class="form-control" >  
+                            <select id="class_time1" name="class_time" class="form-control" >  
                               <option value="" disabled selected>...</option> 
-                              <option value="1">کلاس فشرده شنبه تا چهارشنبه ساعت ۹ تا ۱۲</option>
-                              <option value="2">کلاس فشرده شنبه تا چهارشنبه ساعت ۱۳ تا ۱۶</option>
-                              <option value="3">کلاس عادی زوج ساعت ۱۷ تا ۲۰</option>
-                              <option value="4">کلاس عادی فرد ساعت ۱۷ تا۲۰</option>
                             </select>
                           </label>
                         </div>
@@ -2217,7 +2157,7 @@
                         <!--form-item-->
                       </div>
                     </div>
-                    <div class="form-row mt-5">
+                    <div class="form-row mt-3">
                       <div class="col-lg-12 p-1">
                         <div class="btn-checkbox">
                           <h3>
@@ -2293,7 +2233,7 @@
                       <h1>آموزشگاه تعمیرات موبایل</h1>
                       <h1 class="mb-5">متخصصان فردا</h1>
                       <p class="pb-5 pt-5">برای ثبت نام روی لینک زیر کلیک کنید.</p>
-                      <div class="spacer-003"></div>
+                      <div class="spacer-008"></div>
                       <div class="row align-items-center text-gray mb-2">
                         <div class="col-2 d-flex justify-content-center ">
                           <i class="fa fa-phone fa-2x" aria-hidden="true"></i>
@@ -2564,7 +2504,7 @@
                 <h3 class="title-form"> فرم ثبت‌نام </h3>
                 <form id="register_form2" class="form-wrapper2">
                   <div class="form-row">
-                    <div class="col-lg-6 p-1">
+                    <div class="col-lg-6 p-2">
                       <div class="form-item">
                         <span class="required-star"> نام </span>
                         <label>
@@ -2573,7 +2513,7 @@
                       </div>
                       <!--form-item-->
                     </div>
-                    <div class="col-lg-6 p-1">
+                    <div class="col-lg-6 p-2">
                       <div class="form-item">
                         <span class="required-star"> نام خانوادگی </span>
                         <label>
@@ -2582,7 +2522,7 @@
                       </div>
                       <!--form-item-->
                     </div>
-                    <div class="col-lg-6 p-1">
+                    <div class="col-lg-6 p-2">
                       <div class="form-item">
                         <span class="required-star"> جنسیت </span>
                         <label>
@@ -2597,7 +2537,7 @@
                     </div>
                   </div>
                   <div class="form-row">
-                    <div class="col-lg-6 p-1">
+                    <div class="col-lg-6 p-2">
                       <div class="form-item">
                         <span class="required-star"> نام پدر </span>
                         <label>
@@ -2606,7 +2546,7 @@
                       </div>
                       <!--form-item-->
                     </div>
-                    <div class="col-lg-6 p-1">
+                    <div class="col-lg-6 p-2">
                       <div class="form-item">
                         <span class="required-star"> شماره ملی </span>
                         <label>
@@ -2615,7 +2555,7 @@
                       </div>
                       <!--form-item-->
                     </div>
-                    <div class="col-lg-6 p-1">
+                    <div class="col-lg-6 p-2">
                       <div class="form-item">
                         <span class="required-star"> شماره تماس </span>
                     <label>
@@ -2636,12 +2576,8 @@
                       <div class="form-item">
                         <span class="required-star"> زمان کلاس </span>
                         <label>
-                          <select name="class_time" class="form-control">  
+                          <select id="class_time2" name="class_time" class="form-control">  
                             <option value="" disabled="" selected="">...</option> 
-                            <option value="912">کلاس فشرده شنبه تا چهارشنبه ساعت ۹ تا ۱۲</option>
-                            <option value="1316">کلاس فشرده شنبه تا چهارشنبه ساعت ۱۳ تا ۱۶</option>
-                            <option value="1720Z">کلاس عادی زوج ساعت ۱۷ تا ۲۰</option>
-                            <option value="1720F">کلاس عادی فرد ساعت ۱۷ تا۲۰</option>
                           </select>
                         </label>
                       </div>

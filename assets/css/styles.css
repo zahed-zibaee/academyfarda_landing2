@@ -1729,7 +1729,6 @@
   }
 }
 html {
-  font-family: sans-serif;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   -ms-overflow-style: scrollbar;
@@ -2890,8 +2889,8 @@ div.wpcf7 .ajax-loader {
   }
 }
 body {
-  background-image: -ms-linear-gradient(270deg, #f5f5fa 0%, #fff 100%);
-  background-image: linear-gradient(180deg, #f5f5fa 0%, #fff 100%);
+  background-image: -ms-linear-gradient(270deg, #f1f1f1 0%, #fff 150%);
+  background-image: linear-gradient(180deg, #f1f1f1 0%, #fff 150%);
   position: relative;
   overflow-x: hidden;
 }
@@ -3870,38 +3869,30 @@ body .left-bg {
   }
 }
 .register-form-wrap .left-form .form-wrapper textarea {
+  font-family: 'isans';
   width: 100%;
-  height: 245px;
+  height: 250px;
   border-radius: 11px;
-  background-color: #f1f4f8;
-  border: none;
+  background-color: #eee;
+  border: 1px solid #eee;
   resize: vertical;
   padding: 15px;
-  margin-bottom: 25px;
-  font-size: 12px;
-}
-.register-form-wrap .left-form .form-wrapper2 select {
-  width: 100%;
-  border: none;
-  border-radius: 11px;
-  background-color: #f1f4f8;
-  padding: 12px 10px;
-  font-size: 12px;
-  font-weight: 400;
-  margin-bottom: 5px;
+  margin-bottom: 35px;
+  font-size: 14px;
 }
 @media (min-width: 1600px) {
   .register-form-wrap .left-form .form-wrapper textarea {
-    font-size: 14px;
+    font-size: 15px;
   }
 }
 .register-form-wrap .left-form .form-wrapper input {
+  font-family: 'isans';
   width: 100%;
-  border: none;
+  border: 1px solid #eee;
   border-radius: 11px;
-  background-color: #f1f4f8;
-  padding: 12px 32px;
-  font-size: 12px;
+  background-color: #eee;
+  padding: 12px 35px;
+  font-size: 14px;
   font-weight: 400;
   margin-bottom: 25px;
 }
@@ -5316,27 +5307,28 @@ footer h2 b{
 }
 .register-form-wrap .left-form .form-wrapper2 select {
   width: 100%;
-  border: none;
+  border: 1px solid #eee;
   border-radius: 11px;
-  background-color: #f1f4f8;
+  background-color: #eee;
   padding: 12px 12px;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 400;
   margin-bottom: 5px;
 }
 .register-form-wrap .left-form .form-wrapper2 input {
+  font-family: 'isans';
   width: 100%;
-  border: none;
+  border: 1px solid #eee;
   border-radius: 11px;
-  background-color: #f1f4f8;
+  background-color: #eee;
   padding: 12px 12px;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 400;
   margin-bottom: 5px;
 }
 @media (min-width: 1600px) {
   .register-form-wrap .left-form .form-wrapper2 input {
-    font-size: 14px;
+    font-size: 15px;
   }
 }
 .register-form-wrap .left-form .form-wrapper2 svg {
@@ -5349,15 +5341,17 @@ footer h2 b{
   margin-left: 15px;
 }
 .register-form-wrap .left-form .form-wrapper2 textarea {
+  font-family: 'isans';
   width: 100%;
-  height: 50px;
+  height: 75px;
   border-radius: 11px;
-  background-color: #f1f4f8;
-  border: none;
+  background-color: #eee;
+  border: 1px solid #eee;
   resize: vertical;
   padding: 15px;
   margin-bottom: 5px;
-  font-size: 12px;
+  font-size: 14px;
+  font-weight: 400;
 }
 .spacer-002 {
   margin-top: 150px;
@@ -5446,7 +5440,7 @@ footer h2 b{
   text-align: right !important;
 }
 .text-gray {
-  color: #ddd;
+  color: #eee;
 }
 .form-warning {
   color: #000;
@@ -5467,7 +5461,7 @@ footer h2 b{
   font-size: 14px;
 }
 .spacer-003 {
-  margin-bottom: 75px;
+  margin-bottom: 90px;
 }
 .fixed-footer {
   position: fixed;
@@ -6178,4 +6172,40 @@ margin: 0;
 .body-on-loading {
   overflow: hidden;
   height: 100vh;
+}
+.alert-danger {
+  color: #fff;
+  background-color: #b31f2e;
+  border-color: #b31f2e;
+}
+.alert {
+  position: fixed;
+  top:0;
+  left:0;
+  width: 100%;
+  padding: 0.1rem;
+  border-radius: 0rem;
+  z-index: 2000;
+}
+.alert .close {
+  padding: .1rem 1rem;
+}
+input:focus {
+  border-color: #0400ff !important;
+  box-shadow: 0 0 7px #0400ff inset;
+}
+select:focus {
+  border-color: #0011ff !important;
+  box-shadow: 0 0 7px #0011ff inset;
+}
+textarea:focus {
+  border-color: #0011ff !important;
+  box-shadow: 0 0 7px #0011ff inset;
+}
+input[type="radio"]:focus {
+  border-color: none;
+  box-shadow: none;
+}
+.spacer-008{
+  margin-bottom: 110px;
 }
