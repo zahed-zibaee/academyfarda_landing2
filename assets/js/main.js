@@ -296,50 +296,6 @@ $.ajax({
               slideShadows: true,
             },
           },
-          380: {
-            coverflowEffect: {
-              rotate: 0,
-              stretch: 186,
-            },
-          },
-          372: {
-            coverflowEffect: {
-              rotate: 0,
-              stretch: 182,
-            },
-          },
-
-          365: {
-            coverflowEffect: {
-              stretch: 180,
-              depth: 150,
-            },
-          },
-          350: {
-            coverflowEffect: {
-              stretch: 175,
-              depth: 150,
-            },
-          },
-          348: {
-            coverflowEffect: {
-              stretch: 170,
-            },
-          },
-          333: {
-            coverflowEffect: {
-              stretch: 175,
-            },
-          },
-
-          320: {
-            direction: "horizontal",
-            spaceBetween: 0,
-            centeredSlides: true,
-            freeMode: true,
-
-            coverflowEffect: {},
-          },
         },
       });
 
@@ -402,6 +358,14 @@ $.ajax({
             },
 
             320: {
+              direction: "horizontal",
+              spaceBetween: 0,
+              centeredSlides: true,
+              freeMode: true,
+
+              coverflowEffect: {},
+            },
+            200: {
               direction: "horizontal",
               spaceBetween: 0,
               centeredSlides: true,
@@ -473,6 +437,11 @@ $.ajax({
         freeMode: false,
         initialSlide: 1,
       },
+      200: {
+        slidesPerView: 1,
+        freeMode: false,
+        initialSlide: 1,
+      },
     },
   });
   var swiper3 = new Swiper("#picture_slide2", {
@@ -529,6 +498,11 @@ $.ajax({
         initialSlide: 1,
       },
       520: {
+        slidesPerView: 1,
+        freeMode: false,
+        initialSlide: 1,
+      },
+      200: {
         slidesPerView: 1,
         freeMode: false,
         initialSlide: 1,
