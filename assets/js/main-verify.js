@@ -231,7 +231,7 @@ function check_discount_validation() {
             $("#discount-ans-g").removeClass("hide");
             $("#discount-ans-b").addClass("hide");
             $("#discount-code").html(discount_code);
-            $("#amount").html($.persianNumbers(res.amount));
+            $("#amount").html($.persianNumbers(res.total));
             console.log(res);
             return true;
         },
