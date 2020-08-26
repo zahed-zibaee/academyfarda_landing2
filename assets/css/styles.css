@@ -3907,11 +3907,11 @@ body .left-bg {
   top: 3px;
   width: 15px;
   height: 15px;
-  fill: #9ea4c4;
+  fill: #999 !important;
   margin-left: 15px;
 }
 .register-form-wrap .left-form .form-wrapper .phone-icon {
-  stroke: #9ea4c4;
+  stroke: transparent;
   fill: none;
 }
 .register-form-wrap .left-form .form-wrapper .phone-icon ::placeholder {
@@ -6192,15 +6192,15 @@ margin: 0;
 }
 input:focus {
   border-color: #0400ff !important;
-  box-shadow: 0 0 7px #0400ff inset;
+  box-shadow: 0 0 7px #0400ff;
 }
 select:focus {
   border-color: #0011ff !important;
-  box-shadow: 0 0 7px #0011ff inset;
+  box-shadow: 0 0 7px #0011ff;
 }
 textarea:focus {
   border-color: #0011ff !important;
-  box-shadow: 0 0 7px #0011ff inset;
+  box-shadow: 0 0 7px #0011ff;
 }
 input[type="radio"]:focus {
   border-color: none;
@@ -6208,4 +6208,24 @@ input[type="radio"]:focus {
 }
 .spacer-008{
   margin-bottom: 110px;
+}
+input.parsley-error, select.parsley-error, textarea.parsley-error {
+  border: 1px solid #d65654 !important;
+}
+input.parsley-success, select.parsley-success, textarea.parsley-success {
+  border: 1px solid #63c265 !important;
+}
+input.parsley-success:focus, select.parsley-success:focus, textarea.parsley-success:focus {
+  box-shadow: 0 0 7px #468847;
+}
+input.parsley-error:focus, select.parsley-error:focus, textarea.parsley-error:focus {
+  box-shadow: 0 0 7px #B94A48;
+}
+.parsley-error {
+  border: 1px solid #d65654 !important;
+}
+.parsley-required,
+.parsley-pattern {
+  font-size: 10px;
+  color: #888;
 }

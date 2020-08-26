@@ -62,7 +62,7 @@
       </symbol>
 
       <symbol id="phone-icon" viewBox="0 0 23 22">
-        <path fill="#fff"
+        <path
           d="M22.081 17.159l-3.355-3.356c-.668-.665-1.774-.645-2.466.047l-1.69 1.69-.334-.186c-1.067-.591-2.528-1.402-4.065-2.94-1.542-1.542-2.353-3.005-2.947-4.073a26.537 26.537 0 0 0-.181-.326l1.134-1.133.558-.558c.692-.693.711-1.799.045-2.467L5.425.502C4.758-.165 3.65-.145 2.958.548l-.945.951.026.026a5.468 5.468 0 0 0-.78 1.374 5.698 5.698 0 0 0-.346 1.394c-.443 3.673 1.235 7.03 5.79 11.584 6.296 6.295 11.37 5.82 11.588 5.796.477-.057.934-.17 1.398-.35a5.45 5.45 0 0 0 1.37-.777l.02.019.958-.938c.69-.693.71-1.8.044-2.468z">
         </path>
       </symbol>
@@ -2046,10 +2046,10 @@
                         <div class="form-item">
                           <span class="required-star"> نام </span>
                           <label>
-                            <input name="name" type="text" pattern=".{3,30}"
-                              oninvalid="setCustomValidity('فرمت وارد شده صحیح نیست. ')"
-                              onchange="try{setCustomValidity('')}catch(e){}"
-                              autocomplete="off" required>
+                            <input id="input_name" name="name" type="text" pattern="^.{3,200}$"
+                            oninvalid="setCustomValidity('فرمت وارد شده صحیح نیست. ')"
+                            onchange="try{setCustomValidity('')}catch(e){}"
+                            autocomplete="off" required>
                           </label>
                         </div>
                         <!--form-item-->
@@ -2058,7 +2058,7 @@
                         <div class="form-item">
                           <span class="required-star"> نام خانوادگی </span>
                           <label>
-                            <input name="family" type="text" pattern=".{3,30}"
+                            <input name="family" type="text" pattern="^.{3,200}$"
                               oninvalid="setCustomValidity('فرمت وارد شده صحیح نیست. ')"
                               onchange="try{setCustomValidity('')}catch(e){}"
                               autocomplete="off" required>
@@ -2073,7 +2073,7 @@
                         <div class="form-item">
                           <span class="required-star"> جنسیت </span>
                           <label>
-                            <select name="gender" class="form-control" >  
+                            <select name="gender" class="form-control" required>  
                               <option value="" disabled selected>...</option> 
                               <option value="M">مرد</option>
                               <option value="F">زن</option>
@@ -2086,7 +2086,7 @@
                         <div class="form-item">
                           <span class="required-star"> نام پدر </span>
                           <label>
-                            <input name="father_name" type="text" pattern=".{3,30}"
+                            <input name="father_name" type="text" pattern="^.{3,200}$"
                               oninvalid="setCustomValidity('فرمت وارد شده صحیح نیست. ')"
                               onchange="try{setCustomValidity('')}catch(e){}" 
                               autocomplete="off" required>
@@ -2100,7 +2100,7 @@
                         <div class="form-item">
                           <span class="required-star"> شماره ملی </span>
                           <label>
-                            <input name="code_meli" type="text" pattern=".{10,10}"
+                            <input name="code_meli" type="text" pattern="^[0-9]{10}$"
                               oninvalid="setCustomValidity('فرمت وارد شده صحیح نیست. ')"
                               onchange="try{setCustomValidity('')}catch(e){}"
                               autocomplete="off" required>
@@ -2112,7 +2112,7 @@
                         <div class="form-item">
                           <span class="required-star"> شماره تماس </span>
                       <label>
-                        <input name="phone" type="text" pattern=".{8,11}"
+                        <input name="phone" type="text" pattern="^09[0-9]{9}$"
                           oninvalid="setCustomValidity('فرمت وارد شده صحیح نیست. ')"
                           onchange="try{setCustomValidity('')}catch(e){}"
                           placeholder="09XXXXXXXXX" autocomplete="off" required>
@@ -2124,7 +2124,7 @@
                     <div class="form-item">
                       <span class="required-star"> آدرس </span>
                       <label>
-                        <textarea name="address" type="text" pattern=".{1,3000}"
+                        <textarea name="address" type="text" pattern="^.{10,2000}$"
                           oninvalid="setCustomValidity('فرمت وارد شده صحیح نیست. ')"
                           onchange="try{setCustomValidity('')}catch(e){}"
                           autocomplete="off" required></textarea>
@@ -2135,7 +2135,7 @@
                         <div class="form-item">
                           <span class="required-star"> زمان کلاس </span>
                           <label>
-                            <select id="class_time1" name="class_time" class="form-control" >  
+                            <select id="class_time1" name="class_time" class="form-control" required>  
                               <option value="" disabled selected>...</option> 
                             </select>
                           </label>
@@ -2148,11 +2148,10 @@
                             <div class="form-check form-check-inline mb-2">
                               <input class="form-check-input" type="radio" name="payment_type" id="inlineRadio1" value="option1">
                               <label class="form-check-label" for="inlineRadio1">اقساط</label>
-                            </div>
-                            <div class="form-check form-check-inline mb-2">
-                              <input class="form-check-input" type="radio" name="payment_type" id="inlineRadio2" value="option2">
+                              <input class="form-check-input" type="radio" name="payment_type" id="inlineRadio2" value="option2" required>
                               <label class="form-check-label" for="inlineRadio2">نقدی</label>
                             </div>
+
                         </div>
                         <!--form-item-->
                       </div>
@@ -2502,13 +2501,13 @@
             <div class="register-form-wrap ">
               <div class="left-form">
                 <h3 class="title-form"> فرم ثبت‌نام </h3>
-                <form id="register_form2" class="form-wrapper2">
+                <form id="register_form3" class="form-wrapper2">
                   <div class="form-row">
                     <div class="col-lg-6 p-2">
                       <div class="form-item">
                         <span class="required-star"> نام </span>
                         <label>
-                          <input name="name" type="text" pattern=".{3,30}" oninvalid="setCustomValidity('فرمت وارد شده صحیح نیست. ')" onchange="try{setCustomValidity('')}catch(e){}" autocomplete="off" required="">
+                          <input name="name" type="text" pattern="^.{3,200}$" oninvalid="setCustomValidity('فرمت وارد شده صحیح نیست. ')" onchange="try{setCustomValidity('')}catch(e){}" autocomplete="off" required="">
                         </label>
                       </div>
                       <!--form-item-->
@@ -2517,7 +2516,7 @@
                       <div class="form-item">
                         <span class="required-star"> نام خانوادگی </span>
                         <label>
-                          <input name="family" type="text" pattern=".{3,30}" oninvalid="setCustomValidity('فرمت وارد شده صحیح نیست. ')" onchange="try{setCustomValidity('')}catch(e){}" autocomplete="off" required="">
+                          <input name="family" type="text" pattern="^.{3,200}$" oninvalid="setCustomValidity('فرمت وارد شده صحیح نیست. ')" onchange="try{setCustomValidity('')}catch(e){}" autocomplete="off" required="">
                         </label>
                       </div>
                       <!--form-item-->
@@ -2541,7 +2540,7 @@
                       <div class="form-item">
                         <span class="required-star"> نام پدر </span>
                         <label>
-                          <input name="father_name" type="text" pattern=".{3,30}" oninvalid="setCustomValidity('فرمت وارد شده صحیح نیست. ')" onchange="try{setCustomValidity('')}catch(e){}" autocomplete="off" required="">
+                          <input name="father_name" type="text" pattern="^.{3,200}$" oninvalid="setCustomValidity('فرمت وارد شده صحیح نیست. ')" onchange="try{setCustomValidity('')}catch(e){}" autocomplete="off" required="">
                         </label>
                       </div>
                       <!--form-item-->
@@ -2550,7 +2549,7 @@
                       <div class="form-item">
                         <span class="required-star"> شماره ملی </span>
                         <label>
-                          <input name="code_meli" type="text" pattern=".{10,10}" oninvalid="setCustomValidity('فرمت وارد شده صحیح نیست. ')" onchange="try{setCustomValidity('')}catch(e){}" autocomplete="off" required="">
+                          <input name="code_meli" type="text" pattern="^[0-9]{10}$" oninvalid="setCustomValidity('فرمت وارد شده صحیح نیست. ')" onchange="try{setCustomValidity('')}catch(e){}" autocomplete="off" required="">
                         </label>
                       </div>
                       <!--form-item-->
@@ -2559,7 +2558,7 @@
                       <div class="form-item">
                         <span class="required-star"> شماره تماس </span>
                     <label>
-                      <input name="phone" type="text" pattern=".{8,11}" oninvalid="setCustomValidity('فرمت وارد شده صحیح نیست. ')" onchange="try{setCustomValidity('')}catch(e){}" placeholder="09XXXXXXXXX" autocomplete="off" required="">
+                      <input name="phone" type="text" pattern="^09[0-9]{9}$" oninvalid="setCustomValidity('فرمت وارد شده صحیح نیست. ')" onchange="try{setCustomValidity('')}catch(e){}" placeholder="09XXXXXXXXX" autocomplete="off" required="">
                       </label>
                       </div>
                       <!--form-item-->
@@ -2568,7 +2567,7 @@
                   <div class="form-item">
                     <span class="required-star"> آدرس </span>
                     <label>
-                      <textarea name="address" type="text" pattern=".{1,3000}" oninvalid="setCustomValidity('فرمت وارد شده صحیح نیست. ')" onchange="try{setCustomValidity('')}catch(e){}" autocomplete="off" required=""></textarea>
+                      <textarea name="address" type="text" pattern="^.{10,2000}$" oninvalid="setCustomValidity('فرمت وارد شده صحیح نیست. ')" onchange="try{setCustomValidity('')}catch(e){}" autocomplete="off" required=""></textarea>
                     </label>
                   </div>
                   <div class="form-row">
@@ -2587,11 +2586,11 @@
                       <div class="form-item">
                         <span class="required-star pb-3"> نوع پرداخت </span>
                         <div class="form-check form-check-inline mb-2">
-                          <input class="form-check-input" type="radio" name="payment_type" id="inlineRadio3" value="option1">
+                          <input class="form-check-input" type="radio" name="payment_type" id="inlineRadio3" value="option1" required>
                           <label class="form-check-label" for="inlineRadio3">اقساط</label>
                         </div>
                         <div class="form-check form-check-inline mb-2">
-                          <input class="form-check-input" type="radio" name="payment_type" id="inlineRadio4" value="option2">
+                          <input class="form-check-input" type="radio" name="payment_type" id="inlineRadio4" value="option2" required>
                           <label class="form-check-label" for="inlineRadio4">نقدی</label>
                         </div>
                       </div>
@@ -2724,6 +2723,8 @@
     <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/parsleyjs@2.9.2/dist/parsley.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/parsleyjs@2.9.2/dist/i18n/fa.js"></script>
     <script src="assets/js/main.js"></script>
   </body>
 

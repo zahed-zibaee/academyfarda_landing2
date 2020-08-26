@@ -41,20 +41,20 @@ if ($urlParam("loading") == "off") {
 }
 //end loading
 //check for connection with server function
-function checkconnection(){
+function checkconnection() {
   $.ajax({
     url: "http://127.0.0.1:8000/hi",
     method: "POST",
     crossDomain: true,
     success: function (res) {
-      if (res.ans == "hi"){
+      if (res.ans == "hi") {
         setTimeout(function () {
           $("#serverconnectionerror").removeClass("show").addClass("hide");
         }, 1);
-        if(gotcourse ==false){
+        if (gotcourse == false) {
           getcourses();
         }
-      }else{
+      } else {
         setTimeout(function () {
           $("#serverconnectionerror").removeClass("hide").addClass("show");
         }, 1);
@@ -69,77 +69,77 @@ function checkconnection(){
   });
 }
 //check for connection with server
-checkconnection()
-setInterval(function() {
-  checkconnection()
-  
+checkconnection();
+setInterval(function () {
+  checkconnection();
 }, 10000);
 //end check for server connection
 //get all courses function
-function getcourses(){
+function getcourses() {
   $.ajax({
     url: "http://127.0.0.1:8000/payments/getcourses",
     method: "POST",
     crossDomain: true,
     success: function (res) {
       console.log(res.course[0]);
-      var trHTML = '';
-      $.each(res.course, function (i ,item) {
-        if (item.active == true){
-          trHTML += '<tr><td>'
-        }else{
-          trHTML += '<tr class="inactive"><td>'
+      var trHTML = "";
+      $.each(res.course, function (i, item) {
+        if (item.active == true) {
+          trHTML += "<tr><td>";
+        } else {
+          trHTML += '<tr class="inactive"><td>';
         }
-        if(item.time == 912){
-          trHTML += "۹ تا ۱۲"
-        }else if(item.time == 1316){
-          trHTML += "۱۳ تا ۱۶"
-        }else if(item.time == 1720){
-          trHTML += "۱۷ تا ۲۰"
-        }else{
-          trHTML += "نا مشخص"
+        if (item.time == 912) {
+          trHTML += "۹ تا ۱۲";
+        } else if (item.time == 1316) {
+          trHTML += "۱۳ تا ۱۶";
+        } else if (item.time == 1720) {
+          trHTML += "۱۷ تا ۲۰";
+        } else {
+          trHTML += "نا مشخص";
         }
-        trHTML += '</td><td>' 
-        if (item.day=="STW"){
-          trHTML += "شنبه تا چهار‌شنبه"
-        }else if(item.day=="STT"){
-          trHTML += "شنبه تا پنج‌شنبه "
-        }else if(item.day=="O"){
-          trHTML += "فرد"
-        }else if(item.day=="E"){
-          trHTML += "زوج"
-        }else{
-          trHTML += "نا مشخص"
+        trHTML += "</td><td>";
+        if (item.day == "STW") {
+          trHTML += "شنبه تا چهار‌شنبه";
+        } else if (item.day == "STT") {
+          trHTML += "شنبه تا پنج‌شنبه ";
+        } else if (item.day == "O") {
+          trHTML += "فرد";
+        } else if (item.day == "E") {
+          trHTML += "زوج";
+        } else {
+          trHTML += "نا مشخص";
         }
-        trHTML += '</td><td>' 
-        if (item.type=="I"){
-          trHTML += "فشرده"
-        }else if(item.type=="R"){
-          trHTML += "عادی"
-        }else{
-          trHTML += "نا مشخص"
+        trHTML += "</td><td>";
+        if (item.type == "I") {
+          trHTML += "فشرده";
+        } else if (item.type == "R") {
+          trHTML += "عادی";
+        } else {
+          trHTML += "نا مشخص";
         }
-        trHTML += '</td><td>' 
-        if (item.type=="I"){
-          trHTML += "دو ماه"
-        }else if(item.type=="R"){
-          trHTML += "یک ماه و یک هفته"
-        }else{
-          trHTML += "نا مشخص"
-        }
-      });
-      
-      $('#tbody-courses').append(trHTML);
-      trHTML = '';
-      $.each(res.course, function (i ,item) {
-        if (item.active == true){
-          trHTML += "<option value=" + item.id + ">" + item.name + "</option>"
-        }else{
-          trHTML += "<option value=" + item.id + " disabled>" + item.name + "</option>"
+        trHTML += "</td><td>";
+        if (item.type == "I") {
+          trHTML += "دو ماه";
+        } else if (item.type == "R") {
+          trHTML += "یک ماه و یک هفته";
+        } else {
+          trHTML += "نا مشخص";
         }
       });
-      $('#class_time1').append(trHTML);
-      $('#class_time2').append(trHTML);
+
+      $("#tbody-courses").append(trHTML);
+      trHTML = "";
+      $.each(res.course, function (i, item) {
+        if (item.active == true) {
+          trHTML += "<option value=" + item.id + ">" + item.name + "</option>";
+        } else {
+          trHTML +=
+            "<option value=" + item.id + " disabled>" + item.name + "</option>";
+        }
+      });
+      $("#class_time1").append(trHTML);
+      $("#class_time2").append(trHTML);
       gotcourse = true;
     },
     error: function (error) {
@@ -147,7 +147,7 @@ function getcourses(){
       setTimeout(function () {
         $("#serverconnectionerror").removeClass("hide").addClass("show");
       }, 1);
-    }
+    },
   });
 }
 //end get courses
@@ -216,47 +216,14 @@ function getcourses(){
       },
     });
   });
-  // this is for buy course
+  // this is for buy course function
   $("#register_form2").submit(function (e) {
     e.preventDefault();
     var $form = $(this);
-    var data = $form.serializeArray();
-    var result = {};
-    $.each(data, function () {
-      result[this.name] = this.value;
-    });
-    var url =
-      "./verify.html?name=" +
-      result.name +
-      "&" +
-      "family=" +
-      result.family +
-      "&" +
-      "gender=" +
-      result.gender +
-      "&" +
-      "father_name=" +
-      result.father_name +
-      "&" +
-      "code_meli=" +
-      result.code_meli +
-      "&" +
-      "phone=" +
-      result.phone +
-      "&" +
-      "address=" +
-      result.address +
-      "&" +
-      "class_time=" +
-      result.class_time +
-      "&" +
-      "payment_type=" +
-      result.payment_type +
-      "&";
+    var url = "./verify.html?" + $form.serialize();
     $.ajax({
       url: url,
       method: "GET",
-      data: data,
       crossDomain: true,
       success: function (res) {
         console.log(res);
@@ -264,24 +231,50 @@ function getcourses(){
           window.location.href = url;
         }, 1000);
       },
-      error: function (e, v) {
-        dwtoast($form.find(".error-message").html());
-      },
+      error: function (e, v) {},
     });
   });
-  
-  $(document).on("click", "[data-modal]", function (e) {
+  $("#register_form3").submit(function (e) {
     e.preventDefault();
-
-    var $target = $($(this).data("modal"));
-
-    if ($target.length) {
-      window.globalmodal.setContent($target.html());
-      $(document).trigger("modal_content_loaded");
-      window.globalmodal.open();
-    }
+    var $form = $(this);
+    var url = "./verify.html?" + $form.serialize();
+    $.ajax({
+      url: url,
+      method: "GET",
+      crossDomain: true,
+      success: function (res) {
+        console.log(res);
+        setTimeout(function () {
+          window.location.href = url;
+        }, 1000);
+      },
+      error: function (e, v) {},
+    });
   });
-
+  // validation check
+  $(function () {
+    $("#register_form2")
+      .parsley()
+      .on("field:validated", function () {
+        var ok = $(".parsley-error").length === 0;
+      })
+      .on("form:submit", function (e) {
+        e.preventDefault();
+        $("#register_form2").submit();
+      });
+  });
+  $(function () {
+    $("#register_form3")
+      .parsley()
+      .on("field:validated", function () {
+        var ok = $(".parsley-error").length === 0;
+      })
+      .on("form:submit", function (e) {
+        e.preventDefault();
+        $("#register_form3").submit();
+      });
+  });
+  //
   $(window)
     .on("ready resize", function () {
       var swiper = new Swiper("#license_slide", {
