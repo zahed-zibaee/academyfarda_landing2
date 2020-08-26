@@ -51,6 +51,9 @@ function checkconnection(){
         setTimeout(function () {
           $("#serverconnectionerror").removeClass("show").addClass("hide");
         }, 1);
+        if(gotcourse ==false){
+          getcourses();
+        }
       }else{
         setTimeout(function () {
           $("#serverconnectionerror").removeClass("hide").addClass("show");
@@ -69,6 +72,7 @@ function checkconnection(){
 checkconnection()
 setInterval(function() {
   checkconnection()
+  
 }, 10000);
 //end check for server connection
 //get all courses function
@@ -146,14 +150,6 @@ function getcourses(){
     }
   });
 }
-//check for course get
-getcourses();
-setInterval(function() {
-  if(gotcourse ==false){
-    getcourses();
-  }
-}, 10000);
-//
 //end get courses
 (function ($) {
   /**
