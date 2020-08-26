@@ -2,3 +2,4 @@ footer
 home green
 discount and total in table 
 receipt
+green wellcome back on connect
