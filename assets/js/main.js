@@ -1,5 +1,6 @@
 //variable def
 var gotcourse = false;
+var connect = true;
 //dwtoast
 function dwtoast(txt) {
   var $toast = jQuery("#dwtoast");
@@ -51,6 +52,20 @@ function checkconnection() {
         setTimeout(function () {
           $("#serverconnectionerror").removeClass("show").addClass("hide");
         }, 1);
+        if (connect == false) {
+          setTimeout(function () {
+            $("#serverconnectionreconnect")
+              .removeClass("hide")
+              .addClass("show");
+          }, 1);
+          setTimeout(function () {
+            $("#serverconnectionreconnect")
+              .removeClass("show")
+              .addClass("hide");
+          }, 5000);
+          connect = true;
+        }
+        //if its first connect get courses
         if (gotcourse == false) {
           getcourses();
         }
@@ -58,6 +73,7 @@ function checkconnection() {
         setTimeout(function () {
           $("#serverconnectionerror").removeClass("hide").addClass("show");
         }, 1);
+        connect = false;
       }
     },
     error: function (error) {
@@ -65,6 +81,7 @@ function checkconnection() {
       setTimeout(function () {
         $("#serverconnectionerror").removeClass("hide").addClass("show");
       }, 1);
+      connect = false;
     },
   });
 }

@@ -29,25 +29,24 @@
     <div id="loading2" class="force-hide">
       <img src="assets/svg/ball-triangle.svg" width="200" alt="loading..." />
     </div>
-    <div class="site-wrap" id="site_wrap">
-      <div
-        id="serverconnectionerror"
-        class="alert alert-danger text-center alert-dismissible fade hide"
-        role="alert"
+    <div
+      id="serverconnectionerror"
+      class="alert alert-danger text-center fade hide"
+      role="alert"
+    >
+      <span
+        >ارتباط با سرور ممکن نیست. ممکن است بعضی از امکانات به درستی کار
+        نکنند...</span
       >
-        <span
-          >ارتباط با سرور ممکن نیست. ممکن است بعضی از امکانات به درستی کار
-          نکنند...</span
-        >
-        <button
-          type="button"
-          class="close"
-          data-dismiss="alert"
-          aria-label="Close"
-        >
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
+    </div>
+    <div
+      id="serverconnectionreconnect"
+      class="alert alert-success text-center fade hide"
+      role="alert"
+    >
+      <span>ارتباط برقرار شد</span>
+    </div>
+    <div class="site-wrap" id="site_wrap">
       <!------------------------------- End Connection error ----------------------------------->
       <!-------------------------------start-header----------------------------------->
       <header class="site-header site-header-200px">
@@ -97,9 +96,7 @@
           <div class="login-modal-inner">
             <h3>آدرس شعبه ها</h3>
             <div class="address-modal">
-              <span>
-                شعبه انقلاب:
-              </span>
+              <span> شعبه انقلاب: </span>
 
               <p>
                 تهران، خیابان انقلاب، روبروی درب اصلی دانشگاه تهران، ابتدای
@@ -110,9 +107,7 @@
             <!--address-modal-->
 
             <div class="address-modal">
-              <span>
-                شعبه اصلی ولیعصر:
-              </span>
+              <span> شعبه اصلی ولیعصر: </span>
 
               <p>
                 تهران، بالاتر از میدان ولیعصر، بعد از سینما استقلال، پلاک 1706،
@@ -155,57 +150,39 @@
             >
               <tbody class="bg-primary">
                 <tr>
-                  <th class="text-nowarp spacer-007">
-                    نام
-                  </th>
+                  <th class="text-nowarp spacer-007">نام</th>
                   <td class="text-right pr-3 font-verify" id="name"></td>
                 </tr>
                 <tr>
-                  <th class="text-nowarp spacer-007">
-                    نام خانوادگی
-                  </th>
+                  <th class="text-nowarp spacer-007">نام خانوادگی</th>
                   <td class="text-right pr-3 font-verify" id="family"></td>
                 </tr>
                 <tr>
-                  <th class="text-nowarp spacer-007">
-                    جنسیت
-                  </th>
+                  <th class="text-nowarp spacer-007">جنسیت</th>
                   <td class="text-right pr-3 font-verify" id="gender"></td>
                 </tr>
                 <tr>
-                  <th class="text-nowarp spacer-007">
-                    نام پدر
-                  </th>
+                  <th class="text-nowarp spacer-007">نام پدر</th>
                   <td class="text-right pr-3 font-verify" id="father_name"></td>
                 </tr>
                 <tr>
-                  <th class="text-nowarp spacer-007">
-                    کد ملی
-                  </th>
+                  <th class="text-nowarp spacer-007">کد ملی</th>
                   <td class="text-right pr-3 font-verify" id="code_meli"></td>
                 </tr>
                 <tr>
-                  <th class="text-nowarp spacer-007">
-                    شماره تماس
-                  </th>
+                  <th class="text-nowarp spacer-007">شماره تماس</th>
                   <td class="text-right pr-3 font-verify" id="phone"></td>
                 </tr>
                 <tr>
-                  <th class="text-nowarp spacer-007">
-                    آدرس
-                  </th>
+                  <th class="text-nowarp spacer-007">آدرس</th>
                   <td class="text-right pr-3 font-verify" id="address"></td>
                 </tr>
                 <tr>
-                  <th class="text-nowarp spacer-007">
-                    زمان کلاس
-                  </th>
+                  <th class="text-nowarp spacer-007">زمان کلاس</th>
                   <td class="text-right pr-3 font-verify" id="class_time"></td>
                 </tr>
                 <tr>
-                  <th class="text-nowarp spacer-007">
-                    نوع پرداخت
-                  </th>
+                  <th class="text-nowarp spacer-007">نوع پرداخت</th>
                   <td
                     class="text-right pr-3 font-verify"
                     id="payment_type"
@@ -276,7 +253,7 @@
                     <i
                       class="fa fa-home fa-2x"
                       aria-hidden="true"
-                      style="color: white;"
+                      style="color: white"
                     ></i></button
                 ></a>
               </div>
@@ -286,7 +263,7 @@
                     <i
                       class="fa fa-instagram fa-2x"
                       aria-hidden="true"
-                      style="color: white;"
+                      style="color: white"
                     ></i></button
                 ></a>
               </div>
@@ -296,7 +273,7 @@
                     <i
                       class="fa fa-telegram fa-2x"
                       aria-hidden="true"
-                      style="color: white;"
+                      style="color: white"
                     ></i></button
                 ></a>
               </div>
@@ -306,7 +283,7 @@
                     <i
                       class="fa fa-whatsapp fa-2x"
                       aria-hidden="true"
-                      style="color: white;"
+                      style="color: white"
                     ></i></button
                 ></a>
               </div>
@@ -316,7 +293,7 @@
                     <i
                       class="fa fa-phone fa-2x"
                       aria-hidden="true"
-                      style="color: white;"
+                      style="color: white"
                     ></i></button
                 ></a>
               </div>
@@ -326,7 +303,7 @@
                     <i
                       class="fa fa-map-marker fa-2x"
                       aria-hidden="true"
-                      style="color: white;"
+                      style="color: white"
                     ></i></button
                 ></a>
               </div>
@@ -429,7 +406,7 @@
                 </div>
               </div>
               <div class="row justify-content-center">
-                <span id="wrong-code" class="hide" style="color: red;"
+                <span id="wrong-code" class="hide" style="color: red"
                   >کد وارد شده شتباه است.</span
                 >
               </div>
