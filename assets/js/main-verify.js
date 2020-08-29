@@ -18,14 +18,19 @@ var course_id = decodeURIComponent($urlParam("class_time"));
 var token1 = "";
 var token2 = "";
 var connect = true;
-//check for connection with server
-setInterval(function () {
+var total = false;
+//function check connection
+function checkconnection(){
   $.ajax({
     url: "http://127.0.0.1:8000/hi",
     method: "POST",
     crossDomain: true,
     success: function (res) {
       if (res.ans == "hi") {
+        if(total == false){
+          get_total(false);
+          total = true;
+        }
         setTimeout(function () {
           $("#serverconnectionerror").removeClass("show").addClass("hide");
         }, 1);
@@ -57,6 +62,12 @@ setInterval(function () {
       connect = false;
     },
   });
+}
+//check for connection with server
+checkconnection();
+setInterval(function () {
+  checkconnection();
+  
 }, 10000);
 //end check for server connection
 //put data to table
@@ -238,12 +249,6 @@ $("#send_sms_validator").click(function (e) {
     lock = false;
   }
 });
-//discount code show
-$("#open-discount").click(function (e) {
-  e.preventDefault();
-  $("#form-discount").removeClass("hide");
-  $("#open-discount").addClass("force-hide");
-});
 //verify data for validation functions
 function check_course_validation() {
   var data = "course_id=" + course_id;
@@ -267,30 +272,48 @@ function check_course_validation() {
     return false;
   }
 }
-function check_discount_validation() {
-  var discount_c = $("#input-discount").val();
+function get_total(discount) {
   var course_id = $urlParam("class_time");
-  var data = "discount_code=" + discount_c + "&" + "course_id=" + course_id;
-  var url = "http://127.0.0.1:8000/payments/checkdiscountcourse";
+  var data = "course_id=" + course_id;
+  if(discount == true){
+    var discount_c = $("#input-discount").val();
+    data += "&" + "discount_code=" + discount_c 
+  }
+  var url = "http://127.0.0.1:8000/payments/getcoursetotal";
   $.ajax({
     url: url,
     type: "POST",
     data: data,
     crossDomain: true,
     success: function (res) {
-      discount_code = discount_c;
-      $("#discount-ans-g").removeClass("hide");
-      $("#discount-ans-b").addClass("hide");
-      $("#discount-code").html(discount_code);
-      $("#amount").html($.persianNumbers(res.total));
       console.log(res);
+      if(discount == true){
+        discount_code = discount_c;
+        $("#discount_total").removeClass("hide");
+        $("#course_total").addClass("linethrough");
+        $("#discount-code").html(discount_code);
+        $("#discount-ans-g").removeClass("hide");
+        $("#discount-ans-b").addClass("hide");
+        $("#discount-ans-r").addClass("hide");
+        $("#remove_discount").removeClass("force-hide");
+        $("#total2").html($.persianNumbers(res.total));
+      }else{
+        $("#total").html($.persianNumbers(res.total));
+      }
       return true;
     },
     error: function (error) {
-      discount_code = "NULL";
-      $("#discount-ans-g").addClass("hide");
-      $("#discount-ans-b").removeClass("hide");
       console.log(error);
+      if(discount == true){
+        discount_code = "NULL";
+        $("#discount_total").addClass("hide");
+        $("#course_total").removeClass("linethrough");
+        $("#discount-code").html(discount_code);
+        $("#total2").html($.persianNumbers(""));
+        $("#discount-ans-g").addClass("hide");
+        $("#discount-ans-b").removeClass("hide");
+        $("#discount-ans-r").addClass("hide");
+      }
       return false;
     },
   });
@@ -355,7 +378,7 @@ function check_data_validation() {
 //checking discount on click
 $("#check_discount").click(function (e) {
   e.preventDefault();
-  discount_code = check_discount_validation();
+  discount_code = get_total(true);
 });
 //sms code input and loading functions
 function badsmsinputremover() {
@@ -495,3 +518,16 @@ function gettokens() {
     $("#num5").val().toString() +
     $("#num6").val().toString();
 }
+//remove discount 
+$("#remove_discount").click(function(e){
+  e.preventDefault();
+  discount_code = "NULL";
+  $("#discount_total").addClass("hide");
+  $("#course_total").removeClass("linethrough");
+  $("#discount-code").html(discount_code);
+  $("#total2").html($.persianNumbers(""));
+  $("#discount-ans-g").addClass("hide");
+  $("#discount-ans-b").addClass("hide");
+  $("#discount-ans-r").removeClass("hide");
+  $("#remove_discount").addClass("force-hide");
+});

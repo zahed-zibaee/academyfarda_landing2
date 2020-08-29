@@ -4196,7 +4196,7 @@ button.close {
   line-height: 1;
   color: #000;
   text-shadow: 0 1px 0 #fff;
-  opacity: 0.5;
+  opacity: 0.5; 
 }
 .bounce-in-fwd {
   -webkit-animation: bounce-in-fwd 1s ease-in 1s infinite both;
@@ -6163,6 +6163,9 @@ input[type="number"]::-webkit-outer-spin-button {
 #discount-ans-b {
   color: red !important;
 }
+#discount-ans-r {
+  color: green !important;
+}
 #open-discount {
   display: block;
   font-family: Yekan;
@@ -6259,4 +6262,15 @@ textarea.parsley-error:focus {
   color: #fff;
   background-color: #2bb31f;
   border-color: #2bb31f;
+}
+.thred {
+  background-color: #e01660 !important;
+}
+.linethrough {
+  text-decoration: line-through !important;
+}
+.btn-danger {
+  color: #fff;
+  background-color: #dc3545;
+  border-color: #dc3545;
 }

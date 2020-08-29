@@ -1,4 +1,3 @@
 footer
 home green
-discount and total in table 
-receipt
+discount and total in table

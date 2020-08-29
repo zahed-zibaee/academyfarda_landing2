@@ -188,51 +188,35 @@
                     id="payment_type"
                   ></td>
                 </tr>
-              </tbody>
-            </table>
-            <a href="" id="open-discount"
-              >اگر کد تخفیف دارید اینجا کلیک کنید.</a
-            >
-            <form class="pb-5 mb-5 hide" id="form-discount">
-              <div class="row justify-content-center">
-                <h4 class="text-center pb-2">
-                  اگر کد تخفیف دارید میتوانید در کادر زیر وارد کنید.
-                </h4>
-              </div>
-              <div class="row justify-content-center">
-                <div class="col-md-4">
-                  <div class="row">
-                    <div
-                      class="col-8 d-flex justify-content-center align-content-center"
-                    >
-                      <input
-                        id="input-discount"
-                        class="form-control"
-                        type="text"
-                      />
+                <tr>
+                  <th class="text-nowarp spacer-007 thred">قابل پرداخت
+                  </th>
+                  <td
+                    class="text-right pr-3 font-verify"
+                  >
+                  <div class="d-flex">
+                    <div id="course_total" class="pl-3">
+                      <span id="total"></span><span> تومان </span>
                     </div>
-                    <div class="col-4">
-                      <a id="check_discount" class="btn btn-orange">اعمال کد</a>
+                    <div id="discount_total" class="hide">
+                      <span id="total2"></span><span> تومان </span>
                     </div>
                   </div>
-                </div>
-              </div>
-              <div class="row d-flex justify-content-center pt-3">
-                <h3 id="discount-ans-g" class="hide">
-                  کد تخفیف <span id="discount-code"></span> اعمال شد. مبلغ نهایی
-                  قابل پرداخت <span id="amount"></span> تومان
-                </h3>
-                <h3 id="discount-ans-b" class="hide">
-                  کد تخفیف اشتباه است یا تاریخ آن گذشته.
-                </h3>
-              </div>
-            </form>
+                  
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <a href="" id="open-discount" data-toggle="modal" data-target="#exampleModal002"
+              >اگر کد تخفیف دارید اینجا کلیک کنید.</a
+            >
+            
             <div class="row">
               <div class="col-md-2 col-lg-4"></div>
-              <div class="col-md-4 col-lg-2 col-6">
+              <div class="col-md-4 col-lg-2 col-sm-6 col-12 pb-2">
                 <a id="back" class="btn btn-secondary">بازگشت</a>
               </div>
-              <div class="col-md-4 col-lg-2 col-6">
+              <div class="col-md-4 col-lg-2 col-sm-6 col-12 pb-2">
                 <a id="send_sms_validator" class="btn btn-red">تایید مشخصات</a>
               </div>
               <div class="col-md-2 col-lg-4"></div>
@@ -418,6 +402,63 @@
                 </h3>
                 <a id="resend-btn" class="" href="">ارسال دوباره کد</a>
               </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="modal fade"
+        id="exampleModal002"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="exampleModalLabel002"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel002">کد تخفیف</h5>
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form class="pb-5 mb-5 pt-3" id="form-discount">
+                <div class="row justify-content-center">
+                  <h4 class="text-center my-3">
+                    اگر کد تخفیف دارید میتوانید در کادر زیر وارد کنید.
+                  </h4>
+                </div>
+                <div class="row justify-content-center">
+                  <div
+                    class="col-8 d-flex justify-content-center align-content-center"
+                  >
+                    <input
+                      id="input-discount"
+                      class="form-control mx-2"
+                      type="text"
+                    />
+                    <button id="check_discount" class="btn btn-orange mx-2">اعمال کد</button>
+                    <button id="remove_discount" class="btn btn-danger mx-1 force-hide">X</button>
+                  </div>
+                </div>
+                <div class="row d-flex justify-content-center pt-3">
+                  <h3 id="discount-ans-g" class="hide">
+                    کد تخفیف <span id="discount-code"></span> اعمال شد.
+                  </h3>
+                  <h3 id="discount-ans-b" class="hide">
+                    کد تخفیف اشتباه است یا تاریخ آن گذشته.
+                  </h3>
+                  <h3 id="discount-ans-r" class="hide">
+                    کد تخفیف حذف شد.
+                  </h3>
+                </div>
+              </form>
             </div>
           </div>
         </div>
