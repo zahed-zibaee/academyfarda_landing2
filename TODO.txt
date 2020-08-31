@@ -4,3 +4,6 @@ teacher pic
 ghavanin moghararat
 checking for logical problems
 checking in mobile and pc
+change academymobileset home to this and bring that to /home
+change home links
+release 1.1 
