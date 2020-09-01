@@ -8,11 +8,12 @@ function dwtoast(txt) {
   $toast.html(txt);
   $toast.addClass("show");
 
-  // After 3 seconds, remove the show class from DIV
-  setTimeout(function () {
+// After X seconds, remove the show class from DIV
+setTimeout(function () {
     $toast.removeClass("show");
   }, 12000);
 }
+//get size of window
 function getBootstrapDeviceSize() {
   return $("#users-device-size").find("div:visible").first().attr("id");
 }

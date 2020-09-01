@@ -6373,6 +6373,3 @@ footer#footer2 {
 .access-link-hover:hover {
   transform: scale(1.2);
 }
-body.connectionallet {
-  transform: translateY(+20px) !important;
-}

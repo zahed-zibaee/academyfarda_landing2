@@ -117,7 +117,7 @@ $("#back").click(function (e) {
       }, 1000);
     },
     error: function (e, v) {
-      dwtoast($form.find(".error-message").html());
+      console.log(res);
     },
   });
 });
