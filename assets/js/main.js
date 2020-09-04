@@ -235,8 +235,7 @@ function getcourses() {
     });
   });
   // this is for buy course function
-  $("#register_form2").submit(function (e) {
-    e.preventDefault();
+ function register_form2(e) {
     var $form = $(this);
     var url = "./verify.html?" + $form.serialize();
     $.ajax({
@@ -251,9 +250,8 @@ function getcourses() {
       },
       error: function (e, v) {},
     });
-  });
-  $("#register_form3").submit(function (e) {
-    e.preventDefault();
+}
+function register_form3(e) {
     var $form = $(this);
     var url = "./verify.html?" + $form.serialize();
     $.ajax({
@@ -268,7 +266,7 @@ function getcourses() {
       },
       error: function (e, v) {},
     });
-  });
+}
   // validation check
   $(function () {
     $("#register_form2")
@@ -276,9 +274,12 @@ function getcourses() {
       .on("field:validated", function () {
         var ok = $(".parsley-error").length === 0;
       })
-      .on("form:submit", function (e) {
+      .on("form:error ", function (e) {
         e.preventDefault();
-        $("#register_form2").submit();
+      })
+      .on("form:success ", function (e) {
+        e.preventDefault();
+        register_form2()
       });
   });
   $(function () {
@@ -287,9 +288,12 @@ function getcourses() {
       .on("field:validated", function () {
         var ok = $(".parsley-error").length === 0;
       })
-      .on("form:submit", function (e) {
+      .on("form:error ", function (e) {
         e.preventDefault();
-        $("#register_form3").submit();
+      })
+      .on("form:success ", function (e) {
+        e.preventDefault();
+        register_form3()
       });
   });
   //

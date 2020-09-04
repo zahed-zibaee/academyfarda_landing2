@@ -1,6 +1,5 @@
 text
-validation check required
-teacher pic 
+teacher pic
 ghavanin moghararat
 checking for logical problems
 checking in mobile and pc
