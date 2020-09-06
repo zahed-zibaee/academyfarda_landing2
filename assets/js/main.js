@@ -8,8 +8,8 @@ function dwtoast(txt) {
   $toast.html(txt);
   $toast.addClass("show");
 
-// After X seconds, remove the show class from DIV
-setTimeout(function () {
+  // After X seconds, remove the show class from DIV
+  setTimeout(function () {
     $toast.removeClass("show");
   }, 12000);
 }
@@ -189,129 +189,122 @@ function getcourses() {
 
     return false;
   });
-  //this is for send lead
-  $("#register_form").submit(function (e) {
-    e.preventDefault();
+})(jQuery);
+//this is for send lead
+$("#register_form").submit(function (e) {
+  e.preventDefault();
 
-    var $form = $(this);
-    var data = $form.serializeArray();
+  var $form = $(this);
+  var data = $form.serializeArray();
 
-    data.push({
-      name: "token",
-      value: "OcfLGIGkoex3SDI1o2AeHTBdpwWA1usEuxf04JbiNy9uZHlbzLd6sFaI1U6Qemiy",
-    });
+  data.push({
+    name: "token",
+    value: "OcfLGIGkoex3SDI1o2AeHTBdpwWA1usEuxf04JbiNy9uZHlbzLd6sFaI1U6Qemiy",
+  });
 
-    $.ajax({
-      url: "https://academyfarda.com/leads/api/submitnew/",
-      method: "POST",
-      data: data,
-      crossDomain: true,
-      success: function (res) {
-        console.log(res);
+  $.ajax({
+    url: "https://academyfarda.com/leads/api/submitnew/",
+    method: "POST",
+    data: data,
+    crossDomain: true,
+    success: function (res) {
+      console.log(res);
 
-        if (res.status == "submited") {
-          dwtoast($form.find(".success-message").html());
+      if (res.status == "submited") {
+        dwtoast($form.find(".success-message").html());
 
-          setTimeout(function () {
-            window.location.href = "./thanks.html";
-          }, 2000);
-        } else if (res.status == "registeration_error") {
-          dwtoast($form.find(".error-registeration").html());
-        } else if (res.status == "phone_number_needed") {
-          dwtoast($form.find(".error-phone-number-needed").html());
-        } else if (res.status == "repetitive_ phone_number") {
-          dwtoast($form.find(".error-repeated-phone").html());
-        } else if (res.status == "name_needed") {
-          dwtoast($form.find(".error-name_needed").html());
-        } else if (res.status == "unknown_error") {
-          dwtoast($form.find(".error-server").html());
-        } else {
-          dwtoast($form.find(".error-message").html());
-        }
-      },
-      error: function (e, v) {
+        setTimeout(function () {
+          window.location.href = "./thanks.html";
+        }, 2000);
+      } else if (res.status == "registeration_error") {
+        dwtoast($form.find(".error-registeration").html());
+      } else if (res.status == "phone_number_needed") {
+        dwtoast($form.find(".error-phone-number-needed").html());
+      } else if (res.status == "repetitive_ phone_number") {
+        dwtoast($form.find(".error-repeated-phone").html());
+      } else if (res.status == "name_needed") {
+        dwtoast($form.find(".error-name_needed").html());
+      } else if (res.status == "unknown_error") {
+        dwtoast($form.find(".error-server").html());
+      } else {
         dwtoast($form.find(".error-message").html());
-      },
-    });
+      }
+    },
+    error: function (e, v) {
+      dwtoast($form.find(".error-message").html());
+    },
   });
-  // this is for buy course function
- function register_form2(e) {
-    var $form = $(this);
-    var url = "./verify.html?" + $form.serialize();
-    $.ajax({
-      url: url,
-      method: "GET",
-      crossDomain: true,
-      success: function (res) {
-        console.log(res);
-        setTimeout(function () {
-          window.location.href = url;
-        }, 1000);
-      },
-      error: function (e, v) {},
-    });
+});
+// this is for buy course href function
+function href_verify(formid) {
+  var $form = $(formid);
+  var url = "./verify.html?" + $form.serialize();
+  console.log(url);
+  window.location.href = url;
 }
-function register_form3(e) {
-    var $form = $(this);
-    var url = "./verify.html?" + $form.serialize();
-    $.ajax({
-      url: url,
-      method: "GET",
-      crossDomain: true,
-      success: function (res) {
-        console.log(res);
-        setTimeout(function () {
-          window.location.href = url;
-        }, 1000);
-      },
-      error: function (e, v) {},
+//prevent form default submit register forms
+$("#register_form2").submit(function(e){
+  e.preventDefault();
+});
+$("#register_form3").submit(function(e){
+  e.preventDefault();
+});
+// validation check
+$(function () {
+  $("#register_form2")
+    .parsley()
+    .on("form:submit", function () {
+      href_verify("#register_form2");
     });
-}
-  // validation check
-  $(function () {
-    $("#register_form2")
-      .parsley()
-      .on("field:validated", function () {
-        var ok = $(".parsley-error").length === 0;
-      })
-      .on("form:error ", function (e) {
-        e.preventDefault();
-      })
-      .on("form:success ", function (e) {
-        e.preventDefault();
-        register_form2()
-      });
-  });
-  $(function () {
-    $("#register_form3")
-      .parsley()
-      .on("field:validated", function () {
-        var ok = $(".parsley-error").length === 0;
-      })
-      .on("form:error ", function (e) {
-        e.preventDefault();
-      })
-      .on("form:success ", function (e) {
-        e.preventDefault();
-        register_form3()
-      });
-  });
-  //
-  $(window)
-    .on("ready resize", function () {
-      var swiper = new Swiper("#license_slide", {
-        grabCursor: true,
-        centeredSlides: false,
-        slidesPerView: "auto",
-        direction: "vertical",
-        effect: "coverflow",
-        coverflowEffect: {
-          rotate: 0,
-          stretch: 250,
-          depth: 150,
-          modifier: 2,
-          slideShadows: true,
+});
+$(function () {
+  $("#register_form3")
+    .parsley()
+    .on("form:submit", function () {
+      href_verify("#register_form3");
+    });
+});
+//
+$(window)
+  .on("ready resize", function () {
+    var swiper = new Swiper("#license_slide", {
+      grabCursor: true,
+      centeredSlides: false,
+      slidesPerView: "auto",
+      direction: "vertical",
+      effect: "coverflow",
+      coverflowEffect: {
+        rotate: 0,
+        stretch: 250,
+        depth: 150,
+        modifier: 2,
+        slideShadows: true,
+      },
+      pagination: {
+        el: ".license-slide-pagination",
+        clickable: true,
+      },
+      breakpoints: {
+        991: {
+          coverflowEffect: {
+            rotate: 0,
+            stretch: 189,
+            depth: 150,
+            modifier: 2,
+            slideShadows: true,
+          },
         },
+      },
+    });
+
+    if ($(window).width() < 560) {
+      swiper.destroy();
+      var swiper = new Swiper("#license_slide", {
+        slidesPerView: 1,
+        initialSlide: 3,
+        spaceBetween: 0,
+        centeredSlides: false,
+        freeMode: false,
         pagination: {
           el: ".license-slide-pagination",
           clickable: true,
@@ -326,299 +319,273 @@ function register_form3(e) {
               slideShadows: true,
             },
           },
+          380: {
+            coverflowEffect: {
+              rotate: 0,
+              stretch: 186,
+            },
+          },
+          372: {
+            coverflowEffect: {
+              rotate: 0,
+              stretch: 182,
+            },
+          },
+
+          365: {
+            coverflowEffect: {
+              stretch: 180,
+              depth: 150,
+            },
+          },
+          350: {
+            coverflowEffect: {
+              stretch: 175,
+              depth: 150,
+            },
+          },
+          348: {
+            coverflowEffect: {
+              stretch: 170,
+            },
+          },
+          333: {
+            coverflowEffect: {
+              stretch: 175,
+            },
+          },
+
+          320: {
+            direction: "horizontal",
+            spaceBetween: 0,
+            centeredSlides: true,
+            freeMode: true,
+
+            coverflowEffect: {},
+          },
+          200: {
+            direction: "horizontal",
+            spaceBetween: 0,
+            centeredSlides: true,
+            freeMode: true,
+
+            coverflowEffect: {},
+          },
         },
       });
+    }
+  })
+  .resize();
 
-      if ($(window).width() < 560) {
-        swiper.destroy();
-        var swiper = new Swiper("#license_slide", {
-          slidesPerView: 1,
-          initialSlide: 3,
-          spaceBetween: 0,
-          centeredSlides: false,
-          freeMode: false,
-          pagination: {
-            el: ".license-slide-pagination",
-            clickable: true,
-          },
-          breakpoints: {
-            991: {
-              coverflowEffect: {
-                rotate: 0,
-                stretch: 189,
-                depth: 150,
-                modifier: 2,
-                slideShadows: true,
-              },
-            },
-            380: {
-              coverflowEffect: {
-                rotate: 0,
-                stretch: 186,
-              },
-            },
-            372: {
-              coverflowEffect: {
-                rotate: 0,
-                stretch: 182,
-              },
-            },
+var swiper2 = new Swiper("#picture_slide", {
+  slidesPerView: 3,
+  initialSlide: 3,
+  spaceBetween: 0,
+  centeredSlides: false,
+  freeMode: false,
+  loop: true,
+  autoplay: {
+    delay: 4000,
+    disableOnIntraction: false,
+  },
 
-            365: {
-              coverflowEffect: {
-                stretch: 180,
-                depth: 150,
-              },
-            },
-            350: {
-              coverflowEffect: {
-                stretch: 175,
-                depth: 150,
-              },
-            },
-            348: {
-              coverflowEffect: {
-                stretch: 170,
-              },
-            },
-            333: {
-              coverflowEffect: {
-                stretch: 175,
-              },
-            },
+  navigation: {
+    nextEl: ".swiper-buttons-next",
+    prevEl: ".swiper-buttons-prev",
+  },
+  pagination: {
+    el: ".pic-slide-pagination",
+    clickable: true,
+  },
+  on: {
+    init: function () {
+      var $wrapper = this.$wrapperEl;
 
-            320: {
-              direction: "horizontal",
-              spaceBetween: 0,
-              centeredSlides: true,
-              freeMode: true,
+      var transform = $wrapper[0].style.transform
+        .replace("translate3d", "")
+        .replace("(", "")
+        .replace(")", "")
+        .replace(/px/g, "")
+        .split(", ");
 
-              coverflowEffect: {},
-            },
-            200: {
-              direction: "horizontal",
-              spaceBetween: 0,
-              centeredSlides: true,
-              freeMode: true,
+      transform[0] -= $(this.$wrapperEl).find(".swiper-slide").width() * 0.4;
 
-              coverflowEffect: {},
-            },
-          },
-        });
+      transform[0] += "px";
+      transform[1] += "px";
+      transform[2] += "px";
+
+      transform = "translate3d(" + transform.join(", ") + ")";
+
+      setTimeout(function () {
+        $wrapper[0].style.transform = transform;
+      }, 50);
+    },
+  },
+  breakpoints: {
+    991: {
+      slidesPerView: 3,
+      initialSlide: 2,
+    },
+    767: {
+      slidesPerView: 2,
+      initialSlide: 1,
+    },
+    520: {
+      slidesPerView: 1,
+      freeMode: false,
+      initialSlide: 1,
+    },
+    200: {
+      slidesPerView: 1,
+      freeMode: false,
+      initialSlide: 1,
+    },
+  },
+});
+var swiper3 = new Swiper("#picture_slide2", {
+  slidesPerView: 3,
+  initialSlide: 3,
+  spaceBetween: 0,
+  centeredSlides: false,
+  freeMode: false,
+  loop: true,
+  autoplay: {
+    delay: 4000,
+    disableOnIntraction: false,
+  },
+
+  navigation: {
+    nextEl: ".swiper-buttons-next2",
+    prevEl: ".swiper-buttons-prev2",
+  },
+  pagination: {
+    el: ".pic-slide-pagination2",
+    clickable: true,
+  },
+  on: {
+    init: function () {
+      var $wrapper = this.$wrapperEl;
+
+      var transform = $wrapper[0].style.transform
+        .replace("translate3d", "")
+        .replace("(", "")
+        .replace(")", "")
+        .replace(/px/g, "")
+        .split(", ");
+
+      transform[0] -= $(this.$wrapperEl).find(".swiper-slide").width() * 0.4;
+
+      transform[0] += "px";
+      transform[1] += "px";
+      transform[2] += "px";
+
+      transform = "translate3d(" + transform.join(", ") + ")";
+
+      setTimeout(function () {
+        $wrapper[0].style.transform = transform;
+      }, 50);
+    },
+  },
+  breakpoints: {
+    991: {
+      slidesPerView: 3,
+      initialSlide: 2,
+    },
+    767: {
+      slidesPerView: 2,
+      initialSlide: 1,
+    },
+    520: {
+      slidesPerView: 1,
+      freeMode: false,
+      initialSlide: 1,
+    },
+    200: {
+      slidesPerView: 1,
+      freeMode: false,
+      initialSlide: 1,
+    },
+  },
+});
+//
+// Main list tracker and activator
+//
+window.addEventListener("DOMContentLoaded", () => {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      const id = entry.target.getAttribute("id");
+      if (entry.intersectionRatio > 0) {
+        document
+          .querySelector("li a[href='#" + id + "']")
+          .parentElement.classList.add("active");
+      } else {
+        document
+          .querySelector("li a[href='#" + id + "']")
+          .parentElement.classList.remove("active");
       }
-    })
-    .resize();
-
-  var swiper2 = new Swiper("#picture_slide", {
-    slidesPerView: 3,
-    initialSlide: 3,
-    spaceBetween: 0,
-    centeredSlides: false,
-    freeMode: false,
-    loop: true,
-    autoplay: {
-      delay: 4000,
-      disableOnIntraction: false,
-    },
-
-    navigation: {
-      nextEl: ".swiper-buttons-next",
-      prevEl: ".swiper-buttons-prev",
-    },
-    pagination: {
-      el: ".pic-slide-pagination",
-      clickable: true,
-    },
-    on: {
-      init: function () {
-        var $wrapper = this.$wrapperEl;
-
-        var transform = $wrapper[0].style.transform
-          .replace("translate3d", "")
-          .replace("(", "")
-          .replace(")", "")
-          .replace(/px/g, "")
-          .split(", ");
-
-        transform[0] -= $(this.$wrapperEl).find(".swiper-slide").width() * 0.4;
-
-        transform[0] += "px";
-        transform[1] += "px";
-        transform[2] += "px";
-
-        transform = "translate3d(" + transform.join(", ") + ")";
-
-        setTimeout(function () {
-          $wrapper[0].style.transform = transform;
-        }, 50);
-      },
-    },
-    breakpoints: {
-      991: {
-        slidesPerView: 3,
-        initialSlide: 2,
-      },
-      767: {
-        slidesPerView: 2,
-        initialSlide: 1,
-      },
-      520: {
-        slidesPerView: 1,
-        freeMode: false,
-        initialSlide: 1,
-      },
-      200: {
-        slidesPerView: 1,
-        freeMode: false,
-        initialSlide: 1,
-      },
-    },
-  });
-  var swiper3 = new Swiper("#picture_slide2", {
-    slidesPerView: 3,
-    initialSlide: 3,
-    spaceBetween: 0,
-    centeredSlides: false,
-    freeMode: false,
-    loop: true,
-    autoplay: {
-      delay: 4000,
-      disableOnIntraction: false,
-    },
-
-    navigation: {
-      nextEl: ".swiper-buttons-next2",
-      prevEl: ".swiper-buttons-prev2",
-    },
-    pagination: {
-      el: ".pic-slide-pagination2",
-      clickable: true,
-    },
-    on: {
-      init: function () {
-        var $wrapper = this.$wrapperEl;
-
-        var transform = $wrapper[0].style.transform
-          .replace("translate3d", "")
-          .replace("(", "")
-          .replace(")", "")
-          .replace(/px/g, "")
-          .split(", ");
-
-        transform[0] -= $(this.$wrapperEl).find(".swiper-slide").width() * 0.4;
-
-        transform[0] += "px";
-        transform[1] += "px";
-        transform[2] += "px";
-
-        transform = "translate3d(" + transform.join(", ") + ")";
-
-        setTimeout(function () {
-          $wrapper[0].style.transform = transform;
-        }, 50);
-      },
-    },
-    breakpoints: {
-      991: {
-        slidesPerView: 3,
-        initialSlide: 2,
-      },
-      767: {
-        slidesPerView: 2,
-        initialSlide: 1,
-      },
-      520: {
-        slidesPerView: 1,
-        freeMode: false,
-        initialSlide: 1,
-      },
-      200: {
-        slidesPerView: 1,
-        freeMode: false,
-        initialSlide: 1,
-      },
-    },
-  });
-  //
-  // Main list tracker and activator
-  //
-  window.addEventListener("DOMContentLoaded", () => {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        const id = entry.target.getAttribute("id");
-        if (entry.intersectionRatio > 0) {
-          document
-            .querySelector("li a[href='#" + id + "']")
-            .parentElement.classList.add("active");
-        } else {
-          document
-            .querySelector("li a[href='#" + id + "']")
-            .parentElement.classList.remove("active");
-        }
-      });
-    });
-    // Track all sections that have an `id` applied
-    document.querySelectorAll("section[id]").forEach((section) => {
-      observer.observe(section);
     });
   });
-  //
-  //collapse icon + and - (toggle)
-  //
-  $(".accordion .card-header").on("click", function () {
-    $(this).find(".collapse-icon-plus").collapse("toggle");
-    $(this).find(".collapse-icon-minus").collapse("toggle");
+  // Track all sections that have an `id` applied
+  document.querySelectorAll("section[id]").forEach((section) => {
+    observer.observe(section);
   });
-  //
-  //slide register form
-  //
-  $(document).on("click", "#img-btn", function (e) {
-    e.preventDefault();
-    $(this).parents("#register-form-wrap").toggleClass("s-signup");
-  });
-  $(document).on("click", ".go-to-consult-form", function (e) {
-    $("#register-form-wrap").addClass("s-signup");
-  });
+});
+//
+//collapse icon + and - (toggle)
+//
+$(".accordion .card-header").on("click", function () {
+  $(this).find(".collapse-icon-plus").collapse("toggle");
+  $(this).find(".collapse-icon-minus").collapse("toggle");
+});
+//
+//slide register form
+//
+$(document).on("click", "#img-btn", function (e) {
+  e.preventDefault();
+  $(this).parents("#register-form-wrap").toggleClass("s-signup");
+});
+$(document).on("click", ".go-to-consult-form", function (e) {
+  $("#register-form-wrap").addClass("s-signup");
+});
+$(document).on("click", ".go-to-register-form", function (e) {
+  $("#register-form-wrap").removeClass("s-signup");
+});
+$(document).on("click", ".go-to-consult-form-1fs", function (e) {
+  $("#register-form-wrap").addClass("s-signup");
+  $("#question").val(
+    "می‌خواهم یک جلسه رایگان به عنوان مهمان در کلاس شرکت کنم."
+  );
+  $("#question").removeClass("highlight001");
+  setTimeout(function () {
+    $("#question").addClass("highlight001");
+  }, 100);
+});
+//
+//modal close by click on link
+//
+$(document).on("click", ".close-modal", function (e) {
+  $("#exampleModal001").modal("hide");
+});
+//modal open on click on link
+if (
+  getBootstrapDeviceSize() == "xs" ||
+  getBootstrapDeviceSize() == "sm" ||
+  getBootstrapDeviceSize() == "md"
+) {
   $(document).on("click", ".go-to-register-form", function (e) {
-    $("#register-form-wrap").removeClass("s-signup");
+    $("#exampleModal002").modal("show");
   });
   $(document).on("click", ".go-to-consult-form-1fs", function (e) {
-    $("#register-form-wrap").addClass("s-signup");
-    $("#question").val(
+    $("#question2").val(
       "می‌خواهم یک جلسه رایگان به عنوان مهمان در کلاس شرکت کنم."
     );
-    $("#question").removeClass("highlight001");
+    $("#question2").removeClass("highlight001");
+    $("#exampleModal003").modal("show");
     setTimeout(function () {
-      $("#question").addClass("highlight001");
+      $("#question2").addClass("highlight001");
     }, 100);
   });
-  //
-  //modal close by click on link
-  //
-  $(document).on("click", ".close-modal", function (e) {
-    $("#exampleModal001").modal("hide");
+  $(document).on("click", ".go-to-consult-form", function (e) {
+    $("#exampleModal003").modal("show");
   });
-  //modal open on click on link
-  if (
-    getBootstrapDeviceSize() == "xs" ||
-    getBootstrapDeviceSize() == "sm" ||
-    getBootstrapDeviceSize() == "md"
-  ) {
-    $(document).on("click", ".go-to-register-form", function (e) {
-      $("#exampleModal002").modal("show");
-    });
-    $(document).on("click", ".go-to-consult-form-1fs", function (e) {
-      $("#question2").val(
-        "می‌خواهم یک جلسه رایگان به عنوان مهمان در کلاس شرکت کنم."
-      );
-      $("#question2").removeClass("highlight001");
-      $("#exampleModal003").modal("show");
-      setTimeout(function () {
-        $("#question2").addClass("highlight001");
-      }, 100);
-    });
-    $(document).on("click", ".go-to-consult-form", function (e) {
-      $("#exampleModal003").modal("show");
-    });
-  }
-})(jQuery);
+}
