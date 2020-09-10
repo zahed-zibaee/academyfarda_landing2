@@ -1,6 +1,5 @@
 text
 teacher pic
-ghavanin moghararat
 checking for logical problems models
 checking in mobile and pc
 change styles2 to style
