@@ -1825,7 +1825,9 @@ html[dir="rtl"] .post-content ul ul {
   font-family: Yekan;
   font-weight: 800;
   font-size: 2.5rem;
-  max-width: 85px;
+}
+.site-header .head-item .site-logo img {
+  width: 85px;
 }
 @media (max-width: 1199px) {
   .site-header .head-item {
@@ -1836,8 +1838,8 @@ html[dir="rtl"] .post-content ul ul {
   .site-header .head-item {
     margin-bottom: 75px;
   }
-  .site-header .head-item .site-logo {
-    max-width: 60px;
+  .site-header .head-item .site-logo img {
+    width: 60px;
   }
   .site-header .head-item .site-logo {
     font-size: 1.7rem;

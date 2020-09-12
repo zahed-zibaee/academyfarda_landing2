@@ -1,10 +1,8 @@
 text
-teacher pic
-checking for logical problems models
+teacher pic !!!!!
+checking for logical problems models 
 checking in mobile and pc
-change styles2 to style
 change academymobileset home to this and bring that to /home
-change home links
 change javascripts links from http://127.0.0.1:8000 to https://academyfarda.com 
 upload 
 release 1.1 
