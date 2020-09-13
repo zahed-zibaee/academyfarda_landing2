@@ -1,9 +1,18 @@
-text
 teacher pic !!!!!
-checking for logical problems models 
-checking in mobile and pc
-change academymobileset home to this and bring that to /home
+checking for logical problems models
+text 
+upload backend
 change javascripts links from http://127.0.0.1:8000 to https://academyfarda.com 
-upload 
+checking in mobile and pc
+add google search and tools
+upload frontend
+redirects
+upload frontend on academyfarda.com
 release 1.1 
+work on academymobileset joomla site for improvments
+change numpad sms validation
+view changes problem to -something cuz of left side element
 namad electronic
+corona element
+change regester form to other pages
+change pics
