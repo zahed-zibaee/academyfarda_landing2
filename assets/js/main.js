@@ -18,7 +18,7 @@ function getBootstrapDeviceSize() {
   return $("#users-device-size").find("div:visible").first().attr("id");
 }
 //////
-////// LOADING
+////// LOADING consult-form
 //////
 $urlParam = function (name) {
   var results = new RegExp("[?&]" + name + "=([^&#]*)").exec(
@@ -191,10 +191,8 @@ function getcourses() {
   });
 })(jQuery);
 //this is for send lead
-$("#register_form").submit(function (e) {
-  e.preventDefault();
-
-  var $form = $(this);
+function send_leads(element){
+  var $form = element;
   var data = $form.serializeArray();
 
   data.push({
@@ -234,6 +232,14 @@ $("#register_form").submit(function (e) {
       dwtoast($form.find(".error-message").html());
     },
   });
+}
+$("#consult-form").submit(function (e) {
+  e.preventDefault();
+  send_leads($(this));
+});
+$("#consult-form2").submit(function (e) {
+  e.preventDefault();
+  send_leads($(this));
 });
 // this is for buy course href function
 function href_verify(formid) {

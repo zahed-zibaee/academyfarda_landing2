@@ -5132,3 +5132,15 @@ footer#footer2 {
   transform: scale(1.05);
   box-shadow: 0 12px 26px rgba(141, 141, 214, 0.6);
 }
+.pt-6 {
+  padding-top: 5.5rem!important;
+}
+.underline {
+  text-decoration: underline;
+}
+textarea::placeholder {
+  color: #ccc;
+}
+input::placeholder {
+  color: #ccc;
+}
