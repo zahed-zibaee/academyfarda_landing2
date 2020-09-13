@@ -204,7 +204,7 @@ $(function () {
 });
 //function sms send
 function sendsms() {
-  var phone = $urlParam("phone");
+  var phone = fixNumbers($urlParam("phone"));
   var data = "phone=" + phone;
   var url = "http://192.168.11.10:8000/SMS/lookup";
   $.ajax({
@@ -347,12 +347,12 @@ function check_data_validation() {
     regex_failed = true;
   }
   var regex_meli = RegExp("^[0-9]{10}$");
-  if (regex_meli.test(decodeURIComponent($urlParam("code_meli"))) == false) {
+  if (regex_meli.test(fixNumbers(decodeURIComponent($urlParam("code_meli")))) == false) {
     console.log("کد ملی باید شامل 10 رقم باشد.");
     regex_failed = true;
   }
   var regex_phone = RegExp("^09[0-9]{9}$");
-  if (regex_phone.test(decodeURIComponent($urlParam("phone"))) == false) {
+  if (regex_phone.test(fixNumbers(decodeURIComponent($urlParam("phone")))) == false) {
     console.log("شماره موبایل باید با 09 شروع و 9 رقم ادامه داشته باشد.");
     regex_failed = true;
   }
@@ -458,7 +458,7 @@ function submit() {
   data =
     data +
     "code_meli=" +
-    decodeURIComponent($urlParam("code_meli")) +
+    decodeURIComponent(fixNumbers($urlParam("code_meli"))) +
     "&" +
     "address=" +
     decodeURIComponent($urlParam("address")) +
@@ -531,3 +531,18 @@ $("#remove_discount").click(function(e){
   $("#discount-ans-r").removeClass("hide");
   $("#remove_discount").addClass("force-hide");
 });
+//this function will change numbers to english
+var
+persianNumbers = [/۰/g, /۱/g, /۲/g, /۳/g, /۴/g, /۵/g, /۶/g, /۷/g, /۸/g, /۹/g],
+arabicNumbers  = [/٠/g, /١/g, /٢/g, /٣/g, /٤/g, /٥/g, /٦/g, /٧/g, /٨/g, /٩/g],
+fixNumbers = function (str)
+{
+  if(typeof str === 'string')
+  {
+    for(var i=0; i<10; i++)
+    {
+      str = str.replace(persianNumbers[i], i).replace(arabicNumbers[i], i);
+    }
+  }
+  return str;
+};
