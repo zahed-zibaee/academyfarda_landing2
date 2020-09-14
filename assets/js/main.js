@@ -45,7 +45,7 @@ if ($urlParam("loading") == "off") {
 //check for connection with server function
 function checkconnection() {
   $.ajax({
-    url: "http://192.168.11.10:8000/hi",
+    url: "https://academyfarda.com/hi",
     method: "POST",
     crossDomain: true,
     success: function (res) {
@@ -95,7 +95,7 @@ setInterval(function () {
 //get all courses function
 function getcourses() {
   $.ajax({
-    url: "http://192.168.11.10:8000/payments/getcourses",
+    url: "https://academyfarda.com/payments/getcourses",
     method: "POST",
     crossDomain: true,
     success: function (res) {

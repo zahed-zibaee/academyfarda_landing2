@@ -22,7 +22,7 @@ var total = false;
 //function check connection
 function checkconnection(){
   $.ajax({
-    url: "http://192.168.11.10:8000/hi",
+    url: "https://academyfarda.com/hi",
     method: "POST",
     crossDomain: true,
     success: function (res) {
@@ -206,7 +206,7 @@ $(function () {
 function sendsms() {
   var phone = fixNumbers($urlParam("phone"));
   var data = "phone=" + phone;
-  var url = "http://192.168.11.10:8000/SMS/lookup";
+  var url = "https://academyfarda.com/SMS/lookup";
   $.ajax({
     url: url,
     type: "POST",
@@ -252,7 +252,7 @@ $("#send_sms_validator").click(function (e) {
 //verify data for validation functions
 function check_course_validation() {
   var data = "course_id=" + course_id;
-  var url = "http://192.168.11.10:8000/payments/checkcourse";
+  var url = "https://academyfarda.com/payments/checkcourse";
   var aj = $.ajax({
     url: url,
     type: "POST",
@@ -279,7 +279,7 @@ function get_total(discount) {
     var discount_c = $("#input-discount").val();
     data += "&" + "discount_code=" + discount_c 
   }
-  var url = "http://192.168.11.10:8000/payments/getcoursetotal";
+  var url = "https://academyfarda.com/payments/getcoursetotal";
   $.ajax({
     url: url,
     type: "POST",
@@ -425,7 +425,7 @@ function loadingremove() {
 }
 //submit all data and get payment url function
 function submit() {
-  var url = "http://192.168.11.10:8000/payments/cartcoursecreate";
+  var url = "https://academyfarda.com/payments/cartcoursecreate";
   var data =
     "course_id=" +
     course_id +
