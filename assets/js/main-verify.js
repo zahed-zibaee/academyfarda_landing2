@@ -289,16 +289,20 @@ function get_total(discount) {
       console.log(res);
       if(discount == true){
         discount_code = discount_c;
-        $("#discount_total").removeClass("hide");
-        $("#course_total").addClass("linethrough");
-        $("#discount-code").html(discount_code);
-        $("#discount-ans-g").removeClass("hide");
-        $("#discount-ans-b").addClass("hide");
-        $("#discount-ans-r").addClass("hide");
-        $("#remove_discount").removeClass("force-hide");
-        $("#total2").html($.persianNumbers(res.total));
+        setTimeout(() => {
+          $("#discount_total").removeClass("hide");
+          $("#course_total").addClass("linethrough");
+          $("#discount-code").html(discount_code);
+          $("#discount-ans-g").removeClass("hide");
+          $("#discount-ans-b").addClass("hide");
+          $("#discount-ans-r").addClass("hide");
+          $("#remove_discount").removeClass("force-hide");
+          $("#total2").html($.persianNumbers(res.total));
+        }, 100);
       }else{
-        $("#total").html($.persianNumbers(res.total));
+        setTimeout(() => {
+          $("#total").html($.persianNumbers(res.total));
+        }, 100);
       }
       return true;
     },
@@ -306,13 +310,15 @@ function get_total(discount) {
       console.log(error);
       if(discount == true){
         discount_code = "NULL";
-        $("#discount_total").addClass("hide");
-        $("#course_total").removeClass("linethrough");
-        $("#discount-code").html(discount_code);
-        $("#total2").html($.persianNumbers(""));
-        $("#discount-ans-g").addClass("hide");
-        $("#discount-ans-b").removeClass("hide");
-        $("#discount-ans-r").addClass("hide");
+        setTimeout(() => {
+          $("#discount_total").addClass("hide");
+          $("#course_total").removeClass("linethrough");
+          $("#discount-code").html(discount_code);
+          $("#total2").html($.persianNumbers(""));
+          $("#discount-ans-g").addClass("hide");
+          $("#discount-ans-b").removeClass("hide");
+          $("#discount-ans-r").addClass("hide");
+        }, 100);
       }
       return false;
     },

@@ -3537,16 +3537,27 @@ button.close {
 }
 .table-bordered td,
 .table-bordered th {
-  border: 1px solid #dee2e6 !important;
+  border: 1px solid #dee2e6;
 }
 .table-dark {
   color: inherit;
 }
 .table-dark tbody + tbody,
-.table-dark td,
+.table-dark td
+{
+  border-color: #dee2e6;
+}
 .table-dark th,
 .table-dark thead th {
-  border-color: #dee2e6;
+  border-color: #fff;
+}
+.table-dark th:first-child,
+.table-dark thead th:first-child {
+  border-right-color: #3303e2;
+}
+.table-dark th:last-child,
+.table-dark thead th:last-child {
+  border-left-color: #3303e2;
 }
 .table .thead-dark th {
   color: inherit;
@@ -3557,7 +3568,17 @@ thead {
 }
 .table-hover tbody tr:hover {
   color: #000;
-  background-color: rgba(0, 0, 0, 0.05);
+  background-color: #0000000d;
+  border-color: #fff;
+}
+.table-hover tbody tr:hover td{
+  border-color: #fff;
+}
+.table-hover tbody tr:hover td:first-child{
+  border-right-color: #dee2e6 !important;
+}
+.table-hover tbody tr:hover td:last-child{
+  border-left-color: #dee2e6 !important;
 }
 @media (max-width: 767px) {
   .table td {
@@ -5143,4 +5164,17 @@ textarea::placeholder {
 }
 input::placeholder {
   color: #ccc;
+}
+tr.inactive,
+tr.inactive:hover {
+  background-color: #777 !important;
+  text-decoration: line-through !important;
+  color: #fff !important;
+}
+tr.inactive {
+  border: 1px solid #bbb !important;
+}
+select option:disabled {
+  color: #ddd;
+  font-weight: lighter;
 }

@@ -1,8 +1,5 @@
 teacher pic !!!!!
-checking for logical problems models
 text 
-upload backend
-change javascripts links from http://127.0.0.1:8000 to https://academyfarda.com 
 checking in mobile and pc
 add google search and tools
 upload frontend

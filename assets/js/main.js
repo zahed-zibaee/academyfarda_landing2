@@ -149,6 +149,7 @@ function getcourses() {
       $("#tbody-courses").append(trHTML);
       trHTML = "";
       $.each(res.course, function (i, item) {
+        console.log(item.active);
         if (item.active == true) {
           trHTML += "<option value=" + item.id + ">" + item.name + "</option>";
         } else {
