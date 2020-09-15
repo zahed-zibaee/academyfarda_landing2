@@ -5170,9 +5170,7 @@ tr.inactive:hover {
   background-color: #777 !important;
   text-decoration: line-through !important;
   color: #fff !important;
-}
-tr.inactive {
-  border: 1px solid #bbb !important;
+  border-color: #fff !important;
 }
 select option:disabled {
   color: #ddd;
