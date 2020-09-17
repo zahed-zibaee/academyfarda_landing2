@@ -1,6 +1,7 @@
 teacher pic !!!!!
 text 
 checking in mobile and pc
+numpad can take persian numbers?
 add google search and tools
 upload frontend
 redirects

@@ -237,7 +237,7 @@ function sendsms() {
 //send validation sms
 $("#send_sms_validator").click(function (e) {
   e.preventDefault();
-  loadingremove();
+  loadingadd();
   if (sent == false) {
     sendsms();
     timeLeft = 61;
