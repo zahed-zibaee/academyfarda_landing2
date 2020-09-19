@@ -229,11 +229,10 @@ $("#send_sms_validator").click(function (e) {
     sendsms();
     timeLeft = 61;
   } else {
-    $("#exampleModal001").modal("show");
-    setTimeout(() => {
-      $("#num1")[0].focus();
-    }, 1000);
-    lock = false;
+  $("#exampleModal001").modal("show");
+  setTimeout(() => {
+    $("#num1")[0].focus();
+  }, 1000);
   }
 });
 //verify data for validation functions
@@ -286,6 +285,7 @@ function get_total(discount) {
           $("#remove_discount").removeClass("force-hide");
           $("#total2").html($.persianNumbers(res.total));
         }, 100);
+        loadingremove();
       }else{
         setTimeout(() => {
           $("#total").html($.persianNumbers(res.total));
@@ -306,6 +306,7 @@ function get_total(discount) {
           $("#discount-ans-b").removeClass("hide");
           $("#discount-ans-r").addClass("hide");
         }, 100);
+        loadingremove();
       }
       return false;
     },
@@ -371,7 +372,8 @@ function check_data_validation() {
 //checking discount on click
 $("#check_discount").click(function (e) {
   e.preventDefault();
-  discount_code = get_total(true);
+  loadingadd();
+  get_total(true);
 });
 //sms code input and loading functions
 function badsmsinputremover() {
@@ -409,12 +411,16 @@ function clearsmsinput() {
   $("#num1")[0].focus();
 }
 function loadingadd() {
-  $("body").addClass("body-on-loading");
-  $("#loading2").removeClass("force-hide");
+  setTimeout(function () {
+    $("body").addClass("body-on-loading");
+    $("#loading2").removeClass("force-hide");
+  }, 100);
 }
 function loadingremove() {
-  $("body").removeClass("body-on-loading");
-  $("#loading2").addClass("force-hide");
+  setTimeout(function () {
+    $("body").removeClass("body-on-loading");
+    $("#loading2").addClass("force-hide");
+  }, 100);
 }
 //submit all data and get payment url function
 function submit() {
