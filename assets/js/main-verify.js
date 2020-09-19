@@ -67,7 +67,6 @@ function checkconnection(){
 checkconnection();
 setInterval(function () {
   checkconnection();
-  
 }, 10000);
 //end check for server connection
 //put data to table
@@ -106,7 +105,7 @@ $("#back").click(function (e) {
   var url = "./index.html?loading=off";
   setTimeout(function () {
     window.location.href = url;
-  }, 1000);
+  }, 200);
 });
 // Mobile Verification input
 $(function () {
@@ -475,7 +474,7 @@ function submit() {
     success: function (res) {
       setTimeout(function () {
         window.location.href = res.url;
-      }, 1000);
+      }, 200);
     },
     error: function (e) {
       console.log(e);
