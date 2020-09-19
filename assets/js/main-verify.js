@@ -19,6 +19,7 @@ var token1 = "";
 var token2 = "";
 var connect = true;
 var total = false;
+var course = false;
 //function check connection
 function checkconnection(){
   $.ajax({
@@ -30,6 +31,10 @@ function checkconnection(){
         if(total == false){
           get_total(false);
           total = true;
+        }
+        if(course == false){
+          check_course_validation();
+          course = true;
         }
         setTimeout(function () {
           $("#serverconnectionerror").removeClass("show").addClass("hide");
@@ -83,17 +88,6 @@ $("#code_meli").text(
 );
 $("#phone").text($.persianNumbers(decodeURIComponent($urlParam("phone"))));
 $("#address").text($.persianNumbers(decodeURIComponent($urlParam("address"))));
-if (decodeURIComponent($urlParam("class_time")) == "1") {
-  $("#class_time").text("کلاس فشرده شنبه تا چهارشنبه ساعت ۹ تا ۱۲");
-} else if (decodeURIComponent($urlParam("class_time")) == "2") {
-  $("#class_time").text("کلاس فشرده شنبه تا چهارشنبه ساعت ۱۳ تا ۱۶");
-} else if (decodeURIComponent($urlParam("class_time")) == "3") {
-  $("#class_time").text("کلاس عادی زوج ساعت ۱۷ تا ۲۰");
-} else if (decodeURIComponent($urlParam("class_time")) == "4") {
-  $("#class_time").text("کلاس عادی فرد ساعت ۱۷ تا ۲۰");
-} else {
-  $("#class_time").text("کلاس مورد نظز پیدا نشد.");
-}
 if (decodeURIComponent($urlParam("payment_type")) == "option1") {
   $("#payment_type").text("نقدی");
 } else {
@@ -126,16 +120,32 @@ $(function () {
     if (t.hasClass("last")) {
       flag_last = true;
       loadingadd();
+      var res_check_course_validation = check_course_validation();
+      var res_check_data_validation = check_data_validation();
       if (
-        check_course_validation() == true &&
-        check_data_validation() == true
+        res_check_course_validation == true &&
+        res_check_data_validation == true
       ) {
         gettokens();
         submit();
-      } else {
+      } else if (
+        res_check_course_validation == false &&
+        res_check_data_validation == true) {
+        loadingremove();
+        alert(
+          "دوره انتخاب شده وجود ندارد و یا غیر فعال است."
+        );
+      }else if (
+        res_check_course_validation == true &&
+        res_check_data_validation == false) {
         loadingremove();
         alert(
           "اطلاعات وارد شده را بررسی کنید و یا با پشتیبانی تماس حاصل کنید."
+        );
+      }else{
+        loadingremove();
+        alert(
+          "ارور سرور در صورتی که نمیدانید چه اتفاقی افتاده با ما تماس بگیرید."
         );
       }
     } else {
@@ -246,12 +256,15 @@ function check_course_validation() {
     crossDomain: true,
     success: function (res) {
       console.log(res);
+      setTimeout(() => {
+        $("#class_time").text(res.name);
+      }, 100);
     },
     error: function (error) {
       console.log("دوره انتخاب شده فعال نیست و یا اصلا وجود ندارد.");
     },
   });
-  if (aj.status == 200) {
+  if (aj.status == 200 && aj.responseJSON.name==true) {
     return true;
   } else {
     return false;
