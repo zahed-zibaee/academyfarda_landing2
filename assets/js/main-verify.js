@@ -68,6 +68,29 @@ function checkconnection(){
     },
   });
 }
+function checkconnection2(){
+  aj = $.ajax({
+    url: "https://academyfarda.com/hi",
+    method: "POST",
+    crossDomain: true,
+    async: false,
+    success: function (res) {
+      if (res.ans == "hi") {
+        return true;
+      } else {
+        return false;
+      }
+    },
+    error: function (error) {
+      return false;
+    },
+  });
+  if (aj.status == 200 && aj.responseJSON.ans == "hi") {
+    return true;
+  } else {
+    return false;
+  }
+}
 //check for connection with server
 checkconnection();
 setInterval(function () {
@@ -101,8 +124,222 @@ $("#back").click(function (e) {
     window.location.href = url;
   }, 200);
 });
+//numpad focus and select
+$('#num1').on("focus", function(e){
+  setTimeout(function () {
+    $('#num1').select();
+  }, 10);
+});
+$('#num2').on("focus", function(e){
+  setTimeout(function () {
+    $('#num2').select();
+  }, 10);
+});
+$('#num3').on("focus", function(e){
+  setTimeout(function () {
+    $('#num3').select();
+  }, 10);
+});
+$('#num4').on("focus", function(e){
+  setTimeout(function () {
+    $('#num4').select();
+  }, 10);
+});
+$('#num5').on("focus", function(e){
+  setTimeout(function () {
+    $('#num5').select();
+  }, 10);
+});
+$('#num6').on("focus", function(e){
+  setTimeout(function () {
+    $('#num6').select();
+  }, 10);
+});
 // Mobile Verification input
-$(function () {
+$('#num1').on('keydown', function(e){
+  if(e.key === "Backspace" || e.key === "Delete"){
+    $('#num1').val("");
+  }else {
+    setTimeout(function () {
+      $('#num2')[0].focus();
+      $('#num2').select();
+    }, 50);
+  }
+});
+$('#num2').on('keydown', function(e){
+  if(e.key === "Backspace" || e.key === "Delete"){
+    if ($('#num2').val() == ""){
+      setTimeout(function () {
+        $('#num1')[0].focus();
+        $('#num1').select();
+      }, 50);
+    }else{
+      $('#num2').val("");
+    }
+  }else {
+    setTimeout(function () {
+      $('#num3')[0].focus();
+      $('#num3').select();
+    }, 50);
+  }
+});
+$('#num3').on('keydown', function(e){
+  if(e.key === "Backspace" || e.key === "Delete"){
+    if ($('#num3').val() == ""){
+      setTimeout(function () {
+        $('#num2')[0].focus();
+        $('#num2').select();
+      }, 50);
+    }else{
+      $('#num3').val("");
+    }
+  }else {
+    setTimeout(function () {
+      $('#num4')[0].focus();
+      $('#num4').select();
+    }, 50);
+  }
+});
+$('#num4').on('keydown', function(e){
+  if(e.key === "Backspace" || e.key === "Delete"){
+    if ($('#num4').val() == ""){
+      setTimeout(function () {
+        $('#num3')[0].focus();
+        $('#num3').select();
+      }, 50);
+    }else{
+      $('#num4').val("");
+    }
+  }else {
+    setTimeout(function () {
+      $('#num5')[0].focus();
+      $('#num5').select();
+    }, 50);
+  }
+});
+$('#num5').on('keydown', function(e){
+  if(e.key === "Backspace" || e.key === "Delete"){
+    if ($('#num5').val() == ""){
+      setTimeout(function () {
+        $('#num4')[0].focus();
+        $('#num4').select();
+      }, 50);
+    }else{
+      $('#num5').val("");
+    }
+  }else {
+    setTimeout(function () {
+      $('#num6')[0].focus();
+      $('#num6').select();
+    }, 50);
+  }
+});
+$('#num6').on('keydown', function(e){
+  if(e.key === "Backspace" || e.key === "Delete"){
+    if ($('#num6').val() == ""){
+      setTimeout(function () {
+        $('#num5')[0].focus();
+        $('#num5').select();
+      }, 50);
+    }else{
+      $('#num6').val("");
+    }
+  }else {
+    setTimeout(function () {
+      var valid = check_token_validation();
+      if (valid == true){
+        pre_submit()
+      }
+    }, 100);
+  }
+});
+//check for token input validation
+function check_token_validation(){
+  gettokens();
+  badsmsinputremover();
+  $("#wrong-code").addClass("hide");
+  var error = false;
+  if ($('#num1').val() == ""){
+    $("#num1").addClass("bad");
+    error = true;
+  }
+  if ($('#num2').val() == ""){
+    $("#num2").addClass("bad");
+    error = true;
+  }
+  if ($('#num3').val() == ""){
+    $("#num3").addClass("bad");
+    error = true;
+  }
+  if ($('#num4').val() == ""){
+    $("#num4").addClass("bad");
+    error = true;
+  }
+  if ($('#num5').val() == ""){
+    $("#num5").addClass("bad");
+    error = true;
+  }
+  if ($('#num6').val() == ""){
+    $("#num6").addClass("bad");
+    error = true;
+  }
+  if (error == false){
+    return true;
+  }else {
+    $("#wrong-code").removeClass("hide");
+    return false;
+  }
+}
+//on click on submit_code button check for validations
+$("#submit_code").click(function (e) { 
+  e.preventDefault();
+  var valid = check_token_validation();
+  if (valid == true){
+    pre_submit()
+  }
+});
+//check for validation code
+function pre_submit(){
+  badsmsinputremover();
+  $("#wrong-code").addClass("hide");
+  loadingadd();
+  var res_check_connection = checkconnection2();
+  var res_check_course_validation = check_course_validation();
+  var res_check_data_validation = check_data_validation();
+  if (
+    res_check_connection == true &&
+    res_check_course_validation == true &&
+    res_check_data_validation == true
+  ) {
+    submit();
+  } else if (
+    res_check_connection == false) {
+    loadingremove();
+    alert(
+      "ارتباط خود را با اینترنت چک کنید."
+    );
+  }else if (
+    res_check_course_validation == false &&
+    res_check_data_validation == true) {
+    loadingremove();
+    alert(
+      "دوره انتخاب شده وجود ندارد و یا غیر فعال است."
+    );
+  }else if (
+    res_check_course_validation == true &&
+    res_check_data_validation == false) {
+    loadingremove();
+    alert(
+      "اطلاعات وارد شده را بررسی کنید و یا با پشتیبانی تماس حاصل کنید."
+    );
+  }else{
+    loadingremove();
+    alert(
+      "ارور سرور در صورتی که نمیدانید چه اتفاقی افتاده با ما تماس بگیرید."
+    );
+  }
+}
+/*$(function () {
   "use strict";
 
   var body = $("#wrapper");
@@ -198,6 +435,7 @@ $(function () {
   body.on("keydown", "input", onKeyDown);
   body.on("click", "input", onFocus);
 });
+*/
 //function sms send
 function sendsms() {
   var phone = fixNumbers($urlParam("phone"));
@@ -215,7 +453,8 @@ function sendsms() {
         $("#exampleModal001").modal("show");
         setTimeout(() => {
           $("#num1")[0].focus();
-        }, 1000);
+          $("#num1").select();
+        }, 500);
         sent = true;
         loadingremove();
       } else {
@@ -241,7 +480,8 @@ $("#send_sms_validator").click(function (e) {
   $("#exampleModal001").modal("show");
   setTimeout(() => {
     $("#num1")[0].focus();
-  }, 1000);
+    $("#num1").select();
+  }, 500);
   }
 });
 //verify data for validation functions
@@ -264,7 +504,7 @@ function check_course_validation() {
       console.log("دوره انتخاب شده فعال نیست و یا اصلا وجود ندارد.");
     },
   });
-  if (aj.status == 200 && aj.responseJSON.name==true) {
+  if (aj.status == 200 && aj.responseJSON.active== "true") {
     return true;
   } else {
     return false;
@@ -389,12 +629,6 @@ $("#check_discount").click(function (e) {
 });
 //sms code input and loading functions
 function badsmsinputremover() {
-  $("#num1").val("");
-  $("#num2").val("");
-  $("#num3").val("");
-  $("#num4").val("");
-  $("#num5").val("");
-  $("#num6").val("");
   $("#num1").removeClass("bad");
   $("#num2").removeClass("bad");
   $("#num3").removeClass("bad");
@@ -402,6 +636,7 @@ function badsmsinputremover() {
   $("#num5").removeClass("bad");
   $("#num6").removeClass("bad");
   $("#num1")[0].focus();
+  $("#num1").select();
   $("#wrong-code").addClass("hide");
 }
 function badsmsinput() {
@@ -421,6 +656,7 @@ function clearsmsinput() {
   $("#num5").val("");
   $("#num6").val("");
   $("#num1")[0].focus();
+  $("#num1").select();
 }
 function loadingadd() {
   setTimeout(function () {
@@ -491,8 +727,9 @@ function submit() {
     },
     error: function (e) {
       console.log(e);
-      loadingremove();
       badsmsinput();
+      loadingremove();
+      clearsmsinput();
     },
   });
 }
