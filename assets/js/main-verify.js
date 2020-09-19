@@ -104,22 +104,9 @@ if (decodeURIComponent($urlParam("payment_type")) == "option1") {
 $("#back").click(function (e) {
   e.preventDefault();
   var url = "./index.html?loading=off";
-  var data = "";
-  $.ajax({
-    url: url,
-    method: "GET",
-    data: data,
-    crossDomain: true,
-    success: function (res) {
-      console.log(res);
-      setTimeout(function () {
-        window.location.href = url;
-      }, 1000);
-    },
-    error: function (e, v) {
-      console.log(res);
-    },
-  });
+  setTimeout(function () {
+    window.location.href = url;
+  }, 1000);
 });
 // Mobile Verification input
 $(function () {
@@ -237,8 +224,8 @@ function sendsms() {
 //send validation sms
 $("#send_sms_validator").click(function (e) {
   e.preventDefault();
-  loadingadd();
   if (sent == false) {
+    loadingadd();
     sendsms();
     timeLeft = 61;
   } else {
