@@ -39,7 +39,7 @@ if ($urlParam("loading") == "off") {
   setTimeout(function () {
     $("#loading").fadeOut("slow");
     $("body").removeClass("body-on-loading");
-  }, 6000);
+  }, 4000);
 }
 //end loading
 //check for connection with server function
