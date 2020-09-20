@@ -137,9 +137,9 @@ function getcourses() {
           trHTML += "نا مشخص";
         }
         trHTML += "</td><td>";
-        if (item.type == "I") {
+        if (item.type == "R") {
           trHTML += "دو ماه";
-        } else if (item.type == "R") {
+        } else if (item.type == "I") {
           trHTML += "یک ماه و یک هفته";
         } else {
           trHTML += "نا مشخص";
