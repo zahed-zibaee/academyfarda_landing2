@@ -99,7 +99,7 @@ function getcourses() {
     method: "POST",
     crossDomain: true,
     success: function (res) {
-      console.log(res.course[0]);
+      console.log(res);
       var trHTML = "";
       $.each(res.course, function (i, item) {
         if (item.active == true) {
@@ -145,11 +145,9 @@ function getcourses() {
           trHTML += "نا مشخص";
         }
       });
-
       $("#tbody-courses").append(trHTML);
       trHTML = "";
       $.each(res.course, function (i, item) {
-        console.log(item.active);
         if (item.active == true) {
           trHTML += "<option value=" + item.id + ">" + item.name + "</option>";
         } else {
