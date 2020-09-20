@@ -463,9 +463,17 @@ function sendsms() {
       }
     },
     error: function (error) {
-      alert("اشکال در ارسال اس ام اس");
+      if(error.status == 500) {
+        alert("نمیتوان در هر دقیقه بیش از یک پیام ارسال کرد. لطفا صبر کنید و دوباره تلاش کنید.");
+        console.log(error.responseText);
+      }else if (error.status == 403){
+        alert("نمیتوان در یک روز بیش از 10 پیام ارسال کرد.");
+        console.log(error.responseText);
+      }else{
+        alert("اشکال در ارسال اس ام اس لطفا با ما تماس بگیرید.");
+        console.log(error.responseText);
+      }
       loadingremove();
-      console.log(error);
     },
   });
 }

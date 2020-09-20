@@ -1,7 +1,4 @@
 teacher pic !!!!!
-text 
-checking in mobile and pc
-numpad works correct?
 add google search and tools
 upload frontend
 redirects
@@ -9,6 +6,8 @@ upload frontend on academyfarda.com
 release 1.1 
 work on academymobileset joomla site for improvments
 change numpad sms validation
++98 to tell
+android register fild jump problems
 view changes problem to -something cuz of left side element
 namad electronic
 corona element
