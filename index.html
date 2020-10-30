@@ -39,6 +39,18 @@
 
       gtag('config', 'UA-178459743-1');
     </script>
+    <!-- raychat -->
+    <script type="text/javascript">
+      !function(){
+        function t(){
+          var t=document.createElement("script");
+          t.type="text/javascript",t.async=!0,localStorage.getItem("rayToken")?t.src="https://app.raychat.io/scripts/js/"+o+"?rid="+localStorage.getItem("rayToken")+"&href="+window.location.href:t.src="https://app.raychat.io/scripts/js/"+o+"?href="+window.location.href;
+          var e=document.getElementsByTagName("script")[0];
+          e.parentNode.insertBefore(t,e)
+        }
+        var e=document,a=window,o="3e1ef52a-3e85-42c8-aed3-357303e59b2b";
+        "complete"==e.readyState?t():a.attachEvent?a.attachEvent("onload",t):a.addEventListener("load",t,!1)}();
+    </script>
 
   </head>
 

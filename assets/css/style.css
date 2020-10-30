@@ -5176,3 +5176,15 @@ select option:disabled {
   color: #ddd;
   font-weight: lighter;
 }
+@media (min-width: 992px) {
+  .raychat_main_button {
+    margin-left: 10px !important;
+    margin-bottom: 10px !important;
+  }
+}
+@media (max-width: 991px) {
+  .raychat_main_button {
+    margin-left: 5px !important;
+    margin-bottom: 63px !important;
+  }
+}
