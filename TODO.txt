@@ -7,3 +7,4 @@ namad electronic
 corona element
 change regester form to other pages
 change pics
+add more info to table and register class choices
