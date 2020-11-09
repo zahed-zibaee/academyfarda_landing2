@@ -113,6 +113,8 @@ function getcourses() {
           trHTML += "۱۳ تا ۱۶";
         } else if (item.time == 1720) {
           trHTML += "۱۷ تا ۲۰";
+        } else if (item.time == 1420) {
+          trHTML += "۱۴ تا ۲۰";
         } else {
           trHTML += "نا مشخص";
         }
@@ -125,6 +127,8 @@ function getcourses() {
           trHTML += "فرد";
         } else if (item.day == "E") {
           trHTML += "زوج";
+        } else if (item.day == "TH") {
+          trHTML += "فقط پنج‌شنبه";
         } else {
           trHTML += "نا مشخص";
         }
@@ -141,6 +145,8 @@ function getcourses() {
           trHTML += "یک ماه و یک هفته";
         } else if (item.type == "R") {
           trHTML += "دو ماه";
+        } else if (item.type == "3") {
+          trHTML += "سه ماه";
         } else {
           trHTML += "نا مشخص";
         }
