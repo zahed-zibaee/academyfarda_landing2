@@ -3394,27 +3394,24 @@ button.close {
   font-weight: 400;
   letter-spacing: 0.3px;
   line-height: 2vh;
+  box-shadow: 0 4px 10px 1px transparent;
 }
 .list-group-item:hover {
-  z-index: 3;
   color: #fff;
   background-color: #3303e2;
   border-color: #3303e2;
-  font-weight: 700;
   box-shadow: 0 4px 10px 1px #0000003b;
 }
 .list-group-item:last-child:hover {
   background-color: #fff;
-  box-shadow: none;
-  cursor: default;
+  box-shadow: 0 4px 10px 1px transparent;
   font-weight: 400;
   color: #373737;
   border-color: #fff;
 }
 .list-group-item:first-child:hover {
   background-color: #fff;
-  box-shadow: none;
-  cursor: default;
+  box-shadow: 0 4px 10px 1px transparent;
   font-weight: 400;
   color: #373737;
   border-color: #fff;
@@ -3441,17 +3438,13 @@ button.close {
   margin-bottom: 0;
   border-bottom-right-radius: 18px;
   border-bottom-left-radius: 18px;
-}
-.list-group-item:last-child.active {
   background-color: #fff;
   border: 1px solid transparent;
 }
 .list-group-item.active {
-  z-index: 2;
   color: #fff;
   background-color: #3303e2;
   border-color: #3303e2;
-  font-weight: 700;
 }
 .btn-orange {
   color: #f8f8f8;
