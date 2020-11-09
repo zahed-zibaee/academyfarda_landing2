@@ -145,8 +145,6 @@ function getcourses() {
           trHTML += "یک ماه و یک هفته";
         } else if (item.type == "R") {
           trHTML += "دو ماه";
-        } else if (item.type == "3") {
-          trHTML += "سه ماه";
         } else {
           trHTML += "نا مشخص";
         }
