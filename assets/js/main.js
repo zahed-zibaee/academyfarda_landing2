@@ -248,6 +248,9 @@ $("#consult-form2").submit(function (e) {
 function href_verify(formid) {
   var $form = $(formid);
   var url = "./verify.html?" + $form.serialize();
+  if ($urlParam("op") > 0) {
+    url = url + "&op=" + $urlParam("op") 
+  }
   console.log(url);
   window.location.href = url;
 }

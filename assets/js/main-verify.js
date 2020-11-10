@@ -20,6 +20,11 @@ var token2 = "";
 var connect = true;
 var total = false;
 var course = false;
+var operator = 0
+//check for operator existance
+if ($urlParam("op") > 0){
+  operator = $urlParam("op")
+}
 //function check connection
 function checkconnection(){
   $.ajax({
@@ -120,6 +125,9 @@ if (decodeURIComponent($urlParam("payment_type")) == "option1") {
 $("#back").click(function (e) {
   e.preventDefault();
   var url = "./index.html?loading=off";
+  if ($urlParam("op") > 0) {
+    url = url + "&op=" + $urlParam("op") 
+  }
   setTimeout(function () {
     window.location.href = url;
   }, 200);
@@ -721,6 +729,9 @@ function submit() {
   data = data + "payment_type=" + decodeURIComponent($urlParam("payment_type"));
   if (discount_code != "NULL") {
     data = data + "&discount_code=" + discount_code;
+  }
+  if (operator > 0){
+    data = data + "&operator=" + operator
   }
   console.log(data);
   $.ajax({
