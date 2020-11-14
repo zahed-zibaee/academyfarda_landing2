@@ -2,4 +2,4 @@ User-agent: *
 Allow: *
 Crawl-delay: 7
 
-Sitemap: https://academyfarda.com/sitemap.xml
+Sitemap: https://academymobileset.com/sitemap.xml
