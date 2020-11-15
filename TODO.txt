@@ -1,10 +1,11 @@
+change showing courses + start date + not in a table + add more info 
 SEO
-ADwords
+Google ADs
 +98 to tell
-android register fild jump problems
+android register field jump problems
 view changes problem to -something cuz of left side element
 namad electronic
 corona element
-change regester form to other pages
-change pics
-add more info to table and register class choices
+change register form to modal
+change pics to better one
+add promotion video
