@@ -1316,6 +1316,7 @@ html {
 }
 body {
   margin: 0;
+  overflow-x: hidden;
 }
 * {
   margin: 0;
@@ -1538,6 +1539,7 @@ body {
   src: url(../fonts/IRANSansDN.eot?nqj53a#iefix) format("embedded-opentype"),
     url(../fonts/IRANSansDN.woff2?nqj53a) format("woff2"),
     url(../fonts/IRANSansDN.woff?nqj53a) format("woff");
+  font-display: swap;
 }
 @font-face {
   font-family: isans;
@@ -1547,6 +1549,7 @@ body {
   src: url(../fonts/IRANSans-Black.eot?nqj53a#iefix) format("embedded-opentype"),
     url(../fonts/IRANSans-Black.woff2?nqj53a) format("woff2"),
     url(../fonts/IRANSans-Black.woff?nqj53a) format("woff");
+  font-display: swap;
 }
 @font-face {
   font-family: isans;
@@ -1557,6 +1560,7 @@ body {
       format("embedded-opentype"),
     url(../fonts/IRANSansDN-Bold.woff2?nqj53a) format("woff2"),
     url(../fonts/IRANSansDN-Bold.woff?nqj53a) format("woff");
+  font-display: swap;
 }
 @font-face {
   font-family: isans;
@@ -1567,6 +1571,7 @@ body {
       format("embedded-opentype"),
     url(../fonts/IRANSans-Medium.woff2?nqj53a) format("woff2"),
     url(../fonts/IRANSans-Medium.woff?nqj53a) format("woff");
+  font-display: swap;
 }
 @font-face {
   font-family: isans;
@@ -1577,6 +1582,7 @@ body {
       format("embedded-opentype"),
     url(../fonts/IRANSansDN-Light.woff2?nqj53a) format("woff2"),
     url(../fonts/IRANSansDN-Light.woff?nqj53a) format("woff");
+  font-display: swap;
 }
 @font-face {
   font-family: isans;
@@ -1587,6 +1593,7 @@ body {
       format("embedded-opentype"),
     url(../fonts/IRANSans-UltraLight.woff2?nqj53a) format("woff2"),
     url(../fonts/IRANSans-UltraLight.woff?nqj53a) format("woff");
+  font-display: swap;
 }
 @font-face {
   font-family: yekan;
@@ -1596,6 +1603,7 @@ body {
   src: url(../fonts/YekanBakh-Bold.eot?nqj53a#iefix) format("embedded-opentype"),
     url(../fonts/YekanBakh-Bold.woff2?nqj53a) format("woff2"),
     url(../fonts/YekanBakh-Bold.woff?nqj53a) format("woff");
+  font-display: swap;
 }
 @font-face {
   font-family: yekan;
@@ -1605,6 +1613,7 @@ body {
   src: url(../fonts/YekanBakh-Fat.eot?nqj53a#iefix) format("embedded-opentype"),
     url(../fonts/YekanBakh-Fat.woff2?nqj53a) format("woff2"),
     url(../fonts/YekanBakh-Fat.woff?nqj53a) format("woff");
+  font-display: swap;
 }
 @font-face {
   font-family: yekan;
@@ -1615,6 +1624,7 @@ body {
       format("embedded-opentype"),
     url(../fonts/YekanBakh-Regular.woff2?nqj53a) format("woff2"),
     url(../fonts/YekanBakh-Regular.woff?nqj53a) format("woff");
+  font-display: swap;
 }
 svg.icon {
   line-height: 1;
@@ -5180,4 +5190,7 @@ select option:disabled {
     margin-left: 5px !important;
     margin-bottom: 63px !important;
   }
+}
+.overflow-x-v {
+  overflow-x: visible;
 }
