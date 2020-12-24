@@ -2296,14 +2296,21 @@ body .left-bg {
   }
 }
 .global-organization .go-to-consult-form-1fs .free-session-svg {
-  background: url("../svg/free-session-2.svg") no-repeat;
-  margin: 70px auto 0 auto;
-  width: 40rem;
-  height: 40rem;
+  background: url("../svg/free-session-2.svg") no-repeat center center;
+  margin: 50px auto 0 auto;
+  width: 30vw;
+  height: 30vw;
 }
 .global-organization .go-to-consult-form-1fs .free-session-svg:hover {
-  background: url("../svg/free-session-3.svg") no-repeat;
+  background: url("../svg/free-session-3.svg") no-repeat center center;
   transform: translateY(-2px);
+}
+@media (max-width: 991px) {
+  .global-organization .go-to-consult-form-1fs .free-session-svg {
+    margin: 50px auto 0 auto;
+    width: 50vw;
+    height: 50vw;
+  }
 }
 .title-experts {
   margin: 0 auto 100px auto;
