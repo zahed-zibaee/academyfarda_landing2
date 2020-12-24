@@ -2295,23 +2295,15 @@ body .left-bg {
     font-size: 13px;
   }
 }
-.global-organization svg {
-  display: block;
+.global-organization .go-to-consult-form-1fs .free-session-svg {
+  background: url("../svg/free-session-2.svg") no-repeat;
   margin: 70px auto 0 auto;
-  max-width: 313px;
-  max-height: 257px;
+  width: 40rem;
+  height: 40rem;
 }
-@media (max-width: 575px) {
-  .global-organization svg {
-    max-width: 270px;
-    max-height: 250px;
-  }
-}
-@media (min-width: 1600px) {
-  .global-organization svg {
-    max-width: 395px;
-    max-height: 374px;
-  }
+.global-organization .go-to-consult-form-1fs .free-session-svg:hover {
+  background: url("../svg/free-session-3.svg") no-repeat;
+  transform: translateY(-2px);
 }
 .title-experts {
   margin: 0 auto 100px auto;
