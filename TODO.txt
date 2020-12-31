@@ -1,4 +1,6 @@
-change showing courses + start date + not in a table + add more info 
+change showing courses image, add link to register form, make ajax
+change ".software-hardware"
+change jadvale pardakht shahrie
 SEO
 Google ADs
 android register field jump problems
@@ -6,3 +8,4 @@ namad electronic
 change register form to modal
 change pics to better one
 add promotion video
+change ajax to academyfarda site

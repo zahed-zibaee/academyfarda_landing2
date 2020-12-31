@@ -2626,6 +2626,19 @@ footer h2 b {
   display: none;
 }
 
+.collapsing {
+  position: relative;
+  height: 0;
+  overflow: hidden;
+  transition: height 0.5s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .collapsing {
+    transition: none;
+  }
+}
+
 .cqs-header {
   color: #3303e2;
   font-family: yekan;
@@ -2633,12 +2646,19 @@ footer h2 b {
   font-weight: 700;
 }
 
-.collapse-icon-plus {
+.collapse-icon-plus-minus {
   color: #3303e2;
+  font-size: 1.6rem;
 }
 
-.collapse-icon-minus {
-  color: #3303e2;
+.accordion .card .card-header div[aria-expanded="false"] .collapse-icon-plus-minus:before{
+  font-family: FontAwesome;
+  content: "\f067";
+}
+
+.accordion .card .card-header div[aria-expanded="true"] .collapse-icon-plus-minus:before{
+  font-family: FontAwesome;
+  content: "\f068";
 }
 
 .accordion .card-body {
@@ -2712,7 +2732,7 @@ footer h2 b {
   color: #fff;
   background-color: #3303e2;
   box-shadow: 0 7px 15px 2px #00000059;
-  transform: translateY(-3px);
+  transform: translateY(-5px);
 }
 
 .btn-blue:hover {
@@ -2738,22 +2758,51 @@ footer h2 b {
   margin-bottom: 0;
 }
 
-#class-location .btn2-first {
+#payment #accordion002 .btn2-first,
+#class-location #accordion001 .btn2-first {
   border-top-right-radius: 18px;
 }
 
-#class-location .btn2-last {
+#payment #accordion002 .btn2-last,
+#class-location #accordion001 .btn2-last {
   border-top-left-radius: 18px;
 }
 
+#payment #accordion002 .card-body,
 #class-location #accordion001 .card-body {
   padding: 10px;
   color: #050044;
 }
 
+#payment #accordion002 .card-body h5,
+#payment #accordion002 .card-body i,
 #class-location #accordion001 .card-body h5,
 #class-location #accordion001 .card-body i {
   color: #3303e2;
+}
+
+#payment #accordion002 .card.card-shadow:hover {
+  box-shadow: 0 5px 13px rgba(141, 141, 214, 0.4);
+}
+
+#payment #accordion002 .btn-orange {
+  color: #ff7700;
+  background-color: transparent;
+  border: 3px solid #ff7700;
+}
+
+#payment #accordion002 .btn-orange[aria-expanded="true"] {
+  color: #fff;
+  background-color: #ff7700;
+  box-shadow: 0 7px 15px 2px #00000059;
+  transform: translateY(-3px);
+}
+
+#payment #accordion002 .btn-orange:hover {
+  color: #fff;
+  background-color: #ff7700;
+  box-shadow: 0 5px 15px 1px #16123b5d;
+  transition: ease-out 0.3s;
 }
 
 .line-hight-4em {
@@ -4541,3 +4590,4 @@ select option:disabled {
     padding: 0 !important;
   }
 }
+
