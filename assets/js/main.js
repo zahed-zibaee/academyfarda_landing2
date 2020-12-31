@@ -42,6 +42,16 @@ if ($urlParam("loading") == "off") {
   }, 2000);
 }
 //end loading
+//soft scroll
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+      });
+  });
+});
+//end soft scroll
 //check for connection with server function
 function checkconnection() {
   $.ajax({
