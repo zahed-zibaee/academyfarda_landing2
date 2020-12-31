@@ -297,7 +297,7 @@ $(window)
         clickable: true,
       },
       breakpoints: {
-        991: {
+        1199: {
           coverflowEffect: {
             rotate: 0,
             stretch: 189,
@@ -306,9 +306,19 @@ $(window)
             slideShadows: true,
           },
         },
+        991: {
+          direction: "horizontal",
+          coverflowEffect: {
+            rotate: 0,
+            stretch: 150,
+            depth: 10,
+            modifier: 2,
+            slideShadows: false,
+            grabCursor: false,
+          },
+        },
       },
     });
-
     if ($(window).width() < 560) {
       swiper.destroy();
       var swiper = new Swiper("#license_slide", {
@@ -322,22 +332,15 @@ $(window)
           clickable: true,
         },
         breakpoints: {
-          991: {
-            coverflowEffect: {
-              rotate: 0,
-              stretch: 189,
-              depth: 150,
-              modifier: 2,
-              slideShadows: true,
-            },
-          },
           380: {
+            direction: "horizontal",
             coverflowEffect: {
               rotate: 0,
               stretch: 186,
             },
           },
           372: {
+            direction: "horizontal",
             coverflowEffect: {
               rotate: 0,
               stretch: 182,
@@ -345,23 +348,27 @@ $(window)
           },
 
           365: {
+            direction: "horizontal",
             coverflowEffect: {
               stretch: 180,
               depth: 150,
             },
           },
           350: {
+            direction: "horizontal",
             coverflowEffect: {
               stretch: 175,
               depth: 150,
             },
           },
           348: {
+            direction: "horizontal",
             coverflowEffect: {
               stretch: 170,
             },
           },
           333: {
+            direction: "horizontal",
             coverflowEffect: {
               stretch: 175,
             },
@@ -434,16 +441,20 @@ var swiper2 = new Swiper("#picture_slide", {
     },
   },
   breakpoints: {
-    991: {
+    1199: {
       slidesPerView: 3,
       initialSlide: 2,
+    },
+    991: {
+      slidesPerView: 2,
+      initialSlide: 1,
     },
     767: {
       slidesPerView: 2,
       initialSlide: 1,
     },
     520: {
-      slidesPerView: 1,
+      slidesPerView: 2,
       freeMode: false,
       initialSlide: 1,
     },
@@ -499,16 +510,20 @@ var swiper3 = new Swiper("#picture_slide2", {
     },
   },
   breakpoints: {
-    991: {
+    1199: {
       slidesPerView: 3,
       initialSlide: 2,
+    },
+    991: {
+      slidesPerView: 2,
+      initialSlide: 1,
     },
     767: {
       slidesPerView: 2,
       initialSlide: 1,
     },
     520: {
-      slidesPerView: 1,
+      slidesPerView: 2,
       freeMode: false,
       initialSlide: 1,
     },
