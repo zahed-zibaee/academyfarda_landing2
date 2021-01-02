@@ -182,27 +182,6 @@ function getcourses() {
   });
 }
 //end get courses
-(function ($) {
-  /**
-   * "Scroll to" links
-   */
-  $("a.scroll_link").click(function (e) {
-    e.preventDefault();
-    var target = $(this).data("target") || $(this).attr("href");
-
-    $("html, body").animate(
-      {
-        scrollTop: $(target).offset().top + "px",
-      },
-      {
-        duration: 500,
-        easing: "swing",
-      }
-    );
-
-    return false;
-  });
-})(jQuery);
 //this is for send lead
 function send_leads(element){
   var $form = element;
@@ -286,7 +265,7 @@ $(function () {
       href_verify("#register_form3");
     });
 });
-//
+//swiper
 $(window)
   .on("ready resize", function () {
     var swiper = new Swiper("#license_slide", {
@@ -566,13 +545,6 @@ window.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll("section[id]").forEach((section) => {
     observer.observe(section);
   });
-});
-//
-//collapse icon + and - (toggle)
-//
-$(".accordion .card-header").on("click", function () {
-  $(this).find(".collapse-icon-plus").collapse("toggle");
-  $(this).find(".collapse-icon-minus").collapse("toggle");
 });
 //
 //slide register form

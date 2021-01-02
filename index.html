@@ -140,9 +140,9 @@
   </header>
 
   <!-------------------------------end(header)------------------------->
-  <div class="container">
+  <main class="container">
     <div class="row">
-      <div class="col-3 col-lg-4 col-xl-3 d-none d-lg-block">
+      <nav class="col-3 col-lg-4 col-xl-3 d-none d-lg-block">
         <div class="card" id="main-list">
           <ul class="list-group">
             <li class="list-group-item">
@@ -200,9 +200,9 @@
             </li>
           </ul>
         </div>
-      </div>
+      </nav>
       <!-------------end navbar ---------------->
-      <div class="col-9 col-lg-8 col-xl-9 col-12">
+      <article class="col-9 col-lg-8 col-xl-9 col-12">
         <!--left-icons-->
         <section class="main-product" id="intro">
           <div class="row">
@@ -1369,7 +1369,7 @@
             <h3>شرایط و هزینه</h3>
             <span>شما تنها با پرداخت ۱۵۰ هزار تومان کلاس را رزرو و مابقی شهریه را
               می‌توانید به صورت
-              <b>اقساط</b>
+              <b>اقساطی</b>
               و یا
               <b>نقدی</b>
               پرداخت نمایید.
@@ -1394,39 +1394,95 @@
           </div>
           <div class="product-wrap">
             <h2 class="title-product d-flex">پرداخت اقساطی و نقدی</h2>
-            <div id="accordion002" class="my-3">
+            <div id="accordion002" class="my-5">
               <div class="card card card-shadow card-border">
                 <div class="card-header">
                   <div class="row">
                     <div class="col-6 pl-1 pr-0">
-                      <h4 type="button" class="btn2 btn2-first btn-orange text-center pt-1" data-toggle="collapse"
-                        data-target="#collapse201" aria-expanded="true" aria-controls="collapse201">نقدی</h4>
+                      <h4 type="button" class="btn2 btn2-first btn-blue text-center pt-1" data-toggle="collapse"
+                        data-target="#collapse301" aria-expanded="true" aria-controls="collapse301">نقدی</h4>
                     </div>
                     <div class="col-6 pr-1 pl-0">
-                      <h4 type="button" class="btn2 btn2-last btn-orange text-center pt-1 collapsed"
-                        data-toggle="collapse" data-target="#collapse202" aria-expanded="false"
-                        aria-controls="collapse202">اقساط</h4>
+                      <h4 type="button" class="btn2 btn2-last btn-blue text-center pt-1 collapsed"
+                        data-toggle="collapse" data-target="#collapse302" aria-expanded="false"
+                        aria-controls="#collapse302">اقساطی</h4>
                     </div>
                   </div>
                 </div>
                 <div class="card-body h-100 pt-3">
-                  <div class="collapse show" id="collapse201" aria-labelledby="heading201" data-parent="#accordion002">
-                    <p class="bullet">
-                      <b>پرداخت نقدی:</b>
+                  <div class="collapse show" id="collapse301" aria-labelledby="heading301" data-parent="#accordion002">
+                    <p class="bullet mb-2">
+                      <b>شرایط پرداخت نقدی:</b>
                       <span>در ابتدا با ۱۵۰ هزار تومان ثبت‌نام و جلسه اول دوره با
                         پرداخت یک میلیون و هفت صد و پنجاه هزار تومان پرداخت خود را
                         کامل می‌نمایید و از ما صد هزار تومان تخفیف دریافت
-                        می‌کنید.</span> </p>
-
+                        می‌کنید.</span>
+                      </p>
+                      <div class="row bg-gray my-1">
+                        <div class="col-12 d-flex justify-content-between align-items-center">
+                          <h6 class="mb-0">
+                            ثبت‌نام:
+                          </h6>
+                          <span>۱۵۰,۰۰۰ تومان</span>
+                        </div>
+                      </div>
+                      <div class="row bg-gray my-1">
+                        <div class="col-12 d-flex justify-content-between align-items-center">
+                          <h6 class="mb-0">
+                            جلسه اول:
+                          </h6>
+                          <span>۱,۷۵۰,۰۰۰ تومان</span>
+                        </div>
+                      </div>
+                      <div class="row bg-gray my-2 mt-4">
+                        <div class="col-12 d-flex justify-content-between align-items-center">
+                          <h6 class="mb-0">
+                            شهریه کل:
+                          </h6>
+                          <span>۱,۹۰۰,۰۰۰ تومان</span>
+                        </div>
+                      </div>
                   </div>
-                  <div class="collapse" id="collapse202" aria-labelledby="heading202" data-parent="#accordion002">
-                    <p class="bullet">
-                      <b>پرداخت اقساط:</b>
+                  <div class="collapse" id="collapse302" aria-labelledby="heading302" data-parent="#accordion002">
+                    <p class="bullet mb-2">
+                      <b>شرایط پرداخت اقساطی:</b>
                       <span>در ابتدا با ۱۵۰ هزار تومان ثبت‌نام و جلسه اول دوره با
                         پرداخت هشت صد و پنجاه هزار تومان شهریه را به نصف و در اواسط
                         دوره(جلسه 13ام) یک میلیون تومان باقی مانده از شهریه را تسویه
                         می‌نمایید.</span>
                     </p>
+                    <div class="row bg-gray my-1">
+                      <div class="col-12 d-flex justify-content-between align-items-center">
+                        <h6 class="mb-0">
+                          ثبت‌نام:
+                        </h6>
+                        <span>۱۵۰,۰۰۰ تومان</span>
+                      </div>
+                    </div>
+                    <div class="row bg-gray my-1">
+                      <div class="col-12 d-flex justify-content-between align-items-center">
+                        <h6 class="mb-0">
+                          جلسه اول:
+                        </h6>
+                        <span>۸,۵۰۰,۰۰۰ تومان</span>
+                      </div>
+                    </div>
+                    <div class="row bg-gray my-1">
+                      <div class="col-12 d-flex justify-content-between align-items-center">
+                        <span class="d-flex mb-0">
+                          <h6>جلسه سیزده‌ام:</h6>
+                        </span>
+                        <span>۱,۰۰۰,۰۰۰ تومان</span>
+                      </div>
+                    </div>
+                    <div class="row bg-gray my-2 mt-4">
+                      <div class="col-12 d-flex justify-content-between align-items-center">
+                        <h6 class="mb-0">
+                          شهریه کل:
+                        </h6>
+                        <span>۲,۰۰۰,۰۰۰ تومان</span>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -2187,7 +2243,7 @@
             <div class="pic-slide-pagination"></div>
           </div>
         </section>
-      </div>
+      </article>
       <!--------------------------- End dorms ------------------------------->
       <div class="container">
         <div class="spacer-004 d-block d-md-none"></div>
@@ -2308,7 +2364,7 @@
                         <div class="form-check form-check-inline mb-2">
                           <input class="form-check-input" type="radio" name="payment_type" id="inlineRadio01"
                             value="option1" />
-                          <label class="form-check-label" for="inlineRadio01">اقساط</label>
+                          <label class="form-check-label" for="inlineRadio01">اقساطی</label>
                           <input class="form-check-input" type="radio" name="payment_type" id="inlineRadio04"
                             value="option2" required />
                           <label class="form-check-label" for="inlineRadio04">نقدی</label>
@@ -2438,7 +2494,7 @@
         <!--------------------------------------end-register-form------------------------------------------>
       </div>
     </div>
-  </div>
+  </main>
 
 
   <!--------------------------start(footer)--------------------------------->
@@ -2796,7 +2852,7 @@
                       <div class="form-check form-check-inline mb-2">
                         <input class="form-check-input" type="radio" name="payment_type" id="inlineRadio02"
                           value="option1" />
-                        <label class="form-check-label" for="inlineRadio02">اقساط</label>
+                        <label class="form-check-label" for="inlineRadio02">اقساطی</label>
                         <input class="form-check-input" type="radio" name="payment_type" id="inlineRadio03"
                           value="option2" required />
                         <label class="form-check-label" for="inlineRadio03">نقدی</label>
