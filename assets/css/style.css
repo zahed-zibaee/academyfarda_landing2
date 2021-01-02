@@ -4575,7 +4575,15 @@ select option:disabled {
 }
 
 #payment .bg-gray {
-  background-color: #dbdbdb;
+  background-color: #e6e6e6;
   border-radius: 8px;
   height: 50px;
+}
+
+#payment .text-green {
+  color: #006000;
+}
+
+#payment .blue-total {
+  color: #3700ff;
 }
