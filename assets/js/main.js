@@ -55,7 +55,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 //check for connection with server function
 function checkconnection() {
   $.ajax({
-    url: "https://academyfarda.com/hi",
+    url: "http://127.0.0.1:8000/hi",
     method: "POST",
     crossDomain: true,
     success: function (res) {
@@ -105,13 +105,14 @@ setInterval(function () {
 //get all courses function
 function getcourses() {
   $.ajax({
-    url: "https://academyfarda.com/payments/getcourses",
+    url: "http://127.0.0.1:8000/payments/getcourses",
     method: "POST",
     crossDomain: true,
     success: function (res) {
       console.log(res);
       var trHTML = "";
       $.each(res.course, function (i, item) {
+        
         if (item.active == true) {
           trHTML += "<tr><td>";
         } else {
@@ -193,7 +194,7 @@ function send_leads(element){
   });
 
   $.ajax({
-    url: "https://academyfarda.com/leads/api/submitnew/",
+    url: "http://127.0.0.1:8000/leads/api/submitnew/",
     method: "POST",
     data: data,
     crossDomain: true,

@@ -9,3 +9,4 @@ change register form to modal
 change pics to better one
 add promotion video
 change ajax to academyfarda site
+make everything main CSS,JS...
